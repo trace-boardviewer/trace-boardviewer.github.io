@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE Boardviewer: free boardview software for electronics repair</title>
+<meta name="description" content="Free, open-source boardviewer for electronics repair. Open KiCad, EAGLE, BVR and GenCAD boards with the schematic and PDF datasheets in one offline window.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="TRACE Boardviewer: free boardview software">
+<meta property="og:description" content="Free, open-source boardviewer: board, schematic and datasheets in one offline window. KiCad, EAGLE, BVR, GenCAD and more. Windows and macOS.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TRACE Boardviewer: free boardview software">
+<meta name="twitter:description" content="Board, schematic and datasheets in one offline window. KiCad, EAGLE, BVR, GenCAD and more. Windows and macOS.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://trace-boardviewer.github.io/#app","name":"TRACE Boardviewer","description":"Free, open-source boardviewer and repair workspace: open a board file, attach its schematic and PDF datasheets, and search and cross-probe across all of them offline.","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11 (x64); macOS on Apple silicon (experimental)","softwareVersion":"1.2.0","datePublished":"2026-10-06","fileSize":"112 MB","license":"https://opensource.org/licenses/MIT","isAccessibleForFree":true,"inLanguage":["en","de","fr","hu","it","pl","sk","uk"],"url":"https://trace-boardviewer.github.io/","downloadUrl":"https://github.com/trace-boardviewer/trace-boardviewer/releases/latest","releaseNotes":"https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.2.0","image":"https://trace-boardviewer.github.io/assets/img/og.png","screenshot":["https://trace-boardviewer.github.io/assets/img/shot-01-board.png","https://trace-boardviewer.github.io/assets/img/shot-02-crossprobe.png","https://trace-boardviewer.github.io/assets/img/shot-03-pdf.png","https://trace-boardviewer.github.io/assets/img/shot-04-notes.png"],"featureList":["Opens KiCad, EAGLE, BVR and GenCAD board files; more boardview formats in draft","KiCad and EAGLE schematics with exact board-schematic cross-probing","Offline PDF viewer with text search linked to board parts","Per-part and per-pin notes with measured values","No account, no telemetry, works offline"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://trace-boardviewer.github.io/#org"},"sameAs":["https://github.com/trace-boardviewer/trace-boardviewer"]},{"@type":"SoftwareSourceCode","@id":"https://trace-boardviewer.github.io/#source","name":"TRACE Boardviewer source code","codeRepository":"https://github.com/trace-boardviewer/trace-boardviewer","programmingLanguage":"TypeScript","runtimePlatform":"Electron","license":"https://opensource.org/licenses/MIT","targetProduct":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"Organization","@id":"https://trace-boardviewer.github.io/#org","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/","logo":"https://trace-boardviewer.github.io/assets/img/icon.png","sameAs":["https://github.com/trace-boardviewer"]},{"@type":"WebSite","@id":"https://trace-boardviewer.github.io/#website","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/","publisher":{"@id":"https://trace-boardviewer.github.io/#org"},"inLanguage":"en"}]}
+</script>
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="TRACE Boardviewer">
+    <img src="assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="#demo">Demo</a>
+    <a href="#formats">Formats</a>
+    <a href="#guides">Guides</a>
+    <a href="boardview-software-comparison/">Compare</a>
+    <a href="#download">Download</a>
+    <a href="support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>Free boardviewer: board, schematic and datasheet in one offline window.</h1>
+  <p class="lead">
+    Open a boardview, attach its schematic and PDFs, search everything, jump between board and schematic, and keep repair notes. One portable EXE. Nothing leaves your PC.
+  </p>
+  <div class="cta">
+    <a class="btn primary" data-rel="win-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.2.0/TRACE-Boardviewer-1.2.0.exe">Download for Windows</a>
+    <a class="btn" href="#demo">Watch the demo</a>
+  </div>
+  <p class="meta"><span class="item" data-rel="win-name">TRACE-Boardviewer-1.2.0.exe</span><span class="item" data-rel="status" hidden></span><span class="item" data-rel="win-size">111.8 MB</span><span class="item" data-rel="win-sha-item">SHA-256 <code data-rel="win-sha">2a7c277d6199fbe06a781b405f066aa4339c7fdc6584579df96cec62031abec3</code></span></p>
+  <p class="meta">Free and stays free. If it saves you time at the bench, <a href="https://donate.stripe.com/7sYaEZeET2op8PxaGE5EY00" rel="noopener" target="_blank">support it with €5</a> or <a href="https://ko-fi.com/tracerboardview" rel="noopener" target="_blank">on Ko-fi</a> ❤</p>
+  <ul class="badges" aria-label="Build facts">
+    <li class="badge">Windows x64 · portable</li><li class="badge">offline</li><li class="badge">MIT</li>
+    <li class="badge warn">unsigned — SmartScreen warns once</li>
+  </ul>
+</div></section>
+
+<section id="what"><div class="wrap">
+  <h2>What is a boardviewer?</h2>
+  <p class="sub">A boardviewer shows where every part, pin and net sits on a printed circuit board, so you can go from a fault on the schematic to the exact pad to probe. TRACE is a free, open-source boardviewer that keeps the board, its schematic and its PDF datasheets in one window and searches all of them at once. It opens <a href="open-brd-file/">.brd files</a> (EAGLE; TestLink/Landrex and TOPTEST in draft), <a href="eagle-viewer/">EAGLE boards and schematics</a>, <a href="open-bvr-file/">.bvr boardviews</a>, GenCAD .cad/.gcd and KiCad boards. Coming from OpenBoardView or FlexBV? See the <a href="boardview-software-comparison/">honest comparison</a>.</p>
+</div></section>
+
+<section id="demo"><div class="wrap">
+  <h2>Demo</h2>
+  <p class="sub">Shown with a real, openly licensed design: Pico 2 C from the project-piCo repository (KiCad PCB, KiCad schematics and a plotted PDF, WTFPL).</p>
+  <div class="gallery">
+    <figure class="wide">
+      <video controls muted playsinline preload="metadata" poster="assets/img/demo-poster.webp" src="assets/media/demo.mp4"></video>
+      <figcaption>One minute: search a net, cross-probe board and schematic, search the plotted PDF, add a pin note.</figcaption>
+    </figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="assets/img/shot-01-board.webp" data-full="assets/img/shot-01-board.png" alt="TRACE Boardviewer: KiCad board with the selected net highlighted and its connected parts listed" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Net highlighted, connected parts listed.<small data-cap="01"></small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="assets/img/shot-02-crossprobe.webp" data-full="assets/img/shot-02-crossprobe.png" alt="TRACE Boardviewer: board and schematic side by side, the selected part found on the schematic" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Split view: the selected part found on the schematic.<small data-cap="02"></small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="assets/img/shot-03-pdf.webp" data-full="assets/img/shot-03-pdf.png" alt="TRACE Boardviewer: plotted schematic PDF with text search, references linked to board parts" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>PDF search; references in the text link to parts.<small data-cap="03"></small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="assets/img/shot-04-notes.webp" data-full="assets/img/shot-04-notes.png" alt="TRACE Boardviewer: pin notes with measured voltage and resistance values" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Pin notes with measured values, kept per board.<small data-cap="04"></small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="assets/img/shot-05-light.webp" data-full="assets/img/shot-05-light.png" alt="TRACE Boardviewer in the light theme with board and schematic side by side" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Light theme, board and schematic side by side.<small data-cap="05"></small></figcaption></figure>
+  </div>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <h2>What it does</h2>
+  <div class="card"><ul>
+    <li><strong>Board:</strong> search by reference, value, package or net; net highlighting; pin and part inspection; top and mirrored bottom; zoom, pan, rotate; two-point measurement in mm.</li>
+    <li><strong>Schematic:</strong> KiCad and EAGLE schematics with connectivity; exact board↔schematic matching; unmatched or ambiguous parts are listed, never guessed.</li>
+    <li><strong>Documents:</strong> offline PDF viewer with text search and page notes; PNG/JPEG/WebP/SVG images with calibrated measurement; documents are remembered per board.</li>
+    <li><strong>Notes:</strong> per part or pin, with measured voltage/resistance; they follow the board file by content hash and survive restarts.</li>
+    <li><strong>Private:</strong> your boards and files never leave your computer; no account, no telemetry; board files are read without modification; encrypted FZ/CAE needs your own key. The only network request is an optional update check to github.com that you can turn off in Settings.</li>
+    <li><strong>Interface:</strong> English, French, German, Hungarian, Italian, Polish, Slovak, Ukrainian; dark/light; Workshop and Focus layouts. <kbd>Ctrl</kbd>+<kbd>O</kbd> open, <kbd>Ctrl</kbd>+<kbd>F</kbd> search, <kbd>F</kbd> fit, <kbd>R</kbd> rotate, <kbd>M</kbd> measure.</li>
+  </ul></div>
+</div></section>
+
+<section id="formats"><div class="wrap">
+  <h2>Formats</h2>
+  <p class="sub">Generated from the project's <code>docs/SUPPORT.md</code>: "supported / validated with real files" was checked with openly licensed real designs, "draft" only with synthetic files, "recognized, not readable" is identified and refused with an explanation.</p>
+  <div class="table-wrap">
+  <!-- formats:start -->
+<p class="mono" style="padding:8px 10px;color:var(--fg-3);font-size:0.8em">generated from docs/SUPPORT.md · 2026-10-06</p>
+<h3>Boardview and board formats</h3>
+<table><thead><tr><th>Format</th><th>Extensions</th><th>Status</th><th>Validated with</th><th>Nets</th><th>Geometry</th><th>Needs</th></tr></thead><tbody>
+<tr><td>GenCAD 1.4</td><td><code>.cad</code> <code>.gcd</code></td><td><span class="status ok">supported</span></td><td>real files</td><td>yes</td><td>mixed</td><td>—</td></tr>
+<tr><td>Landrex / TestLink BRD</td><td><code>.brd</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>TOPTEST BRD2</td><td><code>.brd</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>Honhan BDV</td><td><code>.bdv</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>BVR raw boardview (BVRAW_FORMAT_3)</td><td><code>.bvr</code></td><td><span class="status ok">supported</span></td><td>real files</td><td>yes</td><td>mixed</td><td>—</td></tr>
+<tr><td>BVR raw boardview (BVRAW_FORMAT_1)</td><td><code>.bvr</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>ASC companion trio</td><td><code>.asc</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>companion files</td></tr>
+<tr><td>FZ / CAE encrypted boardview</td><td><code>.fz</code> <code>.cae</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>mixed</td><td>user-supplied key</td></tr>
+<tr><td>XZZ PCB</td><td><code>.pcb</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>mixed</td><td>—</td></tr>
+<tr><td>CAST CST</td><td><code>.cst</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>KiCad PCB</td><td><code>.kicad_pcb</code></td><td><span class="status ok">validated with real files</span></td><td>real files: KiCad 9 demo (pic_programmer), Antmicro Jetson Nano baseboard (28 MB), Raspberry Pi Pico (open designs, KiCad 8 files); synthetic fixtures: KiCad 4-7 styles</td><td>yes</td><td>real</td><td>—</td></tr>
+<tr><td>EAGLE board XML</td><td><code>.brd</code></td><td><span class="status ok">validated with real files</span></td><td>real files: SparkFun RedBoard (EAGLE 7.7 XML board; 35 MB EAGLE 7.5 production panel); synthetic fixtures: 9.x documents, through-hole pads, rotated mirrored elements</td><td>yes</td><td>real</td><td>—</td></tr>
+<tr><td>Altium PcbDoc</td><td><code>.pcbdoc</code> <code>.cmpcbdoc</code> <code>.cspcbdoc</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>real</td><td>—</td></tr>
+<tr><td>Samsung CAD</td><td><code>.cad</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>estimated</td><td>—</td></tr>
+<tr><td>Mentor Neutral</td><td><code>.neu</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>estimated</td><td>—</td></tr>
+<tr><td>Cadence Allegro BRD (native)</td><td><code>.brd</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>estimated</td><td>—</td></tr>
+<tr><td>TVW boardview</td><td><code>.tvw</code></td><td><span class="status no">extension only</span></td><td>none</td><td>no</td><td>estimated</td><td>—</td></tr>
+<tr><td>Gerber RS-274X</td><td><code>.gbr</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>real</td><td>—</td></tr>
+<tr><td>ODB++ archive</td><td><code>.tgz</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>real</td><td>—</td></tr>
+<tr><td>IPC-2581</td><td><code>.xml</code> <code>.cvg</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>real</td><td>—</td></tr>
+</tbody></table>
+<h3>Structured schematics</h3>
+<table><thead><tr><th>Format</th><th>Extensions</th><th>Connectivity</th><th>Validated with</th><th>Needs</th></tr></thead><tbody>
+<tr><td>KiCad schematic</td><td><code>.kicad_sch</code></td><td>computed from geometry</td><td>real files: KiCad 9 demo (2 sheets), Antmicro Jetson Nano baseboard (8 sheets), Raspberry Pi Pico (open designs, KiCad 8 files)</td><td>sub-sheet files in the same directory (otherwise the sheet is shown unresolved with a diagnostic)</td></tr>
+<tr><td>KiCad legacy schematic</td><td><code>.sch</code></td><td>computed from geometry</td><td>synthetic fixtures only (no real legacy file was available)</td><td>&lt;project&gt;-cache.lib or other .lib files in the same directory for symbol pins and bodies; sub-sheet .sch files in the same directory</td></tr>
+<tr><td>EAGLE schematic</td><td><code>.sch</code></td><td>declared by the file</td><td>real files: SparkFun RedBoard (EAGLE 7.7 XML)</td><td>—</td></tr>
+</tbody></table>
+<h3>Documents in the workspace</h3>
+<table><thead><tr><th>Kind</th><th>Extensions</th><th>What TRACE does</th><th>What it does not do</th></tr></thead><tbody>
+<tr><td>PDF</td><td><code>.pdf</code></td><td>Offline pdf.js viewer: multi-page, thumbnails, zoom/fit/rotate, page jump, selectable text, text search with next/previous, bookmarks, page notes; exact board references found in the text can be linked to board parts</td><td>No OCR: a scanned or raster PDF is shown and clearly marked as not searchable. A PDF is a document, never a boardview or a netlist. No document JavaScript, no XFA, no remote resources.</td></tr>
+<tr><td>Images</td><td><code>.png</code> <code>.jpg</code> <code>.jpeg</code> <code>.webp</code> <code>.svg</code></td><td>Viewer with zoom, pan, rotation, bookmarks, point notes; physical measurement only after the user calibrates two points with a known distance</td><td>No board registration/overlay yet. SVG is sanitized and shown only as an inert image (no scripts, no remote assets; removals are disclosed). Raster images are limited to 80 megapixels.</td></tr>
+<tr><td>Schematics</td><td><code>.kicad_sch</code> <code>.sch</code> (<code>.lib</code> as a companion)</td><td>See the schematic table above</td><td>See the schematic limits above</td></tr>
+</tbody></table>
+<!-- formats:end -->
+  </div>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2>Download</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Windows x64 — portable EXE</h3>
+      <p><a class="btn primary" data-rel="win-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.2.0/TRACE-Boardviewer-1.2.0.exe"><span data-rel="win-name">TRACE-Boardviewer-1.2.0.exe</span></a> <span class="status draft" data-rel="status" hidden></span></p>
+      <p class="meta" style="margin-top:10px"><span class="item" data-rel="win-sha-item">SHA-256 <code data-rel="win-sha">2a7c277d6199fbe06a781b405f066aa4339c7fdc6584579df96cec62031abec3</code></span><span class="item" data-rel="win-size">111.8 MB</span><span class="item" data-rel="date">2026-10-06</span></p>
+      <p style="margin-top:10px">Check the file before you run it (PowerShell, in the download folder):</p>
+      <pre>Get-FileHash .\<span data-rel="win-name">TRACE-Boardviewer-1.2.0.exe</span> -Algorithm SHA256</pre>
+      <p>Built by GitHub Actions from the tagged source. Not code-signed yet: check the hash, then allow it once in SmartScreen ("More info → Run anyway"). Each launch extracts about 500 MB into a private temp folder and removes it on exit. Notes and settings live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
+
+      <p><a data-rel="releases" href="https://github.com/trace-boardviewer/trace-boardviewer/releases">All releases and checksums</a></p>
+    </div>
+    <div class="card">
+      <h3>macOS — experimental</h3>
+      <p>Experimental build for Apple silicon Macs only (M1 or later), unsigned, built on a GitHub macOS runner and validated on an Apple M3 MacBook Air. macOS blocks an unsigned app until you allow it once: right-click the app and choose Open, or clear the quarantine flag in Terminal:</p>
+      <pre>xattr -dr com.apple.quarantine "/Applications/TRACE Boardviewer.app"</pre>
+      <p>Intel Macs are not supported. Use at your own risk and tell us what you see.</p>
+      <p style="margin-top:10px"><a class="btn" data-rel="mac-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.2.0/TRACE-Boardviewer-1.2.0-mac-arm64.zip"><span data-rel="mac-name">TRACE-Boardviewer-1.2.0-mac-arm64.zip</span></a></p>
+      <p class="meta" style="margin-top:10px"><span class="item" data-rel="mac-sha-item">SHA-256 <code data-rel="mac-sha">d0c15a25f9c34c0054ecb845f3fbdb0cbc75070169502a18f5b04e98783c6528</code></span><span class="item" data-rel="mac-size">138.0 MB</span></p>
+      <pre data-rel="mac-hash-cmd">shasum -a 256 ~/Downloads/<span data-rel="mac-file">TRACE-Boardviewer-1.2.0-mac-arm64.zip</span></pre>
+    </div>
+  </div>
+</div></section>
+
+<section id="testing"><div class="wrap">
+  <h2>Testing TRACE?</h2>
+  <p class="sub">Thank you very much for testing TRACE and sharing your opinion, special thanks for that! If you find a bug, please be sure to report it.</p>
+  <p><a class="btn primary" id="bug-link" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a> <a class="btn" href="support.html">Support the project</a></p>
+</div></section>
+
+<section id="guides"><div class="wrap">
+  <h2>Guides</h2>
+  <div class="card"><ul>
+    <li><a href="eagle-viewer/">Free EAGLE viewer: open .brd and .sch files without EAGLE</a></li>
+    <li><a href="open-brd-file/">How to open a .brd file: EAGLE, boardview or Allegro?</a></li>
+    <li><a href="open-bvr-file/">How to open a .bvr boardview file</a></li>
+    <li><a href="boardview-software-comparison/">Boardview software compared: TRACE, OpenBoardView, FlexBV and NexusBV</a></li>
+  </ul></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Does it send my boards anywhere?</summary><p>No. Boards, schematics and notes stay on your computer; there is no account and no telemetry. The only network request TRACE makes is an optional update check to github.com when it starts (nothing about you or your files is sent, and you can turn it off in Settings). Updates are never installed automatically: if a newer version exists you get a link to the download page. The window itself runs under a content security policy that allows no remote connections.</p></details>
+  <details><summary>My BRD / BDV / FZ does not open.</summary><p>Check the table above; some families are still draft. Open an issue with the family, file size and the exact diagnostic — never upload a file you may not share.</p></details>
+  <details><summary>Is there a Linux version?</summary><p>Not yet. TRACE ships a portable Windows x64 EXE and an experimental Apple-silicon macOS build. A Linux build is in preparation; it will appear on the <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases">releases page</a> when it is ready.</p></details>
+  <details><summary>Where do I get board files?</summary><p>TRACE does not include or link to board files. Use files you have the right to use: your own designs, open-hardware projects (many publish KiCad or EAGLE files), or documentation you are licensed to use.</p></details>
+  <details><summary>Can I use it next to OpenBoardView or FlexBV?</summary><p>Yes. TRACE is a portable EXE with no installer, so it does not interfere with other boardviewers. See the <a href="boardview-software-comparison/">comparison</a> for what each one does best.</p></details>
+  <details><summary>Licence and trademarks</summary><p>MIT. Vendor and format names are used only to identify file formats; the project is not affiliated with any of them.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/CHANGELOG.md">CHANGELOG</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="support.html">Support</a>
+    <a href="eagle-viewer/">EAGLE viewer</a>
+    <a href="open-brd-file/">Open a .brd file</a>
+    <a href="open-bvr-file/">Open a .bvr file</a>
+    <a href="boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

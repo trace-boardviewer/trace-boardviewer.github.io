@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to open a .bvr boardview file (BVRAW): free viewer</title>
+<meta name="description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows or macOS, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="How to open a .bvr boardview file (BVRAW): free viewer">
+<meta property="og:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows or macOS, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/open-bvr-file/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to open a .bvr boardview file (BVRAW): free viewer">
+<meta name="twitter:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows or macOS, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/open-bvr-file/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .bvr boardview file","description":"Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows or macOS, next to the schematic. Not for Blue Iris .bvr videos.","datePublished":"2026-10-06","dateModified":"2026-10-06","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-bvr-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .bvr file","item":"https://trace-boardviewer.github.io/open-bvr-file/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../#demo">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">How to open a .bvr file</li>
+  </ol></nav>
+  <h1>How to open a .bvr boardview file</h1>
+  <p class="meta">Updated: <time datetime="2026-10-06">6 October 2026</time></p>
+  <p class="lead">A .bvr boardview is a plain-text description of a circuit board: every part, pin and net with its position. Technicians use it to find where a signal goes. TRACE Boardviewer opens it for free, and you can put the board's schematic and PDFs right next to it.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2>First: is your .bvr a boardview or a video?</h2>
+  <p>Two unrelated things use the .bvr extension.</p>
+  <ul>
+    <li><strong>Boardview (BVRAW):</strong> a text file whose first line looks like <code>BVRAW_FORMAT_3</code> (or <code>BVRAW_FORMAT_1</code>). This page is about these files.</li>
+    <li><strong>Blue Iris recording:</strong> a video saved by the Blue Iris security-camera software, in a proprietary format. Open it with Blue Iris; TRACE cannot play videos.</li>
+  </ul>
+  <p>To check, open the file in a plain text editor without saving it, or just drop it into TRACE, which identifies formats by their content.</p>
+
+  <h2>Which BVR versions TRACE opens</h2>
+  <div class="table-wrap" role="region" aria-label="BVR variants and their status in TRACE, scrolls sideways on narrow screens" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Variant</th><th scope="col">Status in TRACE 1.2.0</th><th scope="col">Details</th></tr></thead>
+    <tbody>
+    <tr><th scope="row"><code>BVRAW_FORMAT_3</code></th><td><span class="status ok">supported</span></td><td>Validated with real files: the five Raspberry Pi Pico boardviews exported by the open-source kicad-boardview plugin all open. Three were cross-checked against their KiCad boards: parts, pin counts, net names, sides and pin positions agree to the file's 1-mil resolution.</td></tr>
+    <tr><th scope="row"><code>BVRAW_FORMAT_1</code></th><td><span class="status draft">draft</span></td><td>Follows the OpenBoardView reference reader; tested on synthetic files only. Pads carry no size.</td></tr>
+    <tr><th scope="row">Other <code>BVRAW_FORMAT_n</code></th><td><span class="status no">recognized, refused</span></td><td>TRACE names the version instead of guessing.</td></tr>
+    <tr><th scope="row"><code>.bv</code> (Microsoft Access database)</th><td><span class="status no">not readable</span></td><td>Export it to BVR first.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Open a .bvr file in three steps</h2>
+  <ol class="steps">
+    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE, or the experimental macOS build for Apple silicon.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac), or drag the .bvr into the window.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> and search for a part (<code>U1</code>), a value or a net (<code>VBUS</code>). Click a result to highlight the whole net and list the connected parts.</li>
+  </ol>
+  <p>Switch between the top and the mirrored bottom view, rotate (<kbd>R</kbd>), fit the board to the window (<kbd>F</kbd>) and measure between two pins (<kbd>M</kbd>).</p>
+
+  <h2>Add the schematic and the PDF</h2>
+  <p>If the .bvr was exported from a KiCad project, attach that project's <code>.kicad_sch</code> (keep the sub-sheets in the same folder) and its plotted schematic PDF. Use the Attach buttons in the Schematic and Documents tabs, or drop the files into the window.</p>
+  <ul>
+    <li>TRACE links board and schematic by exact names, including KiCad's sheet-qualified net names (<code>/sheet/NAME</code>) and automatic names such as <code>Net-(D1-K)</code>.</li>
+    <li>Anything that differs is listed, not guessed.</li>
+    <li>One search then finds a net on the board, on the schematic and in the PDF text.</li>
+    <li>Notes you add to a pin, with your measured voltage or resistance, stay with the board.</li>
+  </ul>
+
+  <h2>Tip: you may not need a BVR at all</h2>
+  <p>If you have the KiCad project, open the <code>.kicad_pcb</code> directly. TRACE reads KiCad boards natively, with real pad shapes; a BVR export carries only a pad radius for each pin. No conversion step is needed. KiCad boards (KiCad 8 and 9 real files) and schematics are validated; see the <a href="../#formats">format table</a>.</p>
+  <p>If you do want a BVR file from a KiCad design, the open-source <a href="https://github.com/whitequark/kicad-boardview" rel="noopener">kicad-boardview</a> exporter can write one. Its script takes an optional <code>--bvr_file</code> argument for a <code>.bvr</code> output next to the default <code>.brd</code> file.</p>
+
+  <h2>What TRACE reads from a BVR 3 file</h2>
+  <ul>
+    <li>Parts and pins with their positions (mils, converted to millimetres) and sides (top, bottom or both, as recorded in the file). A missing side is shown as "both" and disclosed.</li>
+    <li>Pin names, numbers and nets. Empty values for fiducials and unconnected pads are allowed, and net names may contain spaces.</li>
+    <li>Pad size from <code>PIN_RADIUS</code>.</li>
+    <li>Not read: the <code>.obdata</code> side files (package, value and status per part). No BVR 3 file written by a manufacturer's tool has been tested yet.</li>
+  </ul>
+  <p>Files are limited to 64 MiB, and TRACE never modifies them.</p>
+
+  <h2>If the file does not open</h2>
+  <p>TRACE always says why. It names the format it found, the version it refused, or the line that is malformed. Send that message, the first line of the file and its size with a <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report</a>. Please share only files you are allowed to share.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
+    <a class="btn" href="../open-brd-file/">How to open a .brd file</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+  <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/CHANGELOG.md">CHANGELOG</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="./">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

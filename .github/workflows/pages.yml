@@ -1,0 +1,77 @@
+name: GitHub Pages (site/)
+
+# Publishes the static site in site/ to GitHub Pages at https://trace-boardviewer.github.io/. Runs only on pushes to main that touch site/ or this file,
+# and on manual dispatch. No build step: the folder is uploaded as-is. Actions are pinned to commits; the
+# comment names the tag they were resolved from (git ls-remote, 2026-10-05).
+
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # GitHub Pages is only available for public repositories on a free plan: while the repository is private the job is skipped
+    # instead of failing. After the repository is made public, run it once by hand (Actions, GitHub Pages, Run workflow).
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+      - name: Upload site/
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+      # IndexNow tells Bing and the other IndexNow engines which pages changed in this push (Google does not take part).
+      # The key is public by design and is served as site/<key>.txt. This step never fails the deployment.
+      - name: Notify IndexNow
+        shell: bash
+        env:
+          BASE: https://trace-boardviewer.github.io/
+          HOST: trace-boardviewer.github.io
+          KEY: 82604897259b5696877901be61ed9d04
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -uo pipefail
+          if [ -n "${BEFORE:-}" ] && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            files=$(git diff --name-only "$BEFORE" HEAD -- 'site/*.html')
+          else
+            files=$(git ls-files 'site/*.html')
+          fi
+          urls=""
+          for f in $files; do
+            [ -f "$f" ] || continue
+            p="${f#site/}"; [ "$p" = "404.html" ] && continue
+            p="${p%index.html}"
+            urls="${urls:+$urls,}\"${BASE}${p}\""
+          done
+          [ -z "$urls" ] && { echo "No page changed."; exit 0; }
+          body="{\"host\":\"${HOST}\",\"key\":\"${KEY}\",\"keyLocation\":\"${BASE}${KEY}.txt\",\"urlList\":[${urls}]}"
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' --data "$body")
+          echo "IndexNow answered HTTP ${code} (200 or 202 = accepted)"
+          exit 0
