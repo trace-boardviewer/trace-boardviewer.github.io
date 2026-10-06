@@ -66,6 +66,7 @@ jobs:
           for f in $files; do
             [ -f "$f" ] || continue
             p="${f#site/}"; [ "$p" = "404.html" ] && continue
+            case "$p" in google*.html) continue ;; esac
             p="${p%index.html}"
             urls="${urls:+$urls,}\"${BASE}${p}\""
           done
