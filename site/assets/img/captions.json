@@ -3,5 +3,16 @@
   "02": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · KiCad PCB with its KiCad schematic",
   "03": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · plotted schematic PDF",
   "04": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · the note and the voltage were typed by hand for this demonstration",
-  "05": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · light theme"
+  "05": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · light theme",
+  "06": "TRACE 1.2.0 · Jetson Nano baseboard by Antmicro (Apache-2.0) · 28 MB KiCad PCB, net 3V3_SYS highlighted",
+  "07": "TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · KiCad schematic, 8 hierarchical sheets",
+  "08": "TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic",
+  "09": "TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · KiCad PCB with its plotted schematic PDF · light theme",
+  "10": "TRACE 1.2.0 · pic_programmer, KiCad 9 demo (KiCad project, CC BY-SA 4.0) · two-point measurement",
+  "11": "TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · bottom side, mirrored, net 5V0_SYS",
+  "12": "TRACE 1.2.0 · Jetson Nano baseboard layout drawing (Antmicro, Apache-2.0) · the 100.23 mm calibration value was typed by hand for this demonstration",
+  "13": "TRACE 1.2.0 · Pico 2 C front copper Gerber layer (project-piCo, WTFPL) · recognized, not imported",
+  "14": "TRACE 1.2.0 · RedBoard (SparkFun, CC BY-SA 4.0) · Settings, interface in French · light theme",
+  "15": "TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · Focus layout",
+  "16": "TRACE 1.2.0 · Pico 2 C boardview written by kicad-boardview (project-piCo, WTFPL) · BVRAW_FORMAT_3"
 }

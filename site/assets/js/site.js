@@ -1,7 +1,12 @@
-/* TRACE Boardviewer site — theme toggle, release data, captions, gallery lightbox. No network calls except the site's own JSON files. */
+/* TRACE Boardviewer site — theme toggle, release data, captions, gallery lightbox, demo seeking. No network calls except the site's own JSON files. */
 (function () {
   'use strict';
   var root = document.documentElement;
+  // The site root, taken from this script's own address, so every page (at any depth) fetches the same JSON files.
+  var BASE = (function () {
+    var s = document.currentScript && document.currentScript.src;
+    return s ? s.replace(/assets\/js\/site\.js(?:[?#].*)?$/, '') : '';
+  })();
   function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode: ignore */ } }
   function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
@@ -33,8 +38,35 @@
     if (rel.status === 'unreleased') return 'not released yet';
     return '';
   }
+  var SHA256 = /^[0-9a-f]{64}$/;
+  // Optional Linux packages (release.json "linux": { deb, appimage }). The download card exists in the page only when
+  // scripts/render-release.cjs found a linux entry; without one nothing here touches the page.
+  function linuxRelease(rel) {
+    var lin = rel && typeof rel.linux === 'object' && rel.linux ? rel.linux : {};
+    var out = {};
+    ['deb', 'appimage'].forEach(function (key) {
+      var item = lin[key] && typeof lin[key] === 'object' ? lin[key] : {};
+      out[key] = {
+        file: FILENAME.test(item.file || '') ? item.file : '',
+        url: httpsUrl(item.url),
+        sha: typeof item.sha256 === 'string' && SHA256.test(item.sha256) ? item.sha256 : '',
+        bytes: typeof item.bytes === 'number' && item.bytes > 0 ? item.bytes : 0,
+      };
+    });
+    out.any = !!(out.deb.url || out.appimage.url);
+    return out;
+  }
+  // Platform hint: only swaps which hero button is shown; it never downloads anything. Android and ChromeOS count as "other".
+  function platform() {
+    var ua = navigator.userAgent || '', p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    if (/android|cros/i.test(ua)) return 'other';
+    if (/^win/i.test(p) || /windows/i.test(ua)) return 'windows';
+    if (/^mac/i.test(p) || /macintosh/i.test(ua)) return 'mac';
+    if (/linux/i.test(p) || /linux|x11/i.test(ua)) return 'linux';
+    return 'other';
+  }
   // Pages without release placeholders (guides, 404) skip the request; they link to the download section of the home page.
-  (document.querySelector('[data-rel]') ? fetch('release.json', { cache: 'no-cache' }) : Promise.reject(new Error('no release data on this page'))).then(function (r) { return r.json(); }).then(function (rel) {
+  (document.querySelector('[data-rel]') ? fetch(BASE + 'release.json', { cache: 'no-cache' }) : Promise.reject(new Error('no release data on this page'))).then(function (r) { return r.json(); }).then(function (rel) {
     var win = rel.windows || {}, mac = rel.macos || {};
     var version = SEMVER.test(rel.version || '') ? rel.version : '';
     var winFile = FILENAME.test(win.file || '') ? win.file : '';
@@ -55,13 +87,27 @@
     text('[data-rel="mac-size"]', mac.bytes ? fmtBytes(mac.bytes) : '—'); show('[data-rel="mac-size"]', !!mac.bytes);
     show('[data-rel="mac-hash-cmd"]', !!(macFile && macUrl));
     each('[data-rel="releases"]', function (e) { var u = httpsUrl(rel.releasesUrl); if (u) e.setAttribute('href', u); });
+    if (document.querySelector('[data-rel="linux-card"]')) {
+      var lin = linuxRelease(rel);
+      ['deb', 'appimage'].forEach(function (key) {
+        var item = lin[key], pre = '[data-rel="linux-' + key;
+        enableLink(pre + '-url"]', item.url);
+        if (item.file) text(pre + '-name"]', item.file);
+        text(pre + '-sha"]', item.sha || '—'); show(pre + '-sha-item"]', !!item.sha);
+        text(pre + '-size"]', item.bytes ? fmtBytes(item.bytes) : '—'); show(pre + '-size"]', !!item.bytes);
+        show(pre + '-block"]', !!item.url);
+      });
+      show('[data-rel="linux-card"]', lin.any);
+      show('[data-platform-cta="linux"]', lin.any && platform() === 'linux');
+      show('[data-platform-cta="windows"]', !(lin.any && platform() === 'linux'));
+    }
     // A meta line whose items are all hidden is hidden as a whole.
     each('p.meta', function (p) { if (p.querySelector('.item')) p.hidden = !p.querySelector('.item:not([hidden])'); });
   }).catch(function () { /* keep the static placeholders */ });
 
   // Screenshot provenance captions (build hash, sample file, licence) from a static JSON written by the media lane.
   if (document.querySelector('[data-cap]')) {
-    fetch('assets/img/captions.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (caps) {
+    fetch(BASE + 'assets/img/captions.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (caps) {
       each('[data-cap]', function (e) { var c = caps[e.getAttribute('data-cap')]; if (c) e.textContent = c; });
     }).catch(function () { /* captions stay empty until the media lane writes them */ });
   }
@@ -88,10 +134,36 @@
       if (!isOpen()) return;
       if (native) lb.close(); else { lb.removeAttribute('open'); onClosed(); }
     };
-    each('.gallery .shot', function (b) { b.addEventListener('click', function () { openLightbox(b); }); });
+    each('.shot', function (b) { b.addEventListener('click', function () { openLightbox(b); }); });
     lb.addEventListener('click', function () { closeLightbox(); });
     lb.addEventListener('close', onClosed);
     lb.addEventListener('keydown', function (e) { if (e.key === 'Tab' && lbClose) { e.preventDefault(); lbClose.focus(); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen() && !native) closeLightbox(); });
+  }
+
+  // Demo watch page: "?t=SECONDS" or "#t=SECONDS" in the address starts the video there (the key-moment links of the
+  // VideoObject markup use ?t=); transcript links with data-t seek without leaving the page.
+  var video = document.querySelector('video[data-seek]');
+  if (video) {
+    var startAt = function () {
+      var m = /[?&#]t=(\d+(?:\.\d+)?)/.exec(location.search + location.hash);
+      return m ? Number(m[1]) : 0;
+    };
+    var seek = function (t) {
+      if (!(t >= 0)) return;
+      var go = function () { try { video.currentTime = Math.min(t, video.duration || t); } catch (e) { /* not seekable yet */ } };
+      if (video.readyState >= 1) go(); else video.addEventListener('loadedmetadata', go, { once: true });
+    };
+    if (startAt() > 0) { video.preload = 'metadata'; seek(startAt()); }
+    each('[data-t]', function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var t = Number(a.getAttribute('data-t'));
+        seek(t);
+        var played = video.play(); if (played && played.catch) played.catch(function () { /* autoplay blocked: the position is set anyway */ });
+        try { history.replaceState(null, '', '#t=' + t); } catch (err) { /* file:// or sandboxed */ }
+        video.focus();
+      });
+    });
   }
 })();

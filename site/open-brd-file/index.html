@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/open-brd-file/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .brd file","description":"A .brd file can be an EAGLE board, a TestLink/Landrex or TOPTEST boardview, or an Allegro database. Find out which one you have and how to open it free.","datePublished":"2026-10-06","dateModified":"2026-10-06","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-brd-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .brd file","item":"https://trace-boardviewer.github.io/open-brd-file/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .brd file","description":"A .brd file can be an EAGLE board, a TestLink/Landrex or TOPTEST boardview, or an Allegro database. Find out which one you have and how to open it free.","datePublished":"2026-10-06","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-brd-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .brd file","item":"https://trace-boardviewer.github.io/open-brd-file/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -39,7 +39,7 @@
     TRACE Boardviewer
   </a>
   <nav class="main" aria-label="Sections">
-    <a href="../#demo">Demo</a>
+    <a href="../demo/">Demo</a>
     <a href="../#formats">Formats</a>
     <a href="../#guides">Guides</a>
     <a href="../boardview-software-comparison/">Compare</a>
@@ -60,7 +60,7 @@
     <li aria-current="page">How to open a .brd file</li>
   </ol></nav>
   <h1>How to open a .brd file</h1>
-  <p class="meta">Updated: <time datetime="2026-10-06">6 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
   <p class="lead">".brd" is used by several unrelated programs, so the fastest way to open yours is to find out which kind it is first. This guide shows how to tell them apart in about a minute, which free programs open each kind, and exactly what TRACE Boardviewer can and cannot do with it.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -113,10 +113,11 @@
     <li>Readable lines with <code>str_length</code> / <code>var_data</code>, or sections called BRDOUT, NETS, PARTS, PINS and NAILS: <strong>classic boardview</strong> (TestLink/Landrex or TOPTEST BRD2).</li>
     <li>Unreadable binary: an encoded TestLink/Landrex file, an Allegro database, or an old binary EAGLE board. TRACE tells the first two apart for you. An old binary EAGLE board is reported as matching none of its formats.</li>
   </ul>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-13-diagnostic-800.webp" srcset="../assets/img/shot-13-diagnostic-800.webp 800w, ../assets/img/shot-13-diagnostic.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-13-diagnostic.png" alt="TRACE Boardviewer identifying a file by its content: a Gerber layer recognized and explained instead of being opened as a boardview" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>TRACE identifies a file by its bytes and says what it found. Here a Gerber layer is recognized and explained.<small data-cap="13">TRACE 1.2.0 · Pico 2 C front copper Gerber layer (project-piCo, WTFPL) · recognized, not imported</small></figcaption></figure>
 
   <h2>Open a .brd file in TRACE</h2>
   <ol class="steps">
-    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE with nothing to install, or the experimental macOS build for Apple silicon.</li>
+    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE with nothing to install, the experimental macOS build for Apple silicon, or the experimental Linux packages (<a href="../linux/">.deb and AppImage</a>).</li>
     <li>Start TRACE and press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac), or drag the .brd file into the window.</li>
     <li>For an EAGLE board, attach the matching EAGLE schematic (<code>.sch</code>) and any PDF datasheets with the Attach buttons in the Schematic and Documents tabs, or drop the files into the window. TRACE remembers them for this board.</li>
     <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> and type a part reference, a value or a net name. Click a result to highlight the net on the board. Switch to the schematic with <kbd>Alt</kbd>+<kbd>2</kbd>, or show both side by side with <kbd>Ctrl</kbd>+<kbd>\</kbd>.</li>
@@ -131,6 +132,7 @@
     <li>The board outline is drawn from the file.</li>
   </ul>
   <p>With the schematic attached, parts and nets cross-probe by exact name. On the real RedBoard pair, all 48 schematic nets carry the board's names. One known gap: a file that holds a panel of several boards keeps only the largest outline.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-08-eagle-split-800.webp" srcset="../assets/img/shot-08-eagle-split-800.webp 800w, ../assets/img/shot-08-eagle-split.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-08-eagle-split.png" alt="EAGLE .brd file opened in TRACE next to its EAGLE schematic, the selected part highlighted on both" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>An EAGLE .brd with its schematic in the split view.<small data-cap="08">TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic</small></figcaption></figure>
   <p><strong>TestLink/Landrex and TOPTEST BRD2 boardviews (draft).</strong></p>
   <ul>
     <li>Parts, pins, nets and test points are read, with positions in mils converted to millimetres.</li>
@@ -138,7 +140,7 @@
     <li>The readers follow the public OpenBoardView reference code and are tested on synthetic files only.</li>
     <li>If your file opens wrongly, a <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report</a> with the format name, file size and TRACE's exact message helps a lot. Share only files you are allowed to share.</li>
   </ul>
-  <p><strong>Allegro databases.</strong> These are a proprietary binary format. TRACE recognizes them (versions 16.0 and later) and says so instead of guessing. Open them in Cadence's free viewer, or ask for a GenCAD export, which TRACE reads (GenCAD 1.4, validated with real files).</p>
+  <p><strong>Allegro databases.</strong> These are a proprietary binary format. TRACE recognizes them (versions 16.0 and later) and says so instead of guessing. Open them in Cadence's free viewer, or ask for a GenCAD export, which TRACE reads (GenCAD 1.4, validated with real files; see the <a href="../gencad-viewer/">free GenCAD viewer</a> page).</p>
 
   <h2>Common questions</h2>
   <h3>Is a .brd file the same as a Gerber file?</h3>
@@ -148,13 +150,18 @@
   <h3>Where can I get .brd files for my device?</h3>
   <p>TRACE does not include or link to board files. Use files you have the right to use: your own designs, open-hardware projects, or documentation you are licensed to use.</p>
   <h3>My file is a .bvr, .cad or .kicad_pcb.</h3>
-  <p>See <a href="../open-bvr-file/">How to open a .bvr boardview file</a>. TRACE also reads GenCAD (<code>.cad</code>, <code>.gcd</code>) and KiCad boards (<code>.kicad_pcb</code>); both are validated with real files. Every format TRACE knows is in the <a href="../#formats">support table</a>.</p>
+  <p>See <a href="../open-bvr-file/">How to open a .bvr boardview file</a>. TRACE also reads <a href="../gencad-viewer/">GenCAD</a> (<code>.cad</code>, <code>.gcd</code>) and <a href="../kicad-pcb-viewer/">KiCad boards</a> (<code>.kicad_pcb</code>); both are validated with real files. Every format TRACE knows is in the <a href="../#formats">support table</a>.</p>
 
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
     <a class="btn" href="../boardview-software-comparison/">Compare TRACE with OpenBoardView, FlexBV and NexusBV</a>
     <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
   </div>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
   <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
 </div></section>
 
@@ -165,12 +172,17 @@
     <a href="../">Home</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/CHANGELOG.md">CHANGELOG</a>
+    <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
     <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
     <a href="../eagle-viewer/">EAGLE viewer</a>
-    <a href="./">Open a .brd file</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
     <a href="../open-bvr-file/">Open a .bvr file</a>
     <a href="../boardview-software-comparison/">Compare boardviewers</a>
   </nav>

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://trace-boardviewer.github.io/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://trace-boardviewer.github.io/boardview-software-comparison/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://trace-boardviewer.github.io/eagle-viewer/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://trace-boardviewer.github.io/open-brd-file/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://trace-boardviewer.github.io/open-bvr-file/</loc><lastmod>2026-10-06</lastmod></url>
-  <url><loc>https://trace-boardviewer.github.io/support.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/boardview-software-comparison/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/changelog/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/demo/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/eagle-viewer/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/gencad-viewer/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/getting-started/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/kicad-pcb-viewer/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/linux/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/open-brd-file/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/open-bvr-file/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://trace-boardviewer.github.io/support.html</loc><lastmod>2026-10-07</lastmod></url>
 </urlset>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE</title>
-<meta name="description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows and macOS.">
+<meta name="description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
 <meta property="og:title" content="Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE">
-<meta property="og:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows and macOS.">
+<meta property="og:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
 <meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,11 +19,11 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE">
-<meta name="twitter:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows and macOS.">
+<meta name="twitter:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/eagle-viewer/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free EAGLE viewer: open .brd and .sch files without EAGLE","description":"Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows and macOS.","datePublished":"2026-10-06","dateModified":"2026-10-06","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/eagle-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free EAGLE viewer","item":"https://trace-boardviewer.github.io/eagle-viewer/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free EAGLE viewer: open .brd and .sch files without EAGLE","description":"Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.","datePublished":"2026-10-06","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/eagle-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free EAGLE viewer","item":"https://trace-boardviewer.github.io/eagle-viewer/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -39,7 +39,7 @@
     TRACE Boardviewer
   </a>
   <nav class="main" aria-label="Sections">
-    <a href="../#demo">Demo</a>
+    <a href="../demo/">Demo</a>
     <a href="../#formats">Formats</a>
     <a href="../#guides">Guides</a>
     <a href="../boardview-software-comparison/">Compare</a>
@@ -60,7 +60,7 @@
     <li aria-current="page">Free EAGLE viewer</li>
   </ol></nav>
   <h1>Free EAGLE viewer: open .brd and .sch files without EAGLE</h1>
-  <p class="meta">Updated: <time datetime="2026-10-06">6 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
   <p class="lead">Autodesk stopped selling and supporting EAGLE on 7 June 2026, and EAGLE licensing ended with it (<a href="https://autodesk.com/eagleannouncement" rel="noopener">Autodesk's announcement</a>). Your old projects are still there: EAGLE 6 and later save boards (<code>.brd</code>) and schematics (<code>.sch</code>) as plain XML files.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -85,11 +85,12 @@
     <li>Pin numbers come from the device's board pads, so schematic pins and board pads match exactly.</li>
   </ul>
   <p><strong>Together.</strong> Attach the schematic to the board and TRACE links them by exact reference and net names. On the RedBoard, all 48 schematic nets carry the board's names. Anything that does not match is listed for you to check, never guessed.</p>
-  <p>Add the PDF datasheets too. One search then finds a part or a net on the board, on the schematic and in the PDF text. Notes on a part or a pin keep your measured values with the board.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-08-eagle-split-800.webp" srcset="../assets/img/shot-08-eagle-split-800.webp 800w, ../assets/img/shot-08-eagle-split.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-08-eagle-split.png" alt="Free EAGLE viewer: the SparkFun RedBoard EAGLE board (.brd) and its EAGLE schematic (.sch) side by side in TRACE, the ATmega328P selected in both" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>The SparkFun RedBoard: EAGLE board and schematic side by side, the selected microcontroller highlighted in both.<small data-cap="08">TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic</small></figcaption></figure>
+  <p>Add the PDF datasheets too. One search then finds a part or a net on the board, on the schematic and in the PDF text. Notes on a part or a pin keep your measured values with the board. The <a href="../getting-started/">getting started guide</a> shows each step with screenshots.</p>
 
   <h2>Open an EAGLE project in TRACE</h2>
   <ol class="steps">
-    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE, or the experimental macOS build for Apple silicon.</li>
+    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE, the experimental macOS build for Apple silicon, or the experimental Linux packages (<a href="../linux/">.deb and AppImage</a>).</li>
     <li>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac) and choose the <code>.brd</code> file, or drag it into the window.</li>
     <li>Attach the matching <code>.sch</code> and any PDF datasheets with the Attach buttons in the Schematic and Documents tabs, or drop the files into the window. TRACE remembers them for this board.</li>
     <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> to search for a part (<code>U3</code>), a value (<code>10k</code>) or a net (<code>VIN</code>). <kbd>Ctrl</kbd>+<kbd>\</kbd> shows the board and the schematic side by side. <kbd>Alt</kbd>+<kbd>1</kbd> and <kbd>Alt</kbd>+<kbd>2</kbd> switch between them (<kbd>Option</kbd> on a Mac).</li>
@@ -121,7 +122,7 @@
 
   <h2>Common questions</h2>
   <h3>Can TRACE convert my EAGLE project to KiCad?</h3>
-  <p>No. Use KiCad's own EAGLE importer for that. TRACE is for viewing.</p>
+  <p>No. Use KiCad's own EAGLE importer for that. TRACE is for viewing, and it also opens the converted project: see the <a href="../kicad-pcb-viewer/">KiCad PCB viewer</a> page.</p>
   <h3>Is it really free?</h3>
   <p>Yes. TRACE is MIT-licensed open source, with no account, no paid tier and no telemetry.</p>
   <h3>My .brd will not open. Is it an EAGLE file at all?</h3>
@@ -132,8 +133,14 @@
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
     <a class="btn" href="../#formats">All supported formats</a>
+    <a class="btn" href="../kicad-pcb-viewer/">KiCad PCB viewer</a>
     <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
   </div>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
   <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
 </div></section>
 
@@ -144,11 +151,16 @@
     <a href="../">Home</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/CHANGELOG.md">CHANGELOG</a>
+    <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
     <a href="../support.html">Support</a>
-    <a href="./">EAGLE viewer</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
     <a href="../open-brd-file/">Open a .brd file</a>
     <a href="../open-bvr-file/">Open a .bvr file</a>
     <a href="../boardview-software-comparison/">Compare boardviewers</a>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE Boardviewer release notes (changelog)</title>
+<meta name="description" content="What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.0 (7 October 2026).">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="TRACE Boardviewer release notes (changelog)">
+<meta property="og:description" content="What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.0 (7 October 2026).">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/changelog/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TRACE Boardviewer release notes (changelog)">
+<meta name="twitter:description" content="What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.0 (7 October 2026).">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/changelog/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"TRACE Boardviewer release notes","description":"What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.0 (7 October 2026).","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/changelog/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Release notes","item":"https://trace-boardviewer.github.io/changelog/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">Release notes</li>
+  </ol></nav>
+  <h1>TRACE Boardviewer release notes</h1>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="lead">What changed in each release of TRACE Boardviewer, newest first. Downloads and SHA-256 checksums are on the <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases" rel="noopener">GitHub releases page</a>; the exact format support is in <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md" rel="noopener">docs/SUPPORT.md</a>.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE 1.3.0</a>
+    <a class="btn" href="../getting-started/">Getting started</a>
+  </div>
+</div></section>
+
+<section class="release" id="v1-3-0"><div class="wrap prose">
+  <h2>TRACE Boardviewer 1.3.0 <span class="meta"><time datetime="2026-10-07">7 October 2026</time></span></h2>
+  <p class="meta"><a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.0" rel="noopener">Downloads and checksums for 1.3.0 on GitHub</a></p>
+  <ul>
+    <li><strong>Linux (experimental):</strong> a .deb and an AppImage for x86-64, built and smoke-tested automatically on Ubuntu 24.04 and attached to the release with their SHA256 files. They are unsigned and have not been tried on a desktop Linux machine yet; other distributions, desktop environments, Wayland sessions and arm64 are not tested. The .deb installs an AppArmor profile so that Chromium's sandbox stays on under Ubuntu's user-namespace restriction. The AppImage uses the static AppImage runtime, so it needs no libfuse2. See <code>docs/LINUX.md</code>.</li>
+    <li><strong>Linux sandbox consent:</strong> an AppImage that the system forces to run without the Chromium sandbox (Ubuntu 23.10 and newer restrict user namespaces) asks before it opens a window. Quit is the default, and &quot;Do not ask again&quot; remembers a yes. Use the .deb on Ubuntu.</li>
+    <li><strong>Desktop shell on Linux:</strong> the window icon comes from the PNG, settings, recent boards and notes live in <code>~/.config/trace-boardviewer</code> (<code>$XDG_CONFIG_HOME/trace-boardviewer</code>), and <code>file://</code> arguments from desktop launchers open the board.</li>
+    <li><strong>Documentation:</strong> the README has a Linux section and download button, <code>SECURITY.md</code> explains the Linux sandbox, and the bug report form offers Linux (.deb), Linux (AppImage) and Linux (other). The README's <code>app.asar</code> sentence now says that the integrity check is available on Windows and macOS only: Electron does not offer it on Linux.</li>
+    <li><strong>Security hardening:</strong> file readers and search no longer slow down on crafted input. Long runs of digits, blanks, NULs or repeated markup in a board, schematic, PDF or typed value used to make some patterns take seconds; they are now read in linear time with the same results. Dependency advisories are fixed, and a test-only library is no longer shipped inside the app.</li>
+  </ul>
+</div></section>
+
+<section class="release" id="v1-2-0"><div class="wrap prose">
+  <h2>TRACE Boardviewer 1.2.0 <span class="meta"><time datetime="2026-10-06">6 October 2026</time></span></h2>
+  <p class="meta"><a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.2.0" rel="noopener">Downloads and checksums for 1.2.0 on GitHub</a></p>
+  <ul>
+    <li><strong>Boardview formats:</strong> a byte-based dispatcher with adapters for Landrex/TestLink BRD, TOPTEST BRD2, Honhan BDV, BVR (including BVRAW_FORMAT_3 as written by kicad-boardview), the ASC trio, FZ/CAE and XZZ (both with your own key), CAST CST, KiCad PCB, EAGLE board XML, Samsung CAD (draft) and Altium PcbDoc (draft), plus explained recognition of unsupported families. <code>docs/SUPPORT.md</code> lists what is validated with real files and what is not.</li>
+    <li><strong>Validated with real open designs:</strong> KiCad PCB, EAGLE board XML, the KiCad and EAGLE schematic readers and BVRAW_FORMAT_3 were checked against the KiCad 9 demo, the SparkFun RedBoard, the Antmicro Jetson Nano baseboard and Raspberry Pi Pico boards. A 28 MB KiCad board now opens, outline corners that are almost equal close the contour, pads without a number no longer collide with real pad numbers, power flags and <code>{slash}</code> names no longer merge nets, and sheet-qualified and automatic KiCad net names cross-probe between board and schematic.</li>
+    <li><strong>Technician workspace:</strong> Board, Schematic and Documents tabs, split view, unified search, an offline PDF viewer, an image viewer with explicit calibration, structured KiCad and EAGLE schematics with connectivity and board cross-probe, per-board workspaces that survive a restart, pin notes with measurements, and export of selected files.</li>
+    <li><strong>Reliability:</strong> queued atomic storage that drains pending writes at quit; per-board view (camera and side) persistence; a newer file-open request supersedes older loading work; the board canvas repaints after a lost GPU context; document views keep their fit mode across remounts and restarts; a rejected PDF shows an error instead of a Ready chip; layouts stay usable down to 960×640.</li>
+    <li><strong>Support notice:</strong> a short, skippable notice (&quot;TRACE is free and stays free&quot;) appears once on every start. Not now has the initial focus, so Enter, Esc or a click outside skips it; there is no &quot;don't show again&quot;. Two buttons open the Stripe and Ko-fi pages and a third opens the bug report form. The interface sends only an id to the main process, which holds the three fixed addresses. Copy in all eight languages.</li>
+    <li><strong>Bug reports:</strong> a Report a bug button in the top bar and in the support notice opens the GitHub bug report form in your browser. The repository has an issue form that asks you not to attach proprietary files.</li>
+    <li><strong>Update notification:</strong> at start TRACE can ask the GitHub releases API once whether a newer stable release exists and, if so, shows a small dismissible strip with a Download button that opens the release page. TRACE never downloads, unpacks or runs anything. The request is made by the main process only: one HTTPS GET to a fixed address, no cookies or credentials, no referrer, no redirect followed, fixed headers (the system language is not sent), 8 s timeout, at most 256 KiB read. The switch is in Settings (&quot;Check for updates when TRACE starts&quot;, on by default) next to a Check now button. This is the only network request TRACE makes.</li>
+    <li><strong>Windows portable build:</strong> every launch extracts into its own temporary folder, so closing or starting one instance no longer removes another running instance's runtime; two launches within a few milliseconds no longer share the wrapper's plug-in folder; the wrapper retries the removal of its extraction folder while a child process still holds a file. A launch that is killed or crashes can leave its folder in <code>%TEMP%</code>.</li>
+    <li><strong>macOS (experimental):</strong> an unsigned, ad-hoc signed build from the manual macOS workflow, with a smoke script and static checks. It is not notarized: a downloaded copy needs the Gatekeeper override (right-click, Open, or <code>xattr -dr com.apple.quarantine</code>).</li>
+    <li><strong>Security:</strong> <code>CODEOWNERS</code> for the sensitive paths, importable repository rulesets, and <code>SECURITY.md</code>.</li>
+  </ul>
+</div></section>
+
+<section class="release" id="v1-1-0"><div class="wrap prose">
+  <h2>TRACE Boardviewer 1.1.0</h2>
+  <ul>
+    <li>Interface localization in Hungarian, English, German, French, Italian, Slovak, Polish and Ukrainian, with an instant language switch in Settings.</li>
+    <li>A fresh profile follows the system language; profiles saved before this release keep their Hungarian interface, settings, recent boards and notes. One damaged stored setting no longer resets the other valid settings.</li>
+    <li>Importer errors and warnings, native file dialogs and messages, numbers and dates follow the selected language. Board data, net names, notes and <code>mm</code> units are never translated.</li>
+    <li>Translation catalogs in <code>electron/locales/</code> shared by the interface and the desktop shell, with automated checks for key, placeholder, plural and native/web consistency.</li>
+    <li>Long translated measurement instructions stay clear of board-side controls in small windows, with room for translated pin-table headings.</li>
+    <li>Faster interaction on dense nets through reduced redraw work and geometry processing.</li>
+    <li>A complete portable Windows x64 application in one EXE.</li>
+    <li>Recent boards are saved only after successful parsing. Startup restoration skips invalid legacy recent files and tries the remaining entries.</li>
+    <li>A newer file-open request supersedes older loading work, preventing stale board payloads and error dialogs from replacing the current board. Cancelling a newer file chooser also suppresses an older pending delivery.</li>
+    <li>Closing during startup no longer shows a misleading interface-loading error.</li>
+    <li>Public development documentation, MIT license, bundled dependency notices and Windows build/draft-release automation.</li>
+    <li>Portable QA configuration without developer-specific paths or a bundled private board.</li>
+  </ul>
+</div></section>
+
+<section class="release" id="v1-0-0"><div class="wrap prose">
+  <h2>TRACE Boardviewer 1.0.0</h2>
+  <ul>
+    <li>Initial GENCAD 1.4 desktop viewer with component and pin search, net highlighting, top/bottom views, pan, zoom and rotation.</li>
+    <li>Workshop and Focus layouts, dark/light/system themes, distance measurement and local component notes.</li>
+    <li>Local recent-board restoration and isolated native file/persistence APIs.</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap prose">
+  <p>Found a problem in a release? Please use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a> and do not attach proprietary board files.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

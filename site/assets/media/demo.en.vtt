@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.000
+TRACE Boardviewer: a free, offline boardviewer and repair workspace
+
+2
+00:00:07.000 --> 00:00:14.000
+Search across the board, the schematic and the PDF at once
+
+3
+00:00:14.000 --> 00:00:22.000
+Cross-probe: the same net highlighted on the board and in the schematic
+
+4
+00:00:22.000 --> 00:00:35.000
+Read the plotted schematic PDF: search the text and jump to every match
+
+5
+00:00:35.000 --> 00:00:54.000
+Pin notes with measured values, saved with the board
+
+6
+00:00:54.000 --> 00:00:59.560
+Free and open source (MIT). Windows portable EXE. macOS experimental.

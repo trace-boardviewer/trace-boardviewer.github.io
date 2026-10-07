@@ -139,3 +139,19 @@ nav.main a[aria-current="page"] { background: var(--bg-3); color: var(--fg); }
 @media (max-width: 640px) {
   .prose table.wide tbody th { position: sticky; left: 0; background: var(--bg-2); width: 112px; min-width: 112px; font-size: 0.85em; box-shadow: 1px 0 0 var(--line); }
 }
+/* screenshots inside guide pages, the demo watch page, the changelog and the optional Linux download card */
+.prose code { overflow-wrap: anywhere; }
+.prose > figure, .prose > .figs { margin: 18px 0; }
+.prose > figure { max-width: 780px; }
+.figs { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1000px; }
+.gallery figure figcaption, .prose figure figcaption { overflow-wrap: anywhere; }
+.watch video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; background: #000; border-radius: var(--radius); border: 1px solid var(--line); }
+.watch { max-width: 960px; }
+.timeline a.when { color: var(--accent); }
+.release h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.release h2 .meta { font-size: 0.55em; font-weight: 400; letter-spacing: 0; }
+.card h4 { margin: 16px 0 6px; font-size: 15px; color: var(--fg); }
+.card pre { margin: 8px 0; }
+.toc { columns: 2 240px; column-gap: 24px; padding-left: 22px; }
+.toc li { break-inside: avoid; }
+.meta code { overflow-wrap: anywhere; word-break: break-all; }

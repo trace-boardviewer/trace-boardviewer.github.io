@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use TRACE Boardviewer: open, attach, search, cross-probe</title>
+<meta name="description" content="Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="How to use TRACE Boardviewer: open, attach, search, cross-probe">
+<meta property="og:description" content="Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/getting-started/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to use TRACE Boardviewer: open, attach, search, cross-probe">
+<meta name="twitter:description" content="Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/getting-started/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Getting started with TRACE Boardviewer","description":"Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-08-eagle-split.png","https://trace-boardviewer.github.io/assets/img/shot-09-pdf-parts.png","https://trace-boardviewer.github.io/assets/img/shot-04-notes.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/getting-started/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Getting started","item":"https://trace-boardviewer.github.io/getting-started/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">Getting started</li>
+  </ol></nav>
+  <h1>Getting started with TRACE Boardviewer</h1>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="lead">A boardviewer is most useful with the schematic and the datasheets next to the board. This guide shows how to open a board in TRACE, attach its documents, search across all of them, jump between board and schematic, measure and keep notes.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE</a>
+    <a class="btn" href="../demo/">Watch the 1-minute demo</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2 id="contents">Steps</h2>
+  <ol class="toc">
+    <li><a href="#run">Run TRACE</a></li>
+    <li><a href="#open">Open a board</a></li>
+    <li><a href="#attach">Attach the schematic, PDFs and images</a></li>
+    <li><a href="#search">Search everything at once</a></li>
+    <li><a href="#cross-probe">Cross-probe in the split view</a></li>
+    <li><a href="#link">Check names with Link and aliases</a></li>
+    <li><a href="#pdf">Read and search the PDF</a></li>
+    <li><a href="#notes">Keep notes with measured values</a></li>
+    <li><a href="#measure">Measure on the board and on images</a></li>
+    <li><a href="#views">Sides, layouts, themes and languages</a></li>
+    <li><a href="#export">Export a project</a></li>
+    <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+    <li><a href="#bug">Report a problem</a></li>
+  </ol>
+
+  <h2 id="run">1. Run TRACE</h2>
+  <p><strong>Windows (x64).</strong> Download the portable EXE from the <a href="../#download">download section</a>. Check its SHA-256 in PowerShell with <code>Get-FileHash</code> and compare it with the value on the page. The EXE is not code-signed yet, so SmartScreen warns once: choose "More info", then "Run anyway". Nothing is installed. Each launch unpacks about 500 MB into a private temporary folder and removes it on exit. Settings and notes live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
+  <p><strong>macOS (experimental, Apple silicon only).</strong> Unzip the download and move <code>TRACE Boardviewer.app</code> to Applications. The build is unsigned, so macOS blocks it until you allow it once: right-click the app and choose Open, or run <code>xattr -dr com.apple.quarantine "/Applications/TRACE Boardviewer.app"</code> in Terminal.</p>
+  <p><strong>Linux (experimental, x86-64).</strong> On Ubuntu 24.04 or newer and Debian 12 or newer, install the <code>.deb</code> with <code>sudo apt install ./&lt;file&gt;.deb</code> and start TRACE from the application menu. On other distributions, make the AppImage executable with <code>chmod +x</code> and run it. Check the SHA-256 first. The <a href="../linux/">Linux page</a> explains the packages and the Chromium sandbox.</p>
+  <p>At every start a short support notice appears; "Not now" skips it. TRACE can ask GitHub once whether a newer release exists. That is its only network request, and Settings can turn it off.</p>
+
+  <h2 id="open">2. Open a board</h2>
+  <p>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac) or drag the board file into the window. TRACE detects the format by the file's content: KiCad, EAGLE, GenCAD, BVR and more (see the <a href="../#formats">format table</a>). If a file cannot be opened, TRACE says what it found and why, instead of a generic error.</p>
+  <p>Format guides: <a href="../kicad-pcb-viewer/">KiCad</a> · <a href="../eagle-viewer/">EAGLE</a> · <a href="../gencad-viewer/">GenCAD</a> · <a href="../open-brd-file/">.brd files</a> · <a href="../open-bvr-file/">.bvr files</a></p>
+
+  <h2 id="attach">3. Attach the schematic, PDFs and images</h2>
+  <p>Use <strong>Attach…</strong> in the Documents tab or <strong>Attach a schematic…</strong> in the Schematic tab, or drop the files into the window while a board is open. TRACE accepts KiCad and EAGLE schematics, PDFs and PNG, JPEG, WebP and SVG images.</p>
+  <ul>
+    <li>Attached files are remembered for this board, by their SHA-256 and their path relative to the board. They come back after a restart.</li>
+    <li>A moved file is found again by its relative path. A missing one offers <strong>Relink</strong>. A file that changed is never adopted silently.</li>
+    <li>For KiCad, attach the top-level <code>.kicad_sch</code> and keep the sub-sheets in the same folder.</li>
+  </ul>
+
+  <h2 id="search">4. Search everything at once</h2>
+  <p>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> and type a reference (<code>U4</code>), a value (<code>10k</code>), a package or a net name (<code>+3V3</code>). The results are grouped by source: board components, board nets, schematic symbols, schematic nets and document text, each with its sheet or page. Use <kbd>↑</kbd> <kbd>↓</kbd> and <kbd>Enter</kbd> to open a result. <kbd>Esc</kbd> clears the field.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-06-jetson-net-800.webp" srcset="../assets/img/shot-06-jetson-net-800.webp 800w, ../assets/img/shot-06-jetson-net.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-06-jetson-net.png" alt="Search results in TRACE Boardviewer: a net selected on a KiCad board, highlighted on the board and listed with its pins in the inspector" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>A net found by search: highlighted on the board, with its pins and parts in the inspector.<small data-cap="06">TRACE 1.2.0 · Jetson Nano baseboard by Antmicro (Apache-2.0) · 28 MB KiCad PCB, net 3V3_SYS highlighted</small></figcaption></figure>
+
+  <h2 id="cross-probe">5. Cross-probe in the split view</h2>
+  <p>Press <kbd>Ctrl</kbd>+<kbd>\</kbd> to show the board and a schematic or document side by side; drag the divider to resize. <kbd>Alt</kbd>+<kbd>1</kbd>, <kbd>2</kbd> and <kbd>3</kbd> switch between the Board, Schematic and Documents tabs (<kbd>Option</kbd> on a Mac).</p>
+  <p>Select a part or a pin on the board. The inspector shows the linked schematic part, with the sheet and the number of matched pins, and <strong>Show in schematic</strong> jumps there. Selecting in the schematic selects on the board.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-08-eagle-split-800.webp" srcset="../assets/img/shot-08-eagle-split-800.webp 800w, ../assets/img/shot-08-eagle-split.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-08-eagle-split.png" alt="Board and schematic cross-probing in TRACE: the SparkFun RedBoard EAGLE board and its EAGLE schematic side by side, the ATmega328P selected in both" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Split view with an EAGLE board and its schematic: the selected microcontroller is highlighted in both.<small data-cap="08">TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic</small></figcaption></figure>
+
+  <h2 id="link">6. Check names with Link and aliases</h2>
+  <p>TRACE links board and schematic by exact names and never guesses. When names differ, for example a reference with a suffix or a renamed net, the <strong>Link and aliases</strong> panel lists the differences. Confirm an alias yourself if two names mean the same thing. Aliases are saved with the board's workspace and can be removed again.</p>
+
+  <h2 id="pdf">7. Read and search the PDF</h2>
+  <p>The built-in PDF viewer works offline: thumbnails, zoom, rotation, page jump, bookmarks, page notes and text search with next and previous. Exact board references found in the PDF text are linked to the parts on the board, so a selected part can be found in the schematic PDF and the other way round. A scanned PDF is shown but marked as not searchable: TRACE does no OCR.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-09-pdf-parts-800.webp" srcset="../assets/img/shot-09-pdf-parts-800.webp 800w, ../assets/img/shot-09-pdf-parts.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-09-pdf-parts.png" alt="PDF schematic linked to the board in TRACE: the part U1 selected on a KiCad board and found in the plotted schematic PDF, light theme" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>A part selected on the board and found in the plotted schematic PDF; references in the text are linked.<small data-cap="09">TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · KiCad PCB with its plotted schematic PDF · light theme</small></figcaption></figure>
+
+  <h2 id="notes">8. Keep notes with measured values</h2>
+  <p>Select a part or a pin and press <kbd>N</kbd>, or use <strong>Add a note</strong> in the inspector. Type what you found, and add the voltage, resistance or another value you measured. TRACE never fills these in for you. Notes follow the board file by its content hash, so they survive renaming and restarts.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-04-notes-800.webp" srcset="../assets/img/shot-04-notes-800.webp 800w, ../assets/img/shot-04-notes.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-04-notes.png" alt="Pin note with a measured voltage in TRACE Boardviewer, saved with the board" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>A pin note with a measured voltage, kept with the board.<small data-cap="04">TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · the note and the voltage were typed by hand for this demonstration</small></figcaption></figure>
+
+  <h2 id="measure">9. Measure on the board and on images</h2>
+  <p>Press <kbd>M</kbd> and click two points. The distance is shown in millimetres, and the ends snap to pin centres. <kbd>Esc</kbd> clears the measurement.</p>
+  <p>Images such as board photos or layout drawings have their own measuring tool. Millimetres are shown only after you calibrate: click the two ends of a distance you know, type its length, then measure. Until then, distances are in pixels.</p>
+  <div class="figs">
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-10-measure-800.webp" srcset="../assets/img/shot-10-measure-800.webp 800w, ../assets/img/shot-10-measure.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-10-measure.png" alt="Two-point distance measurement in millimetres between two pads of a KiCad board in TRACE" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Board: two-point measurement in millimetres.<small data-cap="10">TRACE 1.2.0 · pic_programmer, KiCad 9 demo (KiCad project, CC BY-SA 4.0) · two-point measurement</small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-12-image-measure-800.webp" srcset="../assets/img/shot-12-image-measure-800.webp 800w, ../assets/img/shot-12-image-measure.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-12-image-measure.png" alt="Image viewer in TRACE: a layout drawing calibrated on its 100.23 mm dimension, then the 55 mm board height measured as 55.01 mm" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Image: calibrated on the drawing's 100.23 mm dimension, the 55 mm height measures 55.01 mm.<small data-cap="12">TRACE 1.2.0 · Jetson Nano baseboard layout drawing (Antmicro, Apache-2.0) · the 100.23 mm calibration value was typed by hand for this demonstration</small></figcaption></figure>
+  </div>
+
+  <h2 id="views">10. Sides, layouts, themes and languages</h2>
+  <ul>
+    <li><strong>Top and bottom:</strong> the switch above the board shows the top side or the mirrored bottom side. <kbd>R</kbd> rotates and <kbd>F</kbd> fits the board.</li>
+    <li><strong>Layouts:</strong> Workshop shows the search panel and the inspector beside the board. Focus gives the board the whole window with a floating search and inspector. <kbd>Ctrl</kbd>+<kbd>1</kbd> and <kbd>Ctrl</kbd>+<kbd>2</kbd> switch.</li>
+    <li><strong>Themes:</strong> dark, light or the system setting.</li>
+    <li><strong>Languages:</strong> English, French, German, Hungarian, Italian, Polish, Slovak and Ukrainian, switched instantly in Settings. The workspace features added in 1.2.0 (the tabs, search, the PDF, image and schematic viewers and their dialogs) are still English in every language.</li>
+  </ul>
+  <div class="figs">
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-15-focus-800.webp" srcset="../assets/img/shot-15-focus-800.webp 800w, ../assets/img/shot-15-focus.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-15-focus.png" alt="Focus layout in TRACE Boardviewer: the board fills the window, with a floating search and inspector" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Focus layout: the board fills the window.<small data-cap="15">TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · Focus layout</small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-14-settings-language-800.webp" srcset="../assets/img/shot-14-settings-language-800.webp 800w, ../assets/img/shot-14-settings-language.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-14-settings-language.png" alt="TRACE Boardviewer Settings with the interface in French, light theme" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Settings in French, one of the eight interface languages.<small data-cap="14">TRACE 1.2.0 · RedBoard (SparkFun, CC BY-SA 4.0) · Settings, interface in French · light theme</small></figcaption></figure>
+  </div>
+
+  <h2 id="export">11. Export a project</h2>
+  <p><strong>Export…</strong> in the Documents tab bundles exactly what you tick: documents, and optionally the board file and your notes. Nothing else is included, and the originals are never modified. Leave the board file out when you share a bundle and the board may be private.</p>
+
+  <h2 id="shortcuts">12. Keyboard shortcuts</h2>
+  <div class="table-wrap" role="region" aria-label="Keyboard shortcuts, scrolls sideways on narrow screens" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Action</th><th scope="col">Shortcut</th></tr></thead>
+    <tbody>
+    <tr><th scope="row">Open a board</th><td><kbd>Ctrl + O</kbd></td></tr>
+    <tr><th scope="row">Search</th><td><kbd>Ctrl + F</kbd></td></tr>
+    <tr><th scope="row">Fit the board</th><td><kbd>F</kbd></td></tr>
+    <tr><th scope="row">Rotate</th><td><kbd>R</kbd></td></tr>
+    <tr><th scope="row">Measure</th><td><kbd>M</kbd></td></tr>
+    <tr><th scope="row">Labels on / off</th><td><kbd>L</kbd></td></tr>
+    <tr><th scope="row">Note on the selected part or pin</th><td><kbd>N</kbd></td></tr>
+    <tr><th scope="row">Zoom in / out</th><td><kbd>+ / −</kbd></td></tr>
+    <tr><th scope="row">Workshop / Focus layout</th><td><kbd>Ctrl + 1 / 2</kbd></td></tr>
+    <tr><th scope="row">Clear the highlight or measurement</th><td><kbd>Esc</kbd></td></tr>
+    <tr><th scope="row">Board / Schematic / Documents tab</th><td><kbd>Alt + 1 / 2 / 3</kbd></td></tr>
+    <tr><th scope="row">Split view on / off</th><td><kbd>Ctrl + \</kbd></td></tr>
+    <tr><th scope="row">Keyboard shortcuts (help)</th><td><kbd>? or F1</kbd></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>On macOS, <kbd>Cmd</kbd> replaces <kbd>Ctrl</kbd> and <kbd>Option</kbd> replaces <kbd>Alt</kbd>.</p>
+
+  <h2 id="bug">13. Report a problem</h2>
+  <p>The bug button in the top bar of TRACE opens the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a> in your browser. Give the format, the file size and TRACE's exact message. Please do not attach proprietary or customer board files.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
+    <a class="btn" href="../demo/">Watch the demo</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+  <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

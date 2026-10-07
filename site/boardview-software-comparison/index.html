@@ -39,10 +39,10 @@
     TRACE Boardviewer
   </a>
   <nav class="main" aria-label="Sections">
-    <a href="../#demo">Demo</a>
+    <a href="../demo/">Demo</a>
     <a href="../#formats">Formats</a>
     <a href="../#guides">Guides</a>
-    <a href="./" aria-current="page">Compare</a>
+    <a href="../boardview-software-comparison/" aria-current="page">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
@@ -93,7 +93,7 @@
       <td>Closed source, as listed by openboardview.org</td>
       <td>Not stated on its website</td></tr>
     <tr><th scope="row">Platforms</th>
-      <td>Windows x64 (portable EXE). macOS on Apple silicon (experimental, unsigned). Linux: Not yet (in preparation)</td>
+      <td>Windows x64 (portable EXE). macOS on Apple silicon (experimental, unsigned). Linux x86-64: .deb and AppImage (experimental, tested automatically on Ubuntu 24.04)</td>
       <td>Windows, macOS, Linux (the 10.0.0 release has a Windows zip, a macOS dmg and Linux deb and rpm packages)</td>
       <td>Windows 10/11 (64-bit), macOS (Intel and Apple silicon), Linux x86_64</td>
       <td>Windows 10/11 x64 (Windows 7 supported, not actively maintained). A web version at web.nexusbv.net runs in the browser, per its site</td></tr>
@@ -179,7 +179,7 @@
     <li><strong>Classic proprietary boardview formats are draft in TRACE.</strong> The readers for TestLink/Landrex BRD, TOPTEST BRD2, BDV, FZ/CAE, XZZ, CST, ASC and Samsung CAD exist and are tested against synthetic files. No real vendor file has been tested yet. The other three programs list these formats as core features, and OpenBoardView's open-source readers are the public reference TRACE's readers follow. If a file opens wrongly in TRACE, please <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">report it</a>, sharing only files you are allowed to share.</li>
     <li><strong>No Allegro and no TVW.</strong> Allegro databases are recognized and explained, but not read. TVW is accepted by its extension only, and the content is reported as unrecognized.</li>
     <li><strong>No copper.</strong> TRACE shows parts, pads and nets. Tracks, zones and vias are not drawn, and connection guides show logical relationships, not real traces.</li>
-    <li><strong>No Linux build yet.</strong> One is in preparation and not released. The macOS build is experimental, Apple-silicon only and unsigned, so macOS asks you to allow it once.</li>
+    <li><strong>Linux and macOS builds are experimental.</strong> The Linux .deb and AppImage are x86-64 only and tested automatically on Ubuntu 24.04, not yet on a desktop Linux machine. The macOS build is Apple-silicon only and unsigned, so macOS asks you to allow it once.</li>
     <li><strong>Unsigned Windows EXE.</strong> SmartScreen warns once. The download is about 112 MB, and each launch unpacks about 500 MB into a private temporary folder, which is removed on exit.</li>
     <li><strong>Limits.</strong> Files are limited to 64 MiB. Scanned PDFs are shown but cannot be searched (no OCR). The workspace features added in 1.2.0 (tabs, search, schematic and PDF viewers, notes) are in English whichever of the eight interface languages you choose.</li>
   </ul></div>
@@ -188,16 +188,17 @@
   <ul>
     <li><strong>Mostly classic laptop or phone boardview files</strong> (.brd, .bdv, .fz, XZZ .pcb): OpenBoardView, FlexBV and NexusBV read these as core formats, while TRACE's readers are still draft. TRACE is portable, so you can try it alongside them and see whether its schematic and PDF workflow helps you.</li>
     <li><strong>KiCad or EAGLE designs, open hardware, or your own boards:</strong> TRACE reads the board and the schematic natively, free, with exact cross-probing.</li>
-    <li><strong>Linux:</strong> OpenBoardView or FlexBV. NexusBV also has a browser version.</li>
+    <li><strong>Linux:</strong> OpenBoardView or FlexBV for classic boardview files; TRACE for KiCad and EAGLE designs with their schematics and PDFs (<a href="../linux/">experimental .deb and AppImage</a>). NexusBV also has a browser version.</li>
     <li><strong>Board, schematic, datasheets and your measurements in one place, offline, at no cost:</strong> TRACE.</li>
     <li><strong>Allegro files:</strong> NexusBV, FlexBV Professional (beta) or Cadence's own viewer. <strong>TVW (Teboview) files:</strong> NexusBV or FlexBV.</li>
   </ul>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE for Windows</a>
     <a class="btn" href="../#download">macOS (experimental)</a>
+    <a class="btn" href="../linux/">Linux (experimental)</a>
     <a class="btn" href="../#formats">Exact format table</a>
   </div>
-  <p>Format guides: <a href="../open-brd-file/">how to open a .brd file</a> · <a href="../open-bvr-file/">how to open a .bvr file</a> · <a href="../eagle-viewer/">free EAGLE viewer</a></p>
+  <p>Format guides: <a href="../open-brd-file/">how to open a .brd file</a> · <a href="../open-bvr-file/">how to open a .bvr file</a> · <a href="../eagle-viewer/">free EAGLE viewer</a> · <a href="../kicad-pcb-viewer/">KiCad PCB viewer</a> · <a href="../gencad-viewer/">GenCAD viewer</a>. New to TRACE? Start with <a href="../getting-started/">getting started</a> or the <a href="../demo/">1-minute demo</a>.</p>
 
   <h2>How we compared</h2>
   <p>We read each program's own website, release notes or source repository on 6 October 2026: OpenBoardView's GitHub releases (10.0.0), README, licence file and file-format source folder; FlexBV's website, including its edition comparison page; the NexusBV website; and the BoardViewer and BoardRipper pages. We did not run benchmarks. We list what each project says about itself, plus TRACE's own published support table. We will update this page when the programs change. Corrections are welcome through <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues" rel="noopener" target="_blank">GitHub issues</a>. To report a problem with TRACE itself, use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a>.</p>
@@ -221,14 +222,19 @@
     <a href="../">Home</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/CHANGELOG.md">CHANGELOG</a>
+    <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
     <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
     <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
     <a href="../open-brd-file/">Open a .brd file</a>
     <a href="../open-bvr-file/">Open a .bvr file</a>
-    <a href="./">Compare boardviewers</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
   </nav>
   <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
 </div></footer>

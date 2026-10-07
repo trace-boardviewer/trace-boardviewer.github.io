@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KiCad PCB viewer: open .kicad_pcb and schematics without KiCad</title>
+<meta name="description" content="Free, offline KiCad PCB viewer: open .kicad_pcb boards and .kicad_sch schematics side by side, cross-probe parts and nets, search the PDF and keep notes.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="KiCad PCB viewer: open .kicad_pcb and schematics without KiCad">
+<meta property="og:description" content="Free, offline KiCad PCB viewer: open .kicad_pcb boards and .kicad_sch schematics side by side, cross-probe parts and nets, search the PDF and keep notes.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/kicad-pcb-viewer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KiCad PCB viewer: open .kicad_pcb and schematics without KiCad">
+<meta name="twitter:description" content="Free, offline KiCad PCB viewer: open .kicad_pcb boards and .kicad_sch schematics side by side, cross-probe parts and nets, search the PDF and keep notes.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/kicad-pcb-viewer/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"View a KiCad board and schematic without KiCad","description":"Free, offline KiCad PCB viewer: open .kicad_pcb boards and .kicad_sch schematics side by side, cross-probe parts and nets, search the PDF and keep notes.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-06-jetson-net.png","https://trace-boardviewer.github.io/assets/img/shot-07-jetson-sheets.png","https://trace-boardviewer.github.io/assets/img/shot-10-measure.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/kicad-pcb-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"KiCad PCB viewer","item":"https://trace-boardviewer.github.io/kicad-pcb-viewer/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">KiCad PCB viewer</li>
+  </ol></nav>
+  <h1>View a KiCad board and schematic without KiCad</h1>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="lead">TRACE Boardviewer opens KiCad boards (<code>.kicad_pcb</code>) and KiCad schematics (<code>.kicad_sch</code>) for free and offline, side by side and linked part by part. It is a viewer for repair and reference work at the bench, not an editor.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE</a>
+    <a class="btn" href="../getting-started/">Getting started</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2>Who this is for</h2>
+  <ul>
+    <li>You repair or modify open hardware and the project publishes its KiCad files.</li>
+    <li>You want to check a design at the bench without installing a full EDA suite on that computer.</li>
+    <li>You want the board, the schematic and the plotted PDF in one window, with one search across all three and your measurement notes kept with the board.</li>
+  </ul>
+  <p>To change the design, route tracks or make Gerbers, use KiCad itself. TRACE only reads the files and never modifies them.</p>
+
+  <h2>What opens</h2>
+  <div class="table-wrap" role="region" aria-label="KiCad file types and their status in TRACE, scrolls sideways on narrow screens" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">File</th><th scope="col">Versions</th><th scope="col">Checked with</th></tr></thead>
+    <tbody>
+    <tr><th scope="row">Board <code>.kicad_pcb</code></th><td>File versions 4 to 9 (footprint and legacy module records)</td><td>Real KiCad 8 and 9 boards: the KiCad 9 demo (pic_programmer), the Antmicro Jetson Nano baseboard (28 MB) and Raspberry Pi Pico designs. KiCad 4 to 7 styles are tested with synthetic files only.</td></tr>
+    <tr><th scope="row">Schematic <code>.kicad_sch</code></th><td>KiCad 6.0 to 9.0</td><td>Real files: the KiCad 9 demo (2 sheets), the Jetson Nano baseboard (8 sheets) and the Pico designs.</td></tr>
+    <tr><th scope="row">Legacy schematic <code>.sch</code></th><td>EESchema versions 1 to 4, with its <code>-cache.lib</code> or other <code>.lib</code> files in the same folder</td><td>Synthetic files only; no real legacy file was available.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>On the real boards, footprint, pad, net, side and pad-number counts and every pad position equal an independent reading of the same files, and the outlines equal the Edge.Cuts extents. Tracks, vias and zones are checked for syntax but not built, so the 28 MB Jetson Nano board of 3.6 million expressions opens in about 0.2 s.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-06-jetson-net-800.webp" srcset="../assets/img/shot-06-jetson-net-800.webp 800w, ../assets/img/shot-06-jetson-net.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-06-jetson-net.png" alt="TRACE Boardviewer as a KiCad PCB viewer: the 28 MB Antmicro Jetson Nano baseboard with the 3V3_SYS net highlighted and its 36 parts listed" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>The Jetson Nano baseboard (28 MB KiCad PCB): one net highlighted, its pins and parts listed.<small data-cap="06">TRACE 1.2.0 · Jetson Nano baseboard by Antmicro (Apache-2.0) · 28 MB KiCad PCB, net 3V3_SYS highlighted</small></figcaption></figure>
+
+  <h2>Board and schematic, linked by exact names</h2>
+  <p>Attach the top-level <code>.kicad_sch</code> and TRACE reads the whole sheet hierarchy from the same folder. Repeated sub-sheets become separate instances with their own references. Select a part or a net on the board and the inspector shows where it is in the schematic; select it in the schematic and the board follows.</p>
+  <ul>
+    <li>Links use exact names only, including the sheet-qualified names KiCad writes into a board (<code>/sheet/NAME</code>, <code>{slash}</code> for <code>/</code>) and automatic names such as <code>Net-(D1-K)</code>.</li>
+    <li>On the real designs above, every schematic reference with a board part linked by its exact name, without any alias.</li>
+    <li>Whatever differs is listed, never guessed. The <strong>Link and aliases</strong> panel shows the differences, and you confirm an alias yourself when two names mean the same part or net.</li>
+  </ul>
+  <div class="figs">
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-07-jetson-sheets-800.webp" srcset="../assets/img/shot-07-jetson-sheets-800.webp 800w, ../assets/img/shot-07-jetson-sheets.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-07-jetson-sheets.png" alt="KiCad schematic viewer in TRACE: the Jetson Nano baseboard with its 8 hierarchical sheets listed and the Supply sheet open" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Eight hierarchical sheets: the sheet list, the breadcrumb and the Supply sheet.<small data-cap="07">TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · KiCad schematic, 8 hierarchical sheets</small></figcaption></figure>
+    <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-02-crossprobe-800.webp" srcset="../assets/img/shot-02-crossprobe-800.webp 800w, ../assets/img/shot-02-crossprobe.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-02-crossprobe.png" alt="KiCad board and KiCad schematic side by side in TRACE, the selected net highlighted in both" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Split view: the same net on the board and in the schematic.<small data-cap="02">TRACE 1.2.0 · Pico 2 C (project-piCo, WTFPL) · KiCad PCB with its KiCad schematic</small></figcaption></figure>
+  </div>
+
+  <h2>No conversion to a boardview needed</h2>
+  <p>Many repair tools need a KiCad design converted to a boardview first. TRACE opens the <code>.kicad_pcb</code> directly. You get the real pad shapes and the Edge.Cuts outline, which a <code>.bvr</code> export reduces to a pad radius per pin. If you already have a BVR file, see <a href="../open-bvr-file/">how to open a .bvr file</a>.</p>
+
+  <h2>What TRACE draws, and what it leaves out</h2>
+  <ul>
+    <li><strong>Pads:</strong> rectangular and equal-size round pads keep their exact shape. Oval, rounded-rectangle, trapezoid, custom and non-square round pads are drawn as their bounding rectangle and counted as approximated in the board information panel.</li>
+    <li><strong>Outline:</strong> the largest closed Edge.Cuts loop. Inner loops and footprint-level Edge.Cuts are listed as cutouts but not drawn. An open chain is never closed by guessing.</li>
+    <li><strong>Nets:</strong> taken from the pads. Tracks, vias and zones are not drawn, and the connection guides show logical connections, not copper.</li>
+  </ul>
+
+  <h2>Open a KiCad project in TRACE</h2>
+  <ol class="steps">
+    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE, the experimental macOS build for Apple silicon, or the experimental Linux packages (<a href="../linux/">.deb and AppImage</a>).</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac) and choose the <code>.kicad_pcb</code>, or drag it into the window.</li>
+    <li>In the Schematic tab, attach the top-level <code>.kicad_sch</code>. Keep the sub-sheet files in the same folder. Attach the plotted schematic PDF and datasheets in the Documents tab. TRACE remembers them for this board.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> and search for a part (<code>U1</code>), a value (<code>10k</code>) or a net (<code>+3V3</code>). <kbd>Ctrl</kbd>+<kbd>\</kbd> shows the board and the schematic side by side.</li>
+    <li>Press <kbd>M</kbd> and click two pins to measure their distance in millimetres. Press <kbd>N</kbd> to note a measured voltage or resistance on a pin.</li>
+  </ol>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-10-measure-800.webp" srcset="../assets/img/shot-10-measure-800.webp 800w, ../assets/img/shot-10-measure.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-10-measure.png" alt="Two-point measurement in millimetres between two pads of the KiCad 9 demo board pic_programmer in TRACE" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Two-point measurement in millimetres; the ends snap to the pin centres.<small data-cap="10">TRACE 1.2.0 · pic_programmer, KiCad 9 demo (KiCad project, CC BY-SA 4.0) · two-point measurement</small></figcaption></figure>
+  <p>The <a href="../getting-started/">getting started guide</a> walks through every step with screenshots.</p>
+
+  <h2>KiCad, KiCanvas and TRACE</h2>
+  <ul>
+    <li><strong>KiCad</strong> is the free, open-source editor. Use it to change a design.</li>
+    <li><strong>KiCanvas</strong> is a viewer for KiCad files in the browser.</li>
+    <li><strong>TRACE</strong> is an offline repair workspace: the board, its schematic, the PDF datasheets and your notes in one window, with one search across all of them.</li>
+  </ul>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>KiCad 3 and older boards are not supported. Footprints on inner copper layers are rejected by design.</li>
+    <li>Custom-shaped pads are approximated by their bounding rectangle.</li>
+    <li>Sub-sheet files must be in the same folder as the schematic you attach. Otherwise the sheet is shown as unresolved, with a diagnostic.</li>
+    <li>Files are limited to 64 MiB. Local power symbols of KiCad 9 get no global net, and bus aliases are not expanded.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <h3>Does TRACE change my KiCad files?</h3>
+  <p>No. Files are read on your computer and never modified or uploaded.</p>
+  <h3>Can TRACE export Gerbers or convert the design?</h3>
+  <p>No. TRACE is a viewer. Use KiCad for exports.</p>
+  <h3>Which other formats does it open?</h3>
+  <p>EAGLE boards and schematics (see the <a href="../eagle-viewer/">free EAGLE viewer</a> page), <a href="../gencad-viewer/">GenCAD</a>, <a href="../open-bvr-file/">BVR</a> and more. The <a href="../#formats">format table</a> lists every format and its status. The <a href="../boardview-software-comparison/">comparison</a> shows how TRACE differs from other boardviewers.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+  <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boardview software for Linux: TRACE Boardviewer (.deb, AppImage)</title>
+<meta name="description" content="Free, open-source boardviewer for Linux: a .deb for Ubuntu and Debian and a portable AppImage, x86-64, experimental. Board, schematic and PDFs offline.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="Boardview software for Linux: TRACE Boardviewer (.deb, AppImage)">
+<meta property="og:description" content="Free, open-source boardviewer for Linux: a .deb for Ubuntu and Debian and a portable AppImage, x86-64, experimental. Board, schematic and PDFs offline.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/linux/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boardview software for Linux: TRACE Boardviewer (.deb, AppImage)">
+<meta name="twitter:description" content="Free, open-source boardviewer for Linux: a .deb for Ubuntu and Debian and a portable AppImage, x86-64, experimental. Board, schematic and PDFs offline.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/linux/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"TRACE Boardviewer for Linux (experimental)","description":"Free, open-source boardviewer for Linux: a .deb for Ubuntu and Debian and a portable AppImage, x86-64, experimental. Board, schematic and PDFs offline.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-06-jetson-net.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/linux/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Linux","item":"https://trace-boardviewer.github.io/linux/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">Linux</li>
+  </ol></nav>
+  <h1>TRACE Boardviewer for Linux (experimental)</h1>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="lead">TRACE Boardviewer, the free and open-source boardviewer for electronics repair, has Linux packages from version 1.3.0 on: a <code>.deb</code> for Ubuntu and Debian and a portable AppImage, both for x86-64. They are experimental: built and smoke-tested automatically on Ubuntu 24.04, and not yet tested on a desktop Linux machine.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download-linux">Download for Linux</a>
+    <a class="btn" href="../getting-started/">Getting started</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2>Which package should I use?</h2>
+  <div class="table-wrap" role="region" aria-label="Linux packages of TRACE, scrolls sideways on narrow screens" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Package</th><th scope="col">For</th><th scope="col">What it does</th></tr></thead>
+    <tbody>
+    <tr><th scope="row"><code>.deb</code> (recommended)</th><td>Ubuntu 24.04 or newer, Debian 12 or newer</td><td>Installs to <code>/opt/TRACE Boardviewer</code> with a menu entry and the <code>trace-boardviewer</code> command. On systems with AppArmor 4, such as Ubuntu 24.04, it adds an AppArmor profile so that the Chromium sandbox stays on.</td></tr>
+    <tr><th scope="row">AppImage (portable)</th><td>Other distributions, or when you do not want to install anything</td><td>One file you make executable and run. Where unprivileged user namespaces are allowed (Fedora, Debian, Arch and openSUSE by default) the Chromium sandbox works as usual.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Both packages are the same build and are not signed. Check the SHA-256 shown in the <a href="../#download-linux">download section</a> before you install or run one.</p>
+
+  <h2 id="deb">Install the .deb (Ubuntu, Debian)</h2>
+  <p>In a terminal, in the download folder:</p>
+  <pre>sha256sum TRACE-Boardviewer-1.3.0-linux-amd64.deb
+sudo apt install ./TRACE-Boardviewer-1.3.0-linux-amd64.deb</pre>
+  <p>Start TRACE Boardviewer from the application menu, or run <code>trace-boardviewer</code>. Remove it with <code>sudo apt remove trace-boardviewer</code>; your settings and notes stay.</p>
+
+  <h2 id="appimage">Run the AppImage (other distributions)</h2>
+  <pre>sha256sum TRACE-Boardviewer-1.3.0-linux-x86_64.AppImage
+chmod +x TRACE-Boardviewer-1.3.0-linux-x86_64.AppImage
+./TRACE-Boardviewer-1.3.0-linux-x86_64.AppImage</pre>
+  <p>The AppImage needs FUSE, which desktop distributions include, and nothing is installed.</p>
+
+  <h2 id="sandbox">The Chromium sandbox, and why the .deb is recommended on Ubuntu</h2>
+  <p>TRACE runs its window in Chromium's sandbox, which isolates the part that reads board files and documents. On Linux that sandbox needs unprivileged user namespaces. Ubuntu 23.10 and newer restrict them through AppArmor.</p>
+  <ul>
+    <li>The <strong>.deb</strong> installs the AppArmor profile <code>/etc/apparmor.d/trace-boardviewer</code>, so the sandbox stays on under that restriction.</li>
+    <li>The <strong>AppImage</strong> cannot carry such a profile. On a system with the restriction it can only run without the sandbox. TRACE then asks before it opens a window: <strong>Quit</strong> is the default, and "Do not ask again" remembers a yes. On Ubuntu, use the .deb instead.</li>
+  </ul>
+
+  <h2 id="data">Where your settings and notes live</h2>
+  <p>Settings, recent boards and notes are stored in <code>~/.config/trace-boardviewer</code> (<code>$XDG_CONFIG_HOME/trace-boardviewer</code>). To keep them next to the AppImage instead, create a folder named like the AppImage file plus <code>.config</code> beside it (AppImage portable mode, not tested yet). Rename the AppImage to a fixed name first if you want to keep that folder across updates.</p>
+  <p>The update check works as on Windows: it can ask GitHub once whether a newer release exists and only links to the release page. You download the new package yourself, and Settings can turn the check off.</p>
+
+  <h2 id="tested">What is tested, and what is not</h2>
+  <p>Every release build of the two packages is checked automatically on Ubuntu 24.04 under a virtual X display: the package contents, start-up, opening a board, attaching a PDF and an image, saving and restoring the workspace, quitting, the single-instance rule, the window class and icon, the default data location and the sandbox state.</p>
+  <p>Not tested yet: real desktop sessions (GNOME, KDE, Wayland), other distributions and releases (including Debian 12, Fedora, Arch and openSUSE), HiDPI scaling, the native file chooser, drag and drop from a file manager, AppImage integration tools and portable mode, and arm64. If you try TRACE on your distribution, please tell us what you see with the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a>; choose your Linux package in the form.</p>
+
+  <h2>What you can do with it</h2>
+  <p>The Linux build has the same features as the Windows build: KiCad, EAGLE, GenCAD and BVR boards with their schematics and PDF datasheets in one window, one search across all of them, exact board and schematic cross-probing, measurements and pin notes. See the <a href="../getting-started/">getting started guide</a> and the <a href="../#formats">format table</a>.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-06-jetson-net-800.webp" srcset="../assets/img/shot-06-jetson-net-800.webp 800w, ../assets/img/shot-06-jetson-net.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-06-jetson-net.png" alt="TRACE Boardviewer with a 28 MB KiCad board and one net highlighted; the Linux build uses the same interface" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Screenshot taken on Windows; the Linux build uses the same interface.<small data-cap="06">TRACE 1.2.0 · Jetson Nano baseboard by Antmicro (Apache-2.0) · 28 MB KiCad PCB, net 3V3_SYS highlighted</small></figcaption></figure>
+
+  <h2>Known limits</h2>
+  <ul>
+    <li>Only x86-64 packages are built.</li>
+    <li>On GNOME under Wayland the window icon comes from an installed desktop entry. The .deb installs one; for the AppImage, use an AppImage integration tool.</li>
+    <li>Electron's ASAR integrity check is not available on Linux; it is on Windows and macOS.</li>
+    <li>TRACE registers no file associations on any platform, because board extensions such as <code>.brd</code> and <code>.cad</code> are shared by several programs.</li>
+  </ul>
+
+  <h2>Other boardviewers on Linux</h2>
+  <p>OpenBoardView and FlexBV have offered Linux builds for a long time and read the classic boardview formats as core features. The <a href="../boardview-software-comparison/">comparison</a> lists what each program opens. TRACE is portable on Windows and its Linux AppImage needs no installation, so you can try it next to them.</p>
+
+  <h2>Common questions</h2>
+  <h3>Is it free?</h3>
+  <p>Yes. TRACE is MIT-licensed open source, with no account and no telemetry. Your boards and files never leave your computer.</p>
+  <h3>Is there a Flatpak, a Snap or an arm64 build?</h3>
+  <p>Not yet. The Linux packages are a <code>.deb</code> and an AppImage for x86-64.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download-linux">Download for Linux</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+  <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

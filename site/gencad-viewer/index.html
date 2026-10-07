@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free GenCAD viewer for .cad and .gcd files (GenCAD 1.4)</title>
+<meta name="description" content="Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="Free GenCAD viewer for .cad and .gcd files (GenCAD 1.4)">
+<meta property="og:description" content="Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/gencad-viewer/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free GenCAD viewer for .cad and .gcd files (GenCAD 1.4)">
+<meta name="twitter:description" content="Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/gencad-viewer/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free GenCAD viewer (.cad, .gcd)","description":"Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-11-bottom.png","https://trace-boardviewer.github.io/assets/img/shot-13-diagnostic.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/gencad-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free GenCAD viewer","item":"https://trace-boardviewer.github.io/gencad-viewer/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">Free GenCAD viewer</li>
+  </ol></nav>
+  <h1>Free GenCAD viewer (.cad, .gcd)</h1>
+  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="lead">GenCAD 1.4 is a plain-text exchange format for printed circuit boards: parts, pins, nets, pads and the board outline. Test and repair tools use it, and many PCB design tools can write it. TRACE Boardviewer opens it for free and offline, with the schematic PDFs and your notes next to the board.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2>Is your .cad file a GenCAD file?</h2>
+  <p>The <code>.cad</code> extension is used by several unrelated programs, including general drawing software and a Samsung boardview format. A GenCAD file is text and starts with a <code>$HEADER</code> section that contains the line <code>GENCAD 1.4</code>. Open it in a text editor without saving to check.</p>
+  <p>You do not have to know in advance. TRACE identifies a file by its content, not by its extension. It tells a GenCAD <code>.cad</code> apart from a Samsung CAD <code>.cad</code> (read as a draft format), and it says so when a file matches none of its formats.</p>
+
+  <h2>What TRACE reads from a GenCAD 1.4 file</h2>
+  <ul>
+    <li><strong>Sections</strong> from <code>$HEADER</code> to <code>$SIGNALS</code>: parts, pins, pads, nets (signals) and the board outline. GenCAD is validated with real files.</li>
+    <li><strong>Units</strong> from the <code>UNITS</code> header: MM, INCH, THOU or MIL, and USER units (25.4 divided by the given divisor).</li>
+    <li><strong>Sides:</strong> <code>LAYER TOP</code> and <code>BOTTOM</code>; <code>SHAPE MIRRORX</code>, <code>MIRRORY</code>, <code>MIRRORXY</code> and <code>FLIP</code> select the padstack layers.</li>
+    <li><strong>Pads:</strong> ROUND and RECTANGLE pads keep their exact size. Other pad shapes are drawn as their bounding rectangle.</li>
+    <li><strong>Outline:</strong> the outer closed board contour. Cutouts are reported as a warning, not drawn.</li>
+  </ul>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-11-bottom-800.webp" srcset="../assets/img/shot-11-bottom-800.webp 800w, ../assets/img/shot-11-bottom.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-11-bottom.png" alt="Mirrored bottom view in TRACE Boardviewer with a net highlighted across the bottom side of a board" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Top and mirrored bottom view work the same for every board format. Shown here with a KiCad board.<small data-cap="11">TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · bottom side, mirrored, net 5V0_SYS</small></figcaption></figure>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>Only GenCAD 1.4. A file that declares another version is refused with a message that GenCAD 1.4 is required.</li>
+    <li>Before any pin is created, TRACE checks the expanded size of the board: up to 250,000 components, 1,000,000 pins and 8,000,000 placed outline, body and pad-corner points.</li>
+    <li>A file may hold up to 8,000,000 lines within the 64 MiB file limit.</li>
+    <li>TRACE does not edit GenCAD files and does not convert them to other formats.</li>
+  </ul>
+
+  <h2>How to get a GenCAD file</h2>
+  <p>Many PCB design tools can export GenCAD 1.4. When TRACE recognizes a format it cannot read, such as a native Cadence Allegro database, ODB++, IPC-2581 or a Mentor neutral file, its message suggests a GenCAD export from the design tool.</p>
+  <p>If the design comes from KiCad or EAGLE, you do not need GenCAD at all: TRACE opens <a href="../kicad-pcb-viewer/">KiCad boards</a> and <a href="../eagle-viewer/">EAGLE boards</a> directly, with their schematics.</p>
+  <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-13-diagnostic-800.webp" srcset="../assets/img/shot-13-diagnostic-800.webp 800w, ../assets/img/shot-13-diagnostic.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-13-diagnostic.png" alt="TRACE Boardviewer recognizing a Gerber layer by its content and explaining why it cannot be shown as a boardview" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>TRACE names what it found. Here a Gerber layer is recognized and explained instead of imported.<small data-cap="13">TRACE 1.2.0 · Pico 2 C front copper Gerber layer (project-piCo, WTFPL) · recognized, not imported</small></figcaption></figure>
+
+  <h2>Open a GenCAD file in TRACE</h2>
+  <ol class="steps">
+    <li><a href="../#download">Download TRACE</a>: a portable Windows EXE, the experimental macOS build for Apple silicon, or the experimental Linux packages (<a href="../linux/">.deb and AppImage</a>).</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac) and choose the <code>.cad</code> or <code>.gcd</code> file, or drag it into the window.</li>
+    <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> and search for a part, a value, a package or a net. Click a net to highlight all its pins and list the connected parts.</li>
+    <li>Switch between the top and the mirrored bottom side, rotate (<kbd>R</kbd>), fit the board (<kbd>F</kbd>) and measure between two pins (<kbd>M</kbd>).</li>
+  </ol>
+
+  <h2>Add the schematic PDF and your notes</h2>
+  <p>Attach the board's schematic PDF and datasheets in the Documents tab. TRACE searches their text, and exact board references found in the text link to the parts on the board. A scanned PDF is shown and marked as not searchable, because TRACE does no OCR.</p>
+  <p>Notes on a part or a pin keep your measured voltage or resistance. They follow the board file by its content, so renaming the file keeps them. The <a href="../getting-started/">getting started guide</a> shows each step.</p>
+
+  <h2>Common questions</h2>
+  <h3>Is it really free?</h3>
+  <p>Yes. TRACE is MIT-licensed open source, with no account and no telemetry.</p>
+  <h3>Does it open other boardview formats?</h3>
+  <p>Yes, see <a href="../open-brd-file/">how to open a .brd file</a> and <a href="../open-bvr-file/">how to open a .bvr file</a>. Several classic boardview formats are still drafts tested with synthetic files only; the <a href="../#formats">format table</a> says which. The <a href="../boardview-software-comparison/">comparison</a> lists other boardviewers too.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
+    <a class="btn" href="../#formats">All supported formats</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </div>
+  <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
+  <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
+    <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
+    <img alt="">
+    <p class="lightbox-cap"></p>
+  </dialog>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
