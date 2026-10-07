@@ -65,6 +65,17 @@
     if (/linux/i.test(p) || /linux|x11/i.test(ua)) return 'linux';
     return 'other';
   }
+  // Every platform button stays visible; the one for the visitor's system is highlighted and moved to the front (Windows otherwise).
+  function highlightPlatform() {
+    var key = { windows: 'windows', mac: 'macos', linux: 'linux' }[platform()];
+    var target = key && document.querySelector('[data-platform-cta="' + key + '"]:not([hidden])');
+    if (!target) target = document.querySelector('[data-platform-cta="windows"]');
+    if (!target) return;
+    each('[data-platform-cta]', function (e) { e.classList.toggle('primary', e === target); });
+    var first = target.parentNode && target.parentNode.querySelector('[data-platform-cta]');
+    if (first && first !== target) target.parentNode.insertBefore(target, first);
+  }
+  highlightPlatform();
   // Pages without release placeholders (guides, 404) skip the request; they link to the download section of the home page.
   (document.querySelector('[data-rel]') ? fetch(BASE + 'release.json', { cache: 'no-cache' }) : Promise.reject(new Error('no release data on this page'))).then(function (r) { return r.json(); }).then(function (rel) {
     var win = rel.windows || {}, mac = rel.macos || {};
@@ -98,8 +109,8 @@
         show(pre + '-block"]', !!item.url);
       });
       show('[data-rel="linux-card"]', lin.any);
-      show('[data-platform-cta="linux"]', lin.any && platform() === 'linux');
-      show('[data-platform-cta="windows"]', !(lin.any && platform() === 'linux'));
+      show('[data-platform-cta="linux"]', lin.any);
+      highlightPlatform();
     }
     // A meta line whose items are all hidden is hidden as a whole.
     each('p.meta', function (p) { if (p.querySelector('.item')) p.hidden = !p.querySelector('.item:not([hidden])'); });

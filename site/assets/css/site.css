@@ -46,6 +46,11 @@ nav.main a:hover { background: var(--bg-3); color: var(--fg); text-decoration: n
 .btn[aria-disabled="true"] { background: var(--bg-3); border-color: var(--line); color: var(--fg-2); cursor: default; font-weight: 600; }
 .btn[aria-disabled="true"]:hover { text-decoration: none; }
 .btn.small { padding: 4px 9px; font-size: 0.9em; }
+.btn.dl { display: inline-flex; align-items: center; gap: 10px; text-align: left; line-height: 1.2; }
+.btn.dl .os-icon { width: 20px; height: 20px; flex: none; fill: currentColor; }
+.btn.dl small { display: block; font-weight: 400; font-size: 0.8em; opacity: 0.85; }
+.hero .cta .btn.dl { padding: 9px 15px; }
+@media (max-width: 520px) { .hero .cta .btn.dl { flex: 1 1 100%; } }
 .toggles { display: flex; gap: 6px; }
 .hero { padding: 64px 0 40px; border-bottom: 1px solid var(--line); background: radial-gradient(1200px 400px at 20% -10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%); }
 .hero h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.01em; }
