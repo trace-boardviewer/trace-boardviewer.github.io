@@ -84,6 +84,9 @@
     var macFile = FILENAME.test(mac.file || '') ? mac.file : '';
     var winUrl = httpsUrl(win.url), macUrl = httpsUrl(mac.url);
     if (version) text('[data-rel="version"]', version);
+    // A version with a suffix (1.3.1-rc.1) is a test version: the badge and the note above the downloads are shown only then.
+    show('[data-rel="prerelease"]', /^\d+\.\d+\.\d+-/.test(version));
+    show('[data-rel="prerelease-note"]', /^\d+\.\d+\.\d+-/.test(version));
     if (winFile) text('[data-rel="win-name"]', winFile);
     enableLink('[data-rel="win-url"]', winUrl);
     text('[data-rel="win-sha"]', win.sha256 || '—'); show('[data-rel="win-sha-item"]', !!win.sha256);
@@ -98,6 +101,11 @@
     text('[data-rel="mac-size"]', mac.bytes ? fmtBytes(mac.bytes) : '—'); show('[data-rel="mac-size"]', !!mac.bytes);
     show('[data-rel="mac-hash-cmd"]', !!(macFile && macUrl));
     each('[data-rel="releases"]', function (e) { var u = httpsUrl(rel.releasesUrl); if (u) e.setAttribute('href', u); });
+    // The install commands of the Linux page repeat the package file names (the home page has the same spans in its download card).
+    ['deb', 'appimage'].forEach(function (key) {
+      var item = linuxRelease(rel)[key];
+      if (item.file) text('[data-rel="linux-' + key + '-name"]', item.file);
+    });
     if (document.querySelector('[data-rel="linux-card"]')) {
       var lin = linuxRelease(rel);
       ['deb', 'appimage'].forEach(function (key) {

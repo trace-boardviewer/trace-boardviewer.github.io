@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/gencad-viewer/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free GenCAD viewer (.cad, .gcd)","description":"Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-11-bottom.png","https://trace-boardviewer.github.io/assets/img/shot-13-diagnostic.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/gencad-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free GenCAD viewer","item":"https://trace-boardviewer.github.io/gencad-viewer/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free GenCAD viewer (.cad, .gcd)","description":"Open GenCAD 1.4 (.cad, .gcd) boards free on Windows, macOS or Linux: parts, pins, nets, top and bottom, with the schematic PDF alongside. Not a CAD drawing viewer.","datePublished":"2026-10-07","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-11-bottom.png","https://trace-boardviewer.github.io/assets/img/shot-13-diagnostic.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/gencad-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free GenCAD viewer","item":"https://trace-boardviewer.github.io/gencad-viewer/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -71,7 +71,7 @@
 <section><div class="wrap prose">
   <h2>Is your .cad file a GenCAD file?</h2>
   <p>The <code>.cad</code> extension is used by several unrelated programs, including general drawing software and a Samsung boardview format. A GenCAD file is text and starts with a <code>$HEADER</code> section that contains the line <code>GENCAD 1.4</code>. Open it in a text editor without saving to check.</p>
-  <p>You do not have to know in advance. TRACE identifies a file by its content, not by its extension. It tells a GenCAD <code>.cad</code> apart from a Samsung CAD <code>.cad</code> (read as a draft format), and it says so when a file matches none of its formats.</p>
+  <p>You do not have to know in advance. TRACE identifies a file by its content, not by its extension. It tells a GenCAD <code>.cad</code> apart from a Samsung CAD <code>.cad</code> (selected real exports checked), and it says so when a file matches none of its formats.</p>
 
   <h2>What TRACE reads from a GenCAD 1.4 file</h2>
   <ul>
@@ -92,7 +92,7 @@
   </ul>
 
   <h2>How to get a GenCAD file</h2>
-  <p>Many PCB design tools can export GenCAD 1.4. When TRACE recognizes a format it cannot read, such as a native Cadence Allegro database, ODB++, IPC-2581 or a Mentor neutral file, its message suggests a GenCAD export from the design tool.</p>
+  <p>Many PCB design tools can export GenCAD 1.4. TRACE also reads selected native Allegro and Mentor Neutral layouts, ODB++ models and IPC-2581 exports. For unsupported variants, request a GenCAD export from the original design tool; the <a href="../#formats">support table</a> gives each reader's exact limits.</p>
   <p>If the design comes from KiCad or EAGLE, you do not need GenCAD at all: TRACE opens <a href="../kicad-pcb-viewer/">KiCad boards</a> and <a href="../eagle-viewer/">EAGLE boards</a> directly, with their schematics.</p>
   <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-13-diagnostic-800.webp" srcset="../assets/img/shot-13-diagnostic-800.webp 800w, ../assets/img/shot-13-diagnostic.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-13-diagnostic.png" alt="TRACE Boardviewer recognizing a Gerber layer by its content and explaining why it cannot be shown as a boardview" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>TRACE names what it found. Here a Gerber layer is recognized and explained instead of imported.<small data-cap="13">TRACE 1.2.0 · Pico 2 C front copper Gerber layer (project-piCo, WTFPL) · recognized, not imported</small></figcaption></figure>
 
@@ -105,7 +105,7 @@
   </ol>
 
   <h2>Add the schematic PDF and your notes</h2>
-  <p>Attach the board's schematic PDF and datasheets in the Documents tab. TRACE searches their text, and exact board references found in the text link to the parts on the board. A scanned PDF is shown and marked as not searchable, because TRACE does no OCR.</p>
+  <p>Attach the board's schematic PDF and datasheets in the Documents tab. TRACE searches their text, and exact board references found in the text link to the parts on the board. For a scanned PDF, choose Recognize text to run bundled English OCR offline. Progress and Cancel are available; recognized words carry confidence marks and only exact, sufficiently confident board references become links.</p>
   <p>Notes on a part or a pin keep your measured voltage or resistance. They follow the board file by its content, so renaming the file keeps them. The <a href="../getting-started/">getting started guide</a> shows each step.</p>
 
   <h2>Common questions</h2>

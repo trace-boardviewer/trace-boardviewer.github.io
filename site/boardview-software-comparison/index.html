@@ -61,6 +61,7 @@
   </ol></nav>
   <h1>Boardview software compared: TRACE, OpenBoardView, FlexBV and NexusBV</h1>
   <p class="meta">Last checked: <time datetime="2026-10-06">6 October 2026</time></p>
+  <p class="meta">TRACE's column describes test version 1.3.1-rc.2, updated 8 October 2026. Other programs' source checks remain dated 6 October.</p>
   <p class="lead">If you repair boards, you need a boardviewer that opens the files you actually have and gets you from a fault to a part quickly. This page compares four boardviewers you can use for free today.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -76,7 +77,7 @@
   <table class="wide">
     <thead><tr>
       <th scope="col">Feature</th>
-      <th scope="col">TRACE Boardviewer 1.2.0</th>
+      <th scope="col">TRACE Boardviewer 1.3.1-rc.2 (test version)</th>
       <th scope="col">OpenBoardView 10.0.0</th>
       <th scope="col">FlexBV 5 (Free / Professional)</th>
       <th scope="col">NexusBV 0.9</th>
@@ -98,7 +99,7 @@
       <td>Windows 10/11 (64-bit), macOS (Intel and Apple silicon), Linux x86_64</td>
       <td>Windows 10/11 x64 (Windows 7 supported, not actively maintained). A web version at web.nexusbv.net runs in the browser, per its site</td></tr>
     <tr><th scope="row">Classic boardview formats</th>
-      <td>BVR (BVRAW_FORMAT_3) <span class="status ok">supported</span>. <span class="status draft">draft</span>, tested on synthetic files only: TestLink/Landrex BRD, TOPTEST BRD2, Honhan BDV, BVR format 1, ASC trio, FZ/CAE (your own key), XZZ PCB, CAST CST, Samsung CAD</td>
+      <td>FZ/CAE open with published default keys; selected TestLink/Landrex BRD, Honhan BDV, Samsung CAD and TVW exports have real-file checks. BVR formats 1/3, TOPTEST BRD2, ASC, Jet4 BV, BV2, F2B, Tebo ICT, Mentor Neutral and FARC/FAZ now have selected real-export checks. CAST CST supports only documented component layers; XZZ remains a draft requiring a user-supplied key. See the exact table for limits.</td>
       <td>From its source repository: BRD, BRD2, BDV, BVR (formats 1 and 3), ASC, CST, FZ and CAE (keys needed), GenCAD, XZZ PCB and others. The 10.0.0 release notes list GenCAD, XZZ PCB and ASRock CAE as added since version 9</td>
       <td>.brd, .bdv, .bv, .gr; Asus FZ, Samsung CAD, Teboview, XZZ PCB; ODB++, GenCAD, Fabmaster, Hyperlynx (all in the Free edition)</td>
       <td>.A3P, .ASC, .BDV, .BRD (Toptest, Landrex, Mentor Neutral File, Allegro), .BV, .BVR, .CAD (GenCAD, Fabmaster CAD), .CAE, .CST, .F2B, .FAZ, .FZ, .GR, .PCB (XZZPCB), .TVW</td></tr>
@@ -108,7 +109,7 @@
       <td>Yes (both editions)</td>
       <td>Yes (.CAD lists GenCAD)</td></tr>
     <tr><th scope="row">Teboview (.tvw)</th>
-      <td>Not readable: the extension is accepted, the content is reported as unrecognized</td>
+      <td>Selected real exports validated: components, pad positions, nets and sides. Outlines and copper are absent; custom pads use bounding boxes.</td>
       <td>Not listed</td>
       <td>Yes, listed as Teboview (both editions)</td>
       <td>Yes (.TVW, with layers)</td></tr>
@@ -118,7 +119,7 @@
       <td>Professional only. Its changelog marks them "developing, may crash"</td>
       <td>Not listed</td></tr>
     <tr><th scope="row">Cadence Allegro .brd</th>
-      <td>Recognized and explained, not readable (a GenCAD export is suggested)</td>
+      <td>Selected native 16.0–17.5 layouts; real-file checks cover 16.2, 16.4, 16.5, 16.6 and 17.2. Estimated bodies and omitted routing are disclosed.</td>
       <td>Recognized, not read; points to Cadence's free viewer</td>
       <td>Professional only, beta ("developing, may crash")</td>
       <td>Yes, versions 16 to 25 natively</td></tr>
@@ -128,17 +129,17 @@
       <td>Not listed (PDF schematics only)</td>
       <td>Not listed</td></tr>
     <tr><th scope="row">PDF schematics</th>
-      <td>Built-in offline PDF viewer. One search covers board, schematic and PDF text; board references found in the PDF link to parts</td>
+      <td>Built-in offline PDF viewer with English OCR for scanned pages, confidence marks and Cancel. One search covers board, schematic and PDF text; exact board references link to parts.</td>
       <td>Two-way search with custom builds of SumatraPDF (Windows) or Evince (Linux). Its release notes call this a beta feature</td>
       <td>Professional only ("Smart PDF Integration")</td>
       <td>Built in. Two-way navigation between board and PDF; indexed PDF search</td></tr>
     <tr><th scope="row">Notes</th>
-      <td>Per part and per pin, with measured voltage and resistance; kept with the board file by content hash</td>
+      <td>Per named part and pin, with measured voltage/resistance, a migration backup and an unresolved-notes list; kept with the board by content hash</td>
       <td>Annotations, stored per board</td>
       <td>Repair job log in a searchable database (listed as a Professional feature)</td>
       <td>Notes and bookmarks</td></tr>
     <tr><th scope="row">Latest version</th>
-      <td>1.2.0 (6 Oct 2026)</td>
+      <td>1.3.1-rc.2 testing (8 Oct 2026); previous stable 1.3.0</td>
       <td>10.0.0 (22 May 2026)</td>
       <td>5.3162 (27 Jul 2026)</td>
       <td>0.9 (20 Sep 2026)</td></tr>
@@ -150,7 +151,7 @@
   <h2>TRACE Boardviewer</h2>
   <p>TRACE is a free, MIT-licensed repair workspace rather than a viewer alone.</p>
   <p>You open a board, attach its schematic (KiCad or EAGLE) and any PDF datasheets or photos, and one search covers part references, values, packages and nets across all of them. Board and schematic are linked by exact names: TRACE never guesses a match. Anything that differs, such as a fiducial with no schematic symbol or a net with two names, is listed so that you can confirm an alias yourself. Notes can be attached to a part or a single pin, including the voltage or resistance you measured. They follow the board file by its content hash, so renaming the file keeps them.</p>
-  <p>TRACE works offline, needs no account and sends no telemetry. Its only network request is an optional update check, which you can switch off.</p>
+  <p>TRACE works offline, needs no account and sends no telemetry. Network settings show optional update checks and explicit support-receipt verification; board and document content is never sent.</p>
   <p><strong>Best for:</strong> KiCad and EAGLE designs and open hardware, and anyone who wants the board, schematic and datasheets in one window, free.</p>
 
   <h2>OpenBoardView</h2>
@@ -176,8 +177,8 @@
 
   <h2>Where TRACE is weaker</h2>
   <div class="card"><ul>
-    <li><strong>Classic proprietary boardview formats are draft in TRACE.</strong> The readers for TestLink/Landrex BRD, TOPTEST BRD2, BDV, FZ/CAE, XZZ, CST, ASC and Samsung CAD exist and are tested against synthetic files. No real vendor file has been tested yet. The other three programs list these formats as core features, and OpenBoardView's open-source readers are the public reference TRACE's readers follow. If a file opens wrongly in TRACE, please <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">report it</a>, sharing only files you are allowed to share.</li>
-    <li><strong>No Allegro and no TVW.</strong> Allegro databases are recognized and explained, but not read. TVW is accepted by its extension only, and the content is reported as unrecognized.</li>
+    <li><strong>Some classic formats remain draft or have limited validation.</strong> XZZ, HyperLynx, Fabmaster FATF, EasyEDA Standard and pin-list imports retain synthetic-only validation. New BV, BV2, F2B, Tebo, Mentor and FARC readers cover selected export layouts. BRD, BDV, Samsung CAD and TVW checks cover selected exports, and estimated geometry is disclosed. If a file opens wrongly, please <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">report it</a> without attaching proprietary files.</li>
+    <li><strong>Native Allegro has layout limits.</strong> The selected documented layouts import parts, nets, pads and outlines; unknown records, older databases and unverified layer semantics fail explicitly. Tracks, copper fills and vias are omitted. TVW now opens for the selected validated layouts; unknown layer/header variants fail explicitly.</li>
     <li><strong>No copper.</strong> TRACE shows parts, pads and nets. Tracks, zones and vias are not drawn, and connection guides show logical relationships, not real traces.</li>
     <li><strong>Linux and macOS builds are experimental.</strong> The Linux .deb and AppImage are x86-64 only and tested automatically on Ubuntu 24.04, not yet on a desktop Linux machine. The macOS build is Apple-silicon only and unsigned, so macOS asks you to allow it once.</li>
     <li><strong>Unsigned Windows EXE.</strong> SmartScreen warns once. The download is about 112 MB, and each launch unpacks about 500 MB into a private temporary folder, which is removed on exit.</li>
@@ -186,11 +187,11 @@
 
   <h2>Which one should you use?</h2>
   <ul>
-    <li><strong>Mostly classic laptop or phone boardview files</strong> (.brd, .bdv, .fz, XZZ .pcb): OpenBoardView, FlexBV and NexusBV read these as core formats, while TRACE's readers are still draft. TRACE is portable, so you can try it alongside them and see whether its schematic and PDF workflow helps you.</li>
+    <li><strong>Classic boardview files</strong> (.brd, .bdv, .fz, XZZ .pcb): compare the exact format table and your export variant. TRACE now has selected real-file checks for several families, while XZZ and other listed drafts still have limited validation.</li>
     <li><strong>KiCad or EAGLE designs, open hardware, or your own boards:</strong> TRACE reads the board and the schematic natively, free, with exact cross-probing.</li>
     <li><strong>Linux:</strong> OpenBoardView or FlexBV for classic boardview files; TRACE for KiCad and EAGLE designs with their schematics and PDFs (<a href="../linux/">experimental .deb and AppImage</a>). NexusBV also has a browser version.</li>
     <li><strong>Board, schematic, datasheets and your measurements in one place, offline, at no cost:</strong> TRACE.</li>
-    <li><strong>Allegro files:</strong> NexusBV, FlexBV Professional (beta) or Cadence's own viewer. <strong>TVW (Teboview) files:</strong> NexusBV or FlexBV.</li>
+    <li><strong>Native Allegro files:</strong> TRACE reads selected documented layouts; check version and geometry limits. <strong>TVW (Teboview):</strong> TRACE now reads selected export layouts; check the documented geometry and layer limits.</li>
   </ul>
   <div class="cta">
     <a class="btn primary dl" href="../#download"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5.6l7.4-1v7H3zm8.6-1.2L21 3v8.6h-9.4zM3 12.6h7.4v7L3 18.4zm8.6 0H21V21l-9.4-1.3z"/></svg><span>Windows</span></a>

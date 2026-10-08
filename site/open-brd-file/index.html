@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/open-brd-file/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .brd file","description":"A .brd file can be an EAGLE board, a TestLink/Landrex or TOPTEST boardview, or an Allegro database. Find out which one you have and how to open it free.","datePublished":"2026-10-06","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-brd-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .brd file","item":"https://trace-boardviewer.github.io/open-brd-file/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .brd file","description":"A .brd file can be an EAGLE board, a TestLink/Landrex or TOPTEST boardview, or an Allegro database. Find out which one you have and how to open it free.","datePublished":"2026-10-06","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-brd-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .brd file","item":"https://trace-boardviewer.github.io/open-brd-file/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -89,17 +89,17 @@
       <td>Repair and test data</td>
       <td>Plain text with <code>str_length</code> and <code>var_data</code> blocks, or a binary file whose first bytes are <code>23 E2 63 28</code> (the encoded variant)</td>
       <td>OpenBoardView, FlexBV, NexusBV, TRACE</td>
-      <td><span class="status draft">draft</span> The reader is tested on synthetic files only</td></tr>
+      <td><span class="status ok">selected real exports checked</span> Estimated pad/body geometry is disclosed</td></tr>
     <tr><th scope="row">TOPTEST BRD2 boardview</th>
       <td>Repair and test data</td>
       <td>Plain text with sections named BRDOUT, NETS, PARTS, PINS and NAILS</td>
       <td>OpenBoardView, NexusBV, TRACE</td>
-      <td><span class="status draft">draft</span> Tested on synthetic files only</td></tr>
+      <td><span class="status ok">selected real exports checked</span> Unknown variants remain unsupported</td></tr>
     <tr><th scope="row">Cadence Allegro board database</th>
       <td>Allegro PCB Designer</td>
       <td>Binary; TRACE reports it as "Cadence Allegro BRD (native)"</td>
       <td>Cadence's free Allegro viewer; NexusBV lists Allegro 16 to 25; FlexBV Professional (beta)</td>
-      <td><span class="status no">recognized, not readable</span> TRACE explains this and suggests a GenCAD export</td></tr>
+      <td><span class="status ok">selected native layouts readable</span> Real-file checks cover 16.2, 16.4, 16.5, 16.6 and 17.2; other documented layouts use synthetic tests</td></tr>
     </tbody>
   </table>
   </div>
@@ -133,14 +133,14 @@
   </ul>
   <p>With the schematic attached, parts and nets cross-probe by exact name. On the real RedBoard pair, all 48 schematic nets carry the board's names. One known gap: a file that holds a panel of several boards keeps only the largest outline.</p>
   <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-08-eagle-split-800.webp" srcset="../assets/img/shot-08-eagle-split-800.webp 800w, ../assets/img/shot-08-eagle-split.webp 1600w" sizes="(max-width: 840px) calc(100vw - 32px), 780px" data-full="../assets/img/shot-08-eagle-split.png" alt="EAGLE .brd file opened in TRACE next to its EAGLE schematic, the selected part highlighted on both" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>An EAGLE .brd with its schematic in the split view.<small data-cap="08">TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic</small></figcaption></figure>
-  <p><strong>TestLink/Landrex and TOPTEST BRD2 boardviews (draft).</strong></p>
+  <p><strong>TestLink/Landrex and TOPTEST BRD2 boardviews.</strong></p>
   <ul>
     <li>Parts, pins, nets and test points are read, with positions in mils converted to millimetres.</li>
     <li>These formats carry no pad sizes, so pads are shown as markers.</li>
-    <li>The readers follow the public OpenBoardView reference code and are tested on synthetic files only.</li>
+    <li>Selected real exports have independent record checks, with synthetic regressions for malformed input. These checks establish the documented variants, not every dialect.</li>
     <li>If your file opens wrongly, a <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report</a> with the format name, file size and TRACE's exact message helps a lot. Share only files you are allowed to share.</li>
   </ul>
-  <p><strong>Allegro databases.</strong> These are a proprietary binary format. TRACE recognizes them (versions 16.0 and later) and says so instead of guessing. Open them in Cadence's free viewer, or ask for a GenCAD export, which TRACE reads (GenCAD 1.4, validated with real files; see the <a href="../gencad-viewer/">free GenCAD viewer</a> page).</p>
+  <p><strong>Allegro databases.</strong> TRACE now reads selected native 16.0–17.5 record layouts: components, values, packages, pin labels, nets, pads and the outline. Real-file checks cover 16.2, 16.4, 16.5, 16.6 and 17.2; other documented layouts have synthetic validation. Bodies are estimated, curves use chords and custom pads use bounding rectangles. Tracks, copper fills and vias are omitted. Older databases, unknown records and unverified layer semantics are refused; request a <a href="../gencad-viewer/">GenCAD 1.4 export</a> for those variants.</p>
 
   <h2>Common questions</h2>
   <h3>Is a .brd file the same as a Gerber file?</h3>

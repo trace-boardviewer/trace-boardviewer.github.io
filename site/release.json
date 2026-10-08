@@ -1,35 +1,35 @@
 {
   "status": "released",
   "statusText": "",
-  "version": "1.3.0",
-  "date": "2026-10-07",
+  "version": "1.3.1-rc.2",
+  "date": "2026-10-08",
   "releasesUrl": "https://github.com/trace-boardviewer/trace-boardviewer/releases",
   "windows": {
-    "file": "TRACE-Boardviewer-1.3.0.exe",
-    "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.0/TRACE-Boardviewer-1.3.0.exe",
-    "sha256": "c04288482f19b4bf3250682899360d4f75455fed249fe248b643324a72169b7b",
-    "bytes": 117153021
+    "file": "TRACE-Boardviewer-1.3.1-rc.2.exe",
+    "sha256": "186d3af9172da7ea1b0e2b4eb157a3db726fc64b30797ae4b92c6d9a84f4fa5c",
+    "bytes": 111987794,
+    "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1-rc.2/TRACE-Boardviewer-1.3.1-rc.2.exe"
   },
   "macos": {
-    "file": "TRACE-Boardviewer-1.3.0-mac-arm64.zip",
-    "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.0/TRACE-Boardviewer-1.3.0-mac-arm64.zip",
-    "sha256": "a4b788f0d6a8340e293112807e463939e06425a69b659831afd7a17b92ac6a09",
-    "bytes": 144581455,
-    "note": "experimental, unsigned, Apple silicon only, validated on an Apple M3"
+    "file": "TRACE-Boardviewer-1.3.1-rc.2-mac-arm64.zip",
+    "sha256": "f834c776a1c5821e67f8c145eefc24147c9d22c5d74fb27a5abbf17d00db4ce6",
+    "bytes": 150620749,
+    "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1-rc.2/TRACE-Boardviewer-1.3.1-rc.2-mac-arm64.zip",
+    "note": "experimental, unsigned, Apple silicon only; native arm64 CI smoke checks passed"
   },
   "linux": {
-    "note": "experimental, x86-64 only, tested automatically on Ubuntu 24.04",
+    "note": "experimental, x86-64 only; package smoke checks passed on Ubuntu 24.04",
     "deb": {
-      "file": "TRACE-Boardviewer-1.3.0-linux-amd64.deb",
-      "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.0/TRACE-Boardviewer-1.3.0-linux-amd64.deb",
-      "sha256": "bc41f881664a4c9e21f919b3c0073a03cd4d8d7a49fb367ba5419e570e334676",
-      "bytes": 112129812
+      "file": "TRACE-Boardviewer-1.3.1-rc.2-linux-amd64.deb",
+      "sha256": "05b4ada94dfb399312cd8b633fa097ef9e93646ebe4b591302c6ad682acd64c5",
+      "bytes": 116654984,
+      "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1-rc.2/TRACE-Boardviewer-1.3.1-rc.2-linux-amd64.deb"
     },
     "appimage": {
-      "file": "TRACE-Boardviewer-1.3.0-linux-x86_64.AppImage",
-      "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.0/TRACE-Boardviewer-1.3.0-linux-x86_64.AppImage",
-      "sha256": "548c9bc21e6138bc483e4f2680cfc2c9ec4ef044c8d53bef9bcce4e910ae1066",
-      "bytes": 134140454
+      "file": "TRACE-Boardviewer-1.3.1-rc.2-linux-x86_64.AppImage",
+      "sha256": "c29a3ffe40678b4c8ac339ca50dfc9fb5c2a0b2daf727a33e708ffacadb7545e",
+      "bytes": 139917707,
+      "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1-rc.2/TRACE-Boardviewer-1.3.1-rc.2-linux-x86_64.AppImage"
     }
   }
 }
