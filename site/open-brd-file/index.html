@@ -60,7 +60,7 @@
     <li aria-current="page">How to open a .brd file</li>
   </ol></nav>
   <h1>How to open a .brd file</h1>
-  <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-08">8 October 2026</time></p>
   <p class="lead">".brd" is used by several unrelated programs, so the fastest way to open yours is to find out which kind it is first. This guide shows how to tell them apart in about a minute, which free programs open each kind, and exactly what TRACE Boardviewer can and cannot do with it.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -77,7 +77,7 @@
       <th scope="col">Typical source</th>
       <th scope="col">How to recognise it</th>
       <th scope="col">Free ways to open it</th>
-      <th scope="col">TRACE Boardviewer 1.2.0</th>
+      <th scope="col">Current TRACE test release</th>
     </tr></thead>
     <tbody>
     <tr><th scope="row">EAGLE board (XML)</th>
@@ -104,6 +104,7 @@
   </table>
   </div>
   <p>EAGLE 5.12 and earlier saved boards in an older binary format. TRACE reads only the XML format that EAGLE 6 and later write.</p>
+  <p>For native Cadence files, the <a href="../allegro-brd-viewer/">Allegro .brd viewer guide</a> lists the tested versions, geometry limits and alternatives for unsupported databases.</p>
 
   <h2>Find out which one you have</h2>
   <p><strong>The easy way:</strong> drop the file into TRACE. TRACE never trusts the extension. It looks at the bytes, then either opens the file or tells you which format it found and why it cannot be read.</p>

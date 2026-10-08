@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Altium viewer: open PcbDoc boards and SchDoc schematics</title>
+<meta name="description" content="View Altium PcbDoc boards and SchDoc schematics in TRACE, free on Windows, macOS and Linux. Search parts and nets, cross-probe and read the import limits.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="Free Altium viewer: open PcbDoc boards and SchDoc schematics">
+<meta property="og:description" content="View Altium PcbDoc boards and SchDoc schematics in TRACE, free on Windows, macOS and Linux. Search parts and nets, cross-probe and read the import limits.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, schematic and PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/altium-viewer/"><meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Altium viewer: open PcbDoc boards and SchDoc schematics">
+<meta name="twitter:description" content="View Altium PcbDoc boards and SchDoc schematics in TRACE, free on Windows, macOS and Linux. Search parts and nets, cross-probe and read the import limits.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/altium-viewer/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Open Altium .PcbDoc boards and .SchDoc schematics","description":"View Altium PcbDoc boards and SchDoc schematics in TRACE, free on Windows, macOS and Linux. Search parts and nets, cross-probe and read the import limits.","datePublished":"2026-10-08","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"mainEntityOfPage":"https://trace-boardviewer.github.io/altium-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Altium viewer","item":"https://trace-boardviewer.github.io/altium-viewer/"}]}]}</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+<main id="main">
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">TRACE Boardviewer</a></li><li aria-current="page">Altium viewer</li></ol></nav>
+  <h1>Open Altium .PcbDoc boards and .SchDoc schematics</h1>
+  <p class="meta">Updated: <time datetime="2026-10-08">8 October 2026</time> · TRACE 1.3.1-rc.2 test release</p>
+  <p class="lead">TRACE is a free viewer for electronics repair documents. Open a supported Altium PCB file, attach its schematic and datasheets, then search parts and nets together. You do not need an Altium installation to use TRACE, but it reads a defined subset of the formats rather than reproducing the design editor.</p>
+  <div class="cta"><a class="btn primary" href="../#download">Download TRACE</a><a class="btn" href="../#formats">All supported formats</a></div>
+</div></section>
+<section><div class="wrap prose">
+
+  <h2>PCB files: PcbDoc, CmPcbDoc and CsPcbDoc</h2>
+  <p>The board reader accepts binary OLE compound files using CFB version 3 and the supported ASCII PCB record format. It reads components, nets, pads and the first Board6 outline record. The extensions <code>.PcbDoc</code>, <code>.CmPcbDoc</code> and <code>.CsPcbDoc</code> are accepted when their contents match a supported layout.</p>
+  <p>Validation covers 28 openly licensed boards: 26 binary and two ASCII. Binary component, pad and net counts were checked independently against the raw streams; two ASCII/binary pairs agree on every pad to one micrometre. Other writers and versions remain unverified.</p>
+  <ul>
+    <li>Top, bottom and through pads are read. Inner and non-copper pads, and components on inner layers, are skipped and counted.</li>
+    <li>Bodies are estimated from pad extents; component values are not read from the PCB file.</li>
+    <li>Unequal round, octagonal and rounded-rectangle pads use rectangular approximations. Outline arcs use chords.</li>
+    <li>Tracks, vias, fills, regions, text, models and design rules are omitted. Free pads and copper are not drawn.</li>
+    <li>CFB version 4 and library files such as PcbLib and SchLib are unsupported.</li>
+  </ul>
+  <p class="callout warn">Read the import notice before using the board view as a guide. TRACE does not edit the design, export an Altium project or run electrical or design-rule checks.</p>
+
+  <h2>Schematics: SchDoc and project companions</h2>
+  <p>The schematic reader handles the OLE FileHeader record stream and ASCII schematic exports. Connectivity is computed from the drawn geometry. Real-file validation covers 113 openly licensed SchDoc files; the checked LimeSDR nets agree with its Altium-written netlist (627 of 627).</p>
+  <p>Keep sibling <code>.SchDoc</code> files and the <code>.PrjPcb</code> project file together when they define project scope or hierarchy. Hierarchy, repeated sheets and scope 0 have synthetic tests only; real-file evidence covers flat designs. Repeated sheets are shown once.</p>
+  <p>Harnesses, design variants, off-sheet connectors and IEEE symbols are not modelled. Unknown scope values and skipped binary-flagged or Additional records are disclosed. The schematic view is useful for the supported circuits; complex projects need the original design tool for their complete semantics.</p>
+
+  <h2>View the PCB beside the schematic</h2>
+  <ol class="steps">
+    <li><a href="../#download">Download TRACE</a> for Windows x64, Apple-silicon macOS or <a href="../linux/">Linux x86-64</a>. The Mac and Linux builds remain experimental.</li>
+    <li>Open the <code>.PcbDoc</code> with <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac), or drag it into the window.</li>
+    <li>Attach the matching <code>.SchDoc</code> through Documents, keeping companion sheets in the same directory.</li>
+    <li>Search for a part or net. Matching references let you cross-probe between the board and schematic; unresolved targets are reported instead of guessed.</li>
+    <li>Add datasheet or schematic PDFs and keep measurement notes on a part or pin. Search text PDFs directly, or run cancellable offline English OCR on a scanned PDF.</li>
+  </ol>
+  <p>The <a href="../getting-started/">getting started guide</a> explains the common controls and document workflow. The <a href="../demo/">demo</a> shows that workflow with an openly licensed KiCad design in an earlier app version; it is not an Altium screenshot.</p>
+
+  <h2>If the file is refused or something is missing</h2>
+  <p>Compare the diagnostic and the import notice with the limits above. A library is not a board, a project file is a companion rather than a drawable PCB, and changing an extension does not convert the data.</p>
+  <p>For an unsupported PCB variant, ask the design owner for a <a href="../gencad-viewer/">GenCAD 1.4 export</a> or use a compatible viewer. A plotted schematic PDF can be attached when its native schematic uses unsupported features; PDF links are based on exact text matches, not a reconstruction of the circuit.</p>
+  <p>For the maintained format scope, see the <a href="../#formats">compatibility table</a> and <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>. Report reproducible import problems with the app version and diagnostic, using only files you may share.</p>
+
+  <h2>Offline repair work without an account</h2>
+  <p>TRACE is MIT-licensed open source. Files, OCR and notes are processed locally. The Altium readers are included on all three desktop platforms; support and payment verification are optional.</p>
+  <p>For other document families, read the <a href="../kicad-pcb-viewer/">KiCad guide</a>, <a href="../eagle-viewer/">EAGLE guide</a> or <a href="../allegro-brd-viewer/">native Allegro guide</a>.</p>
+  <div class="cta"><a class="btn primary" href="../#download">Download TRACE Boardviewer</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a></div>
+  <p class="sources"><em>Product names identify file formats and programs. They are trademarks of their owners; TRACE is not affiliated with them.</em></p>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../allegro-brd-viewer/">Allegro viewer</a>
+    <a href="../altium-viewer/">Altium viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>
