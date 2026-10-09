@@ -63,6 +63,14 @@
   </div>
   <p class="meta"><span class="item" data-rel="win-name">TRACE-Boardviewer-1.3.1.exe</span><span class="item" data-rel="status" hidden></span><span class="item" data-rel="win-size">106.8 MB</span><span class="item" data-rel="win-sha-item">SHA-256 <code data-rel="win-sha">ca666046eb37ffd129c0af9503e4e9357024d7cebe968c2f49c00b28474e9877</code></span></p>
   <p class="meta">Thank you for trying TRACE and sharing your feedback. Special thanks to everyone who uses the app and <a href="support.html">supports its development</a>. Support is always optional. ❤</p>
+  <aside class="card" aria-labelledby="quick-compatibility-title">
+    <h2 id="quick-compatibility-title">Quick compatibility check · 1.3.1</h2>
+    <ul>
+      <li><strong><span aria-hidden="true">✓</span> Opens:</strong> GenCAD 1.4, KiCad PCB, EAGLE XML, Altium PcbDoc, EasyEDA Pro and selected BRD/BRD2/BDV/BVR/ASC, Jet BV/BV2, TVW, Allegro and FZ/CAE layouts. Attach KiCad/EAGLE/Altium schematics, PDFs and images; search offline and optionally run bundled English OCR on scans.</li>
+      <li><strong><span aria-hidden="true">⚠</span> Check the variant:</strong> coverage and geometry vary; some draft readers use synthetic-only checks. macOS and Linux are experimental; native acceptance of stable 1.3.1 is pending. <a href="#formats">See exact formats and limits.</a></li>
+      <li><strong><span aria-hidden="true">✗</span> Not a complete-board reader for:</strong> Gerber (one layer, no components or nets) and native PADS SDB (custom terminal geometry is unverified). Encrypted XZZ needs your own session-only key; its reader remains draft.</li>
+    </ul>
+  </aside>
   <ul class="badges" aria-label="Build facts">
     <li class="badge warn" data-rel="prerelease" hidden>Test version <span data-rel="version">1.3.1</span></li>
     <li class="badge">Windows x64 · portable</li><li class="badge">Linux x86-64 · experimental</li><li class="badge">offline</li><li class="badge">MIT</li>
@@ -212,7 +220,7 @@
     <!-- linux-download:start -->
     <div class="card" id="download-linux" data-rel="linux-card">
       <h3>Linux x86-64 — experimental</h3>
-      <p>Two packages of the same build. Check the SHA-256 in a terminal in the download folder before you install or run one.</p>
+      <p data-rel="linux-note">Experimental, x86-64 only. Native acceptance testing of the published 1.3.1 Linux packages is pending; both packages are unsigned.</p>
       <div data-rel="linux-deb-block">
       <h4>Ubuntu 24.04 or newer, Debian 12 or newer: .deb (recommended)</h4>
       <p><a class="btn dl" data-rel="linux-deb-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1/TRACE-Boardviewer-1.3.1-linux-amd64.deb"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M12 1.8c-2.3 0-3.7 1.9-3.7 4.3 0 1.4.3 2.3-.4 3.7-.9 1.7-2.7 3.7-2.7 6.6 0 1 .3 1.9.8 2.6-.7.4-1.8.9-1.8 1.9 0 1.1 1.7 1.3 3.1 1.8 1.1.4 1.9.9 2.7.9.7 0 1.3-.4 2-.4s1.3.4 2 .4c.8 0 1.6-.5 2.7-.9 1.4-.5 3.1-.7 3.1-1.8 0-1-1.1-1.5-1.8-1.9.5-.7.8-1.6.8-2.6 0-2.9-1.8-4.9-2.7-6.6-.7-1.4-.4-2.3-.4-3.7 0-2.4-1.4-4.3-3.7-4.3zm0 8.6c-1.9 0-3.5 2.5-3.5 5.4 0 2 .9 3.4 2 4h3c1.1-.6 2-2 2-4 0-2.9-1.6-5.4-3.5-5.4zM10.6 5.4a.85 1.05 0 1 0 0 2.1.85 1.05 0 0 0 0-2.1zm2.8 0a.85 1.05 0 1 0 0 2.1.85 1.05 0 0 0 0-2.1z"/></svg><span data-rel="linux-deb-name">TRACE-Boardviewer-1.3.1-linux-amd64.deb</span></a></p>

@@ -43,7 +43,7 @@
   // scripts/render-release.cjs found a linux entry; without one nothing here touches the page.
   function linuxRelease(rel) {
     var lin = rel && typeof rel.linux === 'object' && rel.linux ? rel.linux : {};
-    var out = {};
+    var out = { note: typeof lin.note === 'string' ? lin.note : '' };
     ['deb', 'appimage'].forEach(function (key) {
       var item = lin[key] && typeof lin[key] === 'object' ? lin[key] : {};
       out[key] = {
@@ -108,6 +108,7 @@
     });
     if (document.querySelector('[data-rel="linux-card"]')) {
       var lin = linuxRelease(rel);
+      if (lin.note) text('[data-rel="linux-note"]', lin.note);
       ['deb', 'appimage'].forEach(function (key) {
         var item = lin[key], pre = '[data-rel="linux-' + key;
         enableLink(pre + '-url"]', item.url);
