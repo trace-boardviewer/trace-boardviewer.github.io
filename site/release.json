@@ -15,10 +15,10 @@
     "sha256": "e6b0ea4d5a4581423d2573457bdc0c837e632dee2538ba58bdfe607b065d84c5",
     "bytes": 150690954,
     "url": "https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1/TRACE-Boardviewer-1.3.1-mac-arm64.zip",
-    "note": "Experimental, unsigned (ad-hoc signed, not notarized), Apple silicon only. Native validation of the published 1.3.1 package is pending."
+    "note": "Experimental, unsigned (ad-hoc signed, not notarized), Apple silicon only. Native acceptance run 37974058845 reported issues; investigation is ongoing."
   },
   "linux": {
-    "note": "Experimental, x86-64 only. Native acceptance testing of the published 1.3.1 Linux packages is pending; both packages are unsigned.",
+    "note": "Experimental, x86-64 only. Native acceptance run 37974058845 reported issues; investigation is ongoing. Both packages are unsigned.",
     "deb": {
       "file": "TRACE-Boardviewer-1.3.1-linux-amd64.deb",
       "sha256": "f0a406fbe5467abdbcc88b46b6aff5d5a08da70bfdac1dbe97e5d4407a148bbf",

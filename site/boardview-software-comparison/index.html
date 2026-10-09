@@ -139,7 +139,7 @@
       <td>Repair job log in a searchable database (listed as a Professional feature)</td>
       <td>Notes and bookmarks</td></tr>
     <tr><th scope="row">Latest version</th>
-      <td>1.3.1 (9 Oct 2026); native macOS and Linux package acceptance is pending</td>
+      <td>1.3.1 (9 Oct 2026); latest native acceptance run reported issues on macOS and Linux, under investigation</td>
       <td>10.0.0 (22 May 2026)</td>
       <td>5.3162 (27 Jul 2026)</td>
       <td>0.9 (20 Sep 2026)</td></tr>
@@ -180,9 +180,9 @@
     <li><strong>Some classic formats remain draft or have limited validation.</strong> XZZ, HyperLynx, Fabmaster FATF, EasyEDA Standard and pin-list imports retain synthetic-only validation. New BV, BV2, F2B, Tebo, Mentor and FARC readers cover selected export layouts. BRD, BDV, Samsung CAD and TVW checks cover selected exports, and estimated geometry is disclosed. If a file opens wrongly, please <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">report it</a> without attaching proprietary files.</li>
     <li><strong>Native Allegro has layout limits.</strong> The selected documented layouts import parts, nets, pads and outlines; unknown records, older databases and unverified layer semantics fail explicitly. Tracks, copper fills and vias are omitted. TVW now opens for the selected validated layouts; unknown layer/header variants fail explicitly.</li>
     <li><strong>No copper.</strong> TRACE shows parts, pads and nets. Tracks, zones and vias are not drawn, and connection guides show logical relationships, not real traces.</li>
-    <li><strong>Linux and macOS builds are experimental.</strong> Stable 1.3.1 native acceptance is pending for the Apple-silicon macOS package and x86-64 Linux .deb and AppImage. All three are unsigned; macOS asks you to allow the downloaded app once.</li>
+    <li><strong>Linux and macOS builds are experimental.</strong> Native acceptance run 37974058845 reported issues on both platforms; investigation is ongoing for the Apple-silicon macOS package and x86-64 Linux .deb and AppImage. All three are unsigned; macOS asks you to allow the downloaded app once.</li>
     <li><strong>Unsigned Windows EXE.</strong> SmartScreen warns once. The download is about 112 MB, and each launch unpacks about 500 MB into a private temporary folder, which is removed on exit.</li>
-    <li><strong>Limits.</strong> Files are limited to 64 MiB. Scanned PDFs are shown but cannot be searched (no OCR). The workspace features added in 1.2.0 (tabs, search, schematic and PDF viewers, notes) are in English whichever of the eight interface languages you choose.</li>
+    <li><strong>Limits.</strong> Files are limited to 64 MiB. Scanned PDF pages have no text initially; choose Recognize text to run bundled offline English OCR (up to 40 megapixels and 120 seconds per page) and make recognized words searchable. The workspace features added in 1.2.0 (tabs, search, schematic and PDF viewers, notes) are in English whichever of the eight interface languages you choose.</li>
   </ul></div>
 
   <h2>Which one should you use?</h2>
