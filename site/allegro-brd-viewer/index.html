@@ -46,8 +46,8 @@
 <section class="hero guide"><div class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">TRACE Boardviewer</a></li><li aria-current="page">Allegro BRD viewer</li></ol></nav>
   <h1>View an Allegro .brd file for electronics repair</h1>
-  <p class="meta">Updated: <time datetime="2026-10-08">8 October 2026</time> · TRACE 1.3.1-rc.2 test release</p>
-  <p class="lead">An Allegro .brd is a native PCB database. TRACE opens selected native layouts so you can find parts and pins, highlight nets and keep schematic PDFs beside the board. It is free and MIT-licensed. This guide explains what the current test release reads and when to request an export instead.</p>
+  <p class="meta">Updated: <time datetime="2026-10-09">9 October 2026</time> · TRACE 1.3.1</p>
+  <p class="lead">An Allegro .brd is a native PCB database. TRACE opens selected native layouts so you can find parts and pins, highlight nets and keep schematic PDFs beside the board. It is free and MIT-licensed. This guide explains what the current release reads and when to request an export instead.</p>
   <div class="cta"><a class="btn primary" href="../#download">Download TRACE</a><a class="btn" href="../#formats">All supported formats</a></div>
 </div></section>
 <section><div class="wrap prose">
@@ -55,7 +55,7 @@
   <h2>Which Allegro versions does TRACE open?</h2>
   <p>The reader covers documented binary record layouts from 16.0 to 17.5. That range does not mean every database written by those versions is supported: unknown record types, unsupported layer codes and inconsistent records are refused with a diagnostic.</p>
   <div class="table-scroll"><table>
-    <caption>Native Allegro validation in TRACE 1.3.1-rc.2</caption>
+    <caption>Native Allegro reader validation included in TRACE 1.3.1</caption>
     <thead><tr><th scope="col">Database layout</th><th scope="col">Evidence</th></tr></thead>
     <tbody>
       <tr><th scope="row">16.2, 16.4, 16.5, 16.6 and 17.2</th><td>Selected real files checked; this is not complete coverage of all exports.</td></tr>
@@ -72,7 +72,7 @@
 
   <h2>Open the board and attach its schematic</h2>
   <ol class="steps">
-    <li><a href="../#download">Download the current TRACE test release</a>. Windows x64 is portable; the Apple-silicon macOS and <a href="../linux/">Linux x86-64 builds</a> remain experimental.</li>
+    <li><a href="../#download">Download TRACE 1.3.1</a>. Windows x64 is portable; the Apple-silicon macOS and <a href="../linux/">Linux x86-64 builds</a> are experimental, and native acceptance of those published packages is pending.</li>
     <li>Open the <code>.brd</code> with <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac), or drag it into TRACE. Read the import notice for that file's approximations and omissions.</li>
     <li>Search parts and nets. Use the Documents tab to attach the schematic PDF and datasheets you already have.</li>
     <li>Search the PDF text and follow exact board reference links. For a scanned PDF, choose Recognize text for bundled English OCR; it works offline and can be cancelled.</li>
