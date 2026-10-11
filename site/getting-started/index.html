@@ -45,7 +45,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -87,10 +87,10 @@
   </ol>
 
   <h2 id="run">1. Run TRACE</h2>
-  <p><strong>Windows (x64).</strong> Download the portable EXE from the <a href="../#download">download section</a>. Check its SHA-256 in PowerShell with <code>Get-FileHash</code> and compare it with the value on the page. The EXE is not code-signed yet, so SmartScreen warns once: choose "More info", then "Run anyway". Nothing is installed. Each launch unpacks about 500 MB into a private temporary folder and removes it on exit. Settings and notes live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
+  <p><strong>Windows (x64).</strong> Download the portable EXE from the <a href="../#download">download section</a>. Check its SHA-256 in PowerShell with <code>Get-FileHash</code> and compare it with the value on the page. The EXE is not code-signed yet, so SmartScreen may warn: choose "More info", then "Run anyway". Nothing is installed. Each launch unpacks the app into a private temporary folder and removes it on exit. Settings and notes live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
   <p><strong>macOS (experimental, Apple silicon only).</strong> Unzip the download and move <code>TRACE Boardviewer.app</code> to Applications. The build is unsigned, so macOS blocks it until you allow it once: right-click the app and choose Open, or run <code>xattr -dr com.apple.quarantine "/Applications/TRACE Boardviewer.app"</code> in Terminal.</p>
-  <p><strong>Linux (experimental, x86-64).</strong> On Ubuntu 24.04 or newer and Debian 12 or newer, install the <code>.deb</code> with <code>sudo apt install ./&lt;file&gt;.deb</code> and start TRACE from the application menu. On other distributions, make the AppImage executable with <code>chmod +x</code> and run it. Check the SHA-256 first. The <a href="../linux/">Linux page</a> explains the packages and the Chromium sandbox.</p>
-  <p>At every start a short support notice appears; "Not now" skips it. TRACE can ask GitHub once whether a newer release exists. That is its only network request, and Settings can turn it off.</p>
+  <p><strong>Linux (experimental, x86-64).</strong> On Ubuntu 24.04, install the <code>.deb</code> with <code>sudo apt install ./&lt;file&gt;.deb</code> and start TRACE from the application menu. On other distributions, make the AppImage executable with <code>chmod +x</code> and run it. Check the SHA-256 first. The <a href="../linux/">Linux page</a> explains the packages and the Chromium sandbox.</p>
+  <p>At every start a short support notice appears; "Not now" skips it. TRACE can ask GitHub once whether a newer release exists. Settings can turn it off, and Settings &gt; Network lists every optional network feature.</p>
 
   <h2 id="open">2. Open a board</h2>
   <p>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on a Mac) or drag the board file into the window. TRACE detects the format by the file's content: KiCad, EAGLE, GenCAD, BVR and more (see the <a href="../#formats">format table</a>). If a file cannot be opened, TRACE says what it found and why, instead of a generic error.</p>
@@ -171,14 +171,14 @@
   <p>On macOS, <kbd>Cmd</kbd> replaces <kbd>Ctrl</kbd> and <kbd>Option</kbd> replaces <kbd>Alt</kbd>.</p>
 
   <h2 id="bug">13. Report a problem</h2>
-  <p>Use <strong>Report a bug</strong> in TRACE to describe the problem. Review the exact report and edit it; your description may contain paths or token-like text. You can optionally include a technical summary with closed fields for version, platform, architecture, locale, surface and import type; those fields cannot contain local paths. Save a draft or leave without sending. Nothing is sent until you choose <strong>Send</strong>. Reports go to a separate receiver, with no GitHub account required. Board files and attachments are not sent. A local helper flags possible paths and token-like text in your description and removes selected text only if you choose to remove it. Drafts and retry records expire after seven days; expired records are removed the next time you access bug reports.</p>
+  <p>Use the bug icon in the top bar, labelled <strong>Report a bug</strong>, to describe the problem. Review the exact report and edit it; your description may contain paths or token-like text. You can optionally include a technical summary with closed fields for version, platform, architecture, locale, surface and import type; those fields cannot contain local paths. Save a draft or leave without sending. Nothing is sent until you choose <strong>Send</strong>. Reports go to a separate receiver, with no GitHub account required. Board files and attachments are not sent. A local helper flags possible paths and token-like text in your description and removes selected text only if you choose to remove it. Drafts and retry records expire after seven days; expired records are removed the next time you access bug reports.</p>
   <p>Failed or uncertain reports are never sent again automatically. If sending fails, <strong>Retry</strong> manually resends the same reviewed report only when you choose Retry. Edit the report first if you want to change what will be sent.</p>
-  <p>You can also use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">manual GitHub issue form</a> in a browser. Do not attach proprietary or customer board files.</p>
+  <p>If you cannot use the app, use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">GitHub issue form</a> in a browser instead; a GitHub account is required there. Do not attach proprietary or customer board files.</p>
 
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
     <a class="btn" href="../demo/">Watch the demo</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a class="btn" href="../getting-started/#bug">Report a bug</a>
   </div>
   <p class="sources"><em>Product names are trademarks of their owners. They are used here only to identify file formats and programs; TRACE is not affiliated with any of them.</em></p>
   <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
@@ -197,7 +197,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>

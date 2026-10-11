@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE</title>
-<meta name="description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
+<meta name="description" content="Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows; macOS and Linux are experimental.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
 <meta property="og:title" content="Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE">
-<meta property="og:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
+<meta property="og:description" content="Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows; macOS and Linux are experimental.">
 <meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,11 +19,11 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free EAGLE viewer: open EAGLE .brd and .sch files without EAGLE">
-<meta name="twitter:description" content="Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.">
+<meta name="twitter:description" content="Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows; macOS and Linux are experimental.">
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/eagle-viewer/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free EAGLE viewer: open .brd and .sch files without EAGLE","description":"Autodesk ended EAGLE on 7 June 2026. Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows, macOS and Linux.","datePublished":"2026-10-06","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/eagle-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free EAGLE viewer","item":"https://trace-boardviewer.github.io/eagle-viewer/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free EAGLE viewer: open .brd and .sch files without EAGLE","description":"Open EAGLE boards (.brd) and schematics (.sch) free and offline, side by side, with cross-probing. Windows; macOS and Linux are experimental.","datePublished":"2026-10-06","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/eagle-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Free EAGLE viewer","item":"https://trace-boardviewer.github.io/eagle-viewer/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -45,7 +45,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -61,7 +61,7 @@
   </ol></nav>
   <h1>Free EAGLE viewer: open .brd and .sch files without EAGLE</h1>
   <p class="meta">Updated: <time datetime="2026-10-07">7 October 2026</time></p>
-  <p class="lead">Autodesk stopped selling and supporting EAGLE on 7 June 2026, and EAGLE licensing ended with it (<a href="https://autodesk.com/eagleannouncement" rel="noopener">Autodesk's announcement</a>). Your old projects are still there: EAGLE 6 and later save boards (<code>.brd</code>) and schematics (<code>.sch</code>) as plain XML files.</p>
+  <p class="lead">Open EAGLE boards (<code>.brd</code>) and schematics (<code>.sch</code>) in TRACE, free and offline, without installing EAGLE. TRACE only reads these files; they are not modified.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
     <a class="btn" href="../#formats">All supported formats</a>
@@ -113,7 +113,6 @@
   <table>
     <thead><tr><th scope="col">You want to</th><th scope="col">Options</th></tr></thead>
     <tbody>
-    <tr><th scope="row">Keep designing and editing</th><td><strong>KiCad</strong> (free, open source) imports EAGLE projects; its documentation lists EAGLE 6.x or newer in XML format. <strong>Autodesk Fusion</strong>'s Electronics workspace is the route Autodesk points EAGLE users to. It is a commercial product, so check Autodesk's current licence terms.</td></tr>
     <tr><th scope="row">View, inspect or repair a board, offline and free</th><td><strong>TRACE Boardviewer</strong>: board and schematic side by side, with search, cross-probing and notes.</td></tr>
     <tr><th scope="row">Take a quick look in a browser</th><td>Online viewers exist; for example, the Altium 365 Viewer lists EAGLE SCH and BRD among its formats. Check how a web viewer handles your files before you use it on a design you cannot share.</td></tr>
     </tbody>
@@ -128,13 +127,13 @@
   <h3>My .brd will not open. Is it an EAGLE file at all?</h3>
   <p><code>.brd</code> is also used by classic repair boardviews and by Cadence Allegro. See <a href="../open-brd-file/">How to open a .brd file</a>. TRACE identifies the format by its content and tells you what it found, or that the file matched none of its formats.</p>
   <h3>Is TRACE the only free option?</h3>
-  <p>No. <a href="../boardview-software-comparison/">Boardview software compared</a> lists other free boardviewers and says what each one opens.</p>
+  <p>No. <a href="../boardview-software-comparison/">Choosing a boardviewer</a> describes what TRACE covers and where to check other boardviewers.</p>
 
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
     <a class="btn" href="../#formats">All supported formats</a>
     <a class="btn" href="../kicad-pcb-viewer/">KiCad PCB viewer</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a class="btn" href="../getting-started/#bug">Report a bug</a>
   </div>
   <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
     <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
@@ -153,7 +152,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>

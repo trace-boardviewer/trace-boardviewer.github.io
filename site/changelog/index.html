@@ -45,7 +45,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -60,12 +60,33 @@
     <li aria-current="page">Release notes</li>
   </ol></nav>
   <h1>TRACE Boardviewer release notes</h1>
-  <p class="meta">Updated: <time datetime="2026-10-09">9 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-11">11 October 2026</time></p>
   <p class="lead">What changed in each release of TRACE Boardviewer, newest first. Downloads and SHA-256 checksums are on the <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases" rel="noopener">GitHub releases page</a>; the exact format support is in <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md" rel="noopener">docs/SUPPORT.md</a>.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE 1.3.1</a>
     <a class="btn" href="../getting-started/">Getting started</a>
   </div>
+</div></section>
+
+<section class="release" id="v1-3-3"><div class="wrap prose">
+  <h2>TRACE Boardviewer 1.3.3 <span class="meta"><time datetime="2026-10-11">11 October 2026</time></span></h2>
+  <p class="meta"><a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.3" rel="noopener">Downloads and checksums for 1.3.3 on GitHub</a></p>
+  <p>Includes the changes of 1.3.2, which was not released separately. Windows x64 is the portable build; the macOS (Apple silicon) and Linux x86-64 builds are experimental.</p>
+  <ul>
+    <li>In-app bug report: describe a problem, review the exact preview of what will be sent, and send it explicitly through a separate receiver. Drafts can be kept locally.</li>
+    <li>Native Cadence Allegro databases open up to 240 MiB (previously 64 MiB) when they declare 4,000,000 objects or fewer.</li>
+    <li>ODB++ product models also read their copper and drilled holes, which are drawn in the 2D view.</li>
+    <li>EasyEDA Pro V3 projects (<code>.epro2</code>) open. Checked on two sample projects; bottom-side placement is not yet verified for V3.</li>
+    <li>Ctrl+, (Windows and Linux) or Cmd+, (macOS) opens Settings, also before a board is open.</li>
+    <li>Typing in a text field no longer switches tabs: Alt+1, Alt+2 and Alt+3 are ignored there.</li>
+    <li>The update check is off until you choose: the first start asks once. In 1.3.1 the startup check was on by default.</li>
+    <li>A settings file locked by another program is no longer overwritten; TRACE reads it again when the lock ends.</li>
+    <li>macOS: the application's own close button quits the application, as Cmd+Q does.</li>
+    <li>Search results heading and list label, the parts-search empty state and the save status word are shown in all eight languages.</li>
+    <li>The export dialog is shown in all eight languages, and the export write-incomplete message is translated too.</li>
+    <li>A TVW board file that is refused says why, and a missing net table has its own localized message.</li>
+    <li>The link dialog shows why an alias was rejected, in the interface language.</li>
+  </ul>
 </div></section>
 
 <section class="release" id="v1-3-1"><div class="wrap prose">
@@ -211,10 +232,10 @@
 </div></section>
 
 <section><div class="wrap prose">
-  <p>Found a problem in a release? Please use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a> and do not attach proprietary board files.</p>
+  <p>Found a problem in a release? Use <strong>Report a bug</strong> in the app (the bug icon in the top bar). If you cannot use the app, the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">GitHub issue form</a> is the fallback; do not attach proprietary board files.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a class="btn" href="../getting-started/#bug">Report a bug</a>
   </div>
 </div></section>
 
@@ -227,7 +248,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>

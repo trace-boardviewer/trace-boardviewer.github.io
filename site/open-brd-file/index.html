@@ -45,7 +45,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -83,22 +83,22 @@
     <tr><th scope="row">EAGLE board (XML)</th>
       <td>EAGLE 6 and later; many open-hardware projects</td>
       <td>A text file that starts with <code>&lt;?xml</code> and contains <code>&lt;eagle</code></td>
-      <td>EAGLE itself is no longer sold or supported by Autodesk (since 7 June 2026). Use KiCad (import), Autodesk Fusion (commercial) or TRACE (<a href="../eagle-viewer/">free EAGLE viewer</a>)</td>
+      <td>If the file is EAGLE board XML, open it in TRACE (<a href="../eagle-viewer/">EAGLE viewer</a>). See the format table for the exact scope.</td>
       <td><span class="status ok">validated with real files</span> Parts, pads, nets and outline; attach the matching <code>.sch</code> to cross-probe</td></tr>
     <tr><th scope="row">TestLink / Landrex boardview</th>
       <td>Repair and test data</td>
       <td>Plain text with <code>str_length</code> and <code>var_data</code> blocks, or a binary file whose first bytes are <code>23 E2 63 28</code> (the encoded variant)</td>
-      <td>OpenBoardView, FlexBV, NexusBV, TRACE</td>
+      <td>TRACE; other programs: check their own documentation</td>
       <td><span class="status ok">selected real exports checked</span> Estimated pad/body geometry is disclosed</td></tr>
     <tr><th scope="row">TOPTEST BRD2 boardview</th>
       <td>Repair and test data</td>
       <td>Plain text with sections named BRDOUT, NETS, PARTS, PINS and NAILS</td>
-      <td>OpenBoardView, NexusBV, TRACE</td>
+      <td>TRACE; other programs: check their own documentation</td>
       <td><span class="status ok">selected real exports checked</span> Unknown variants remain unsupported</td></tr>
     <tr><th scope="row">Cadence Allegro board database</th>
       <td>Allegro PCB Designer</td>
       <td>Binary; TRACE reports it as "Cadence Allegro BRD (native)"</td>
-      <td>Cadence's free Allegro viewer; NexusBV lists Allegro 16 to 25; FlexBV Professional (beta)</td>
+      <td>TRACE for selected layouts; other programs: check their own documentation</td>
       <td><span class="status ok">selected native layouts readable</span> Real-file checks cover 16.2, 16.4, 16.5, 16.6 and 17.2; other documented layouts use synthetic tests</td></tr>
     </tbody>
   </table>
@@ -139,7 +139,7 @@
     <li>Parts, pins, nets and test points are read, with positions in mils converted to millimetres.</li>
     <li>These formats carry no pad sizes, so pads are shown as markers.</li>
     <li>Selected real exports have independent record checks, with synthetic regressions for malformed input. These checks establish the documented variants, not every dialect.</li>
-    <li>If your file opens wrongly, a <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report</a> with the format name, file size and TRACE's exact message helps a lot. Share only files you are allowed to share.</li>
+    <li>If your file opens wrongly, a <a href="../getting-started/#bug">bug report</a> with the format name, file size and TRACE's exact message helps a lot. Share only files you are allowed to share.</li>
   </ul>
   <p><strong>Allegro databases.</strong> TRACE now reads selected native 16.0–17.5 record layouts: components, values, packages, pin labels, nets, pads and the outline. Real-file checks cover 16.2, 16.4, 16.5, 16.6 and 17.2; other documented layouts have synthetic validation. Bodies are estimated, curves use chords and custom pads use bounding rectangles. Tracks, copper fills and vias are omitted. Older databases, unknown records and unverified layer semantics are refused; request a <a href="../gencad-viewer/">GenCAD 1.4 export</a> for those variants.</p>
 
@@ -155,8 +155,8 @@
 
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
-    <a class="btn" href="../boardview-software-comparison/">Compare TRACE with OpenBoardView, FlexBV and NexusBV</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a class="btn" href="../boardview-software-comparison/">Choosing a boardviewer</a>
+    <a class="btn" href="../getting-started/#bug">Report a bug</a>
   </div>
   <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
     <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
@@ -175,7 +175,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>

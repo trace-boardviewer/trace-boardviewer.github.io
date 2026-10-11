@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to open a .bvr boardview file (BVRAW): free viewer</title>
-<meta name="description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, macOS or Linux, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta name="description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, with experimental macOS and Linux builds, next to the schematic.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
 <meta property="og:title" content="How to open a .bvr boardview file (BVRAW): free viewer">
-<meta property="og:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, macOS or Linux, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta property="og:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, with experimental macOS and Linux builds, next to the schematic.">
 <meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,11 +19,11 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How to open a .bvr boardview file (BVRAW): free viewer">
-<meta name="twitter:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, macOS or Linux, next to the schematic. Not for Blue Iris .bvr videos.">
+<meta name="twitter:description" content="Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, with experimental macOS and Linux builds, next to the schematic.">
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/open-bvr-file/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .bvr boardview file","description":"Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, macOS or Linux, next to the schematic. Not for Blue Iris .bvr videos.","datePublished":"2026-10-06","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-bvr-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .bvr file","item":"https://trace-boardviewer.github.io/open-bvr-file/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"How to open a .bvr boardview file","description":"Open .bvr boardview files (BVRAW_FORMAT_3, as written by kicad-boardview) free on Windows, with experimental macOS and Linux builds, next to the schematic.","datePublished":"2026-10-06","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/open-bvr-file/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"How to open a .bvr file","item":"https://trace-boardviewer.github.io/open-bvr-file/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -45,7 +45,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -73,7 +73,6 @@
   <p>Two unrelated things use the .bvr extension.</p>
   <ul>
     <li><strong>Boardview (BVRAW):</strong> a text file whose first line looks like <code>BVRAW_FORMAT_3</code> (or <code>BVRAW_FORMAT_1</code>). This page is about these files.</li>
-    <li><strong>Blue Iris recording:</strong> a video saved by the Blue Iris security-camera software, in a proprietary format. Open it with Blue Iris; TRACE cannot play videos.</li>
   </ul>
   <p>To check, open the file in a plain text editor without saving it, or just drop it into TRACE, which identifies formats by their content.</p>
 
@@ -123,13 +122,13 @@
   <p>Files are limited to 64 MiB, and TRACE never modifies them.</p>
 
   <h2>If the file does not open</h2>
-  <p>TRACE always says why. It names the format it found, the version it refused, or the line that is malformed. Send that message, the first line of the file and its size with a <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report</a>. Please share only files you are allowed to share.</p>
+  <p>TRACE always says why. It names the format it found, the version it refused, or the line that is malformed. Send that message, the first line of the file and its size with a <a href="../getting-started/#bug">bug report</a>. Please share only files you are allowed to share.</p>
 
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE Boardviewer</a>
     <a class="btn" href="../open-brd-file/">How to open a .brd file</a>
     <a class="btn" href="../#formats">All supported formats</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a class="btn" href="../getting-started/#bug">Report a bug</a>
   </div>
   <dialog class="lightbox" aria-label="Image preview" aria-modal="true">
     <button type="button" class="lightbox-close" aria-label="Close preview">×</button>
@@ -148,7 +147,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>

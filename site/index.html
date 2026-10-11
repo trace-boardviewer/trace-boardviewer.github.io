@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TRACE Boardviewer: free boardview software for electronics repair</title>
-<meta name="description" content="Free boardviewer for Windows, macOS and Linux. View KiCad, Allegro and Altium boards with schematics, PDF search, offline OCR and repair notes. MIT open source.">
+<meta name="description" content="Free boardviewer for Windows, experimental on macOS and Linux. KiCad, EAGLE and Altium boards with schematics, PDF search, offline OCR and repair notes. MIT.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
 <meta property="og:title" content="TRACE Boardviewer: free boardview software">
@@ -45,7 +45,7 @@
     <a href="boardview-software-comparison/">Compare</a>
     <a href="#download">Download</a>
     <a href="support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -66,7 +66,7 @@
   <aside class="card" aria-labelledby="quick-compatibility-title">
     <h2 id="quick-compatibility-title">Quick compatibility check · 1.3.1</h2>
     <ul>
-      <li><strong><span aria-hidden="true">✓</span> Opens:</strong> GenCAD 1.4, KiCad PCB, EAGLE XML, Altium PcbDoc, EasyEDA Pro and selected BRD/BRD2/BDV/BVR/ASC, Jet BV/BV2, TVW, Allegro and FZ/CAE layouts. Attach KiCad/EAGLE/Altium schematics, PDFs and images; search offline and optionally run bundled English OCR on scans.</li>
+      <li><strong><span aria-hidden="true">✓</span> Opens:</strong> GenCAD 1.4, KiCad PCB, EAGLE XML, Altium PcbDoc, EasyEDA Pro (including V3 .epro2 projects) and selected BRD/BRD2/BDV/BVR/ASC, Jet BV/BV2, TVW, Allegro and FZ/CAE layouts. Attach KiCad/EAGLE/Altium schematics, PDFs and images; search offline and optionally run bundled English OCR on scans.</li>
       <li><strong><span aria-hidden="true">⚠</span> Check the variant:</strong> coverage and geometry vary; some draft readers use synthetic-only checks. macOS and Linux remain experimental; the latest native acceptance run reported issues on both platforms, and investigation is ongoing. <a href="https://github.com/trace-boardviewer/trace-boardviewer/actions/runs/37974058845" rel="noopener">View the run</a>. <a href="#formats">See exact formats and limits.</a></li>
       <li><strong><span aria-hidden="true">✗</span> Not a complete-board reader for:</strong> Gerber (one layer, no components or nets) and native PADS SDB (custom terminal geometry is unverified). Encrypted XZZ needs your own session-only key; its reader remains draft.</li>
     </ul>
@@ -74,7 +74,7 @@
   <ul class="badges" aria-label="Build facts">
     <li class="badge warn" data-rel="prerelease" hidden>Test version <span data-rel="version">1.3.1</span></li>
     <li class="badge">Windows x64 · portable</li><li class="badge">Linux x86-64 · experimental</li><li class="badge">offline</li><li class="badge">MIT</li>
-    <li class="badge warn">unsigned — SmartScreen warns once</li>
+    <li class="badge warn">unsigned — SmartScreen may warn</li>
   </ul>
 </div></section>
 
@@ -164,7 +164,7 @@
 <tr><td>TVW boardview</td><td><code>.tvw</code></td><td><span class="status ok">validated with selected real files</span></td><td>checked by the maintainer on real exports: complete component tables and every pin UID link checked against the declared layer pads</td><td>yes</td><td>mixed</td><td>—</td></tr>
 <tr><td>EasyEDA Standard PCB</td><td><code>.json</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>mixed</td><td>—</td></tr>
 <tr><td>Gerber RS-274X</td><td><code>.gbr</code></td><td><span class="status no">recognized, not readable</span></td><td>none</td><td>no</td><td>real</td><td>—</td></tr>
-<tr><td>EasyEDA Pro PCB</td><td><code>.epro</code> <code>.epcb</code> <code>.zip</code></td><td><span class="status ok">supported</span></td><td>real files</td><td>yes</td><td>mixed</td><td>—</td></tr>
+<tr><td>EasyEDA Pro PCB</td><td><code>.epro</code> <code>.epro2</code> <code>.epcb</code> <code>.zip</code></td><td><span class="status ok">supported</span></td><td>real files; V3 (<code>.epro2</code>): two sample projects, top side checked</td><td>yes</td><td>mixed</td><td>—</td></tr>
 <tr><td>ODB++ archive</td><td><code>.tgz</code> <code>.gz</code> <code>.tar</code> <code>.zip</code> <code>.z</code></td><td><span class="status draft">validated with open tool-written files</span></td><td>open tool-written files: kicad-cli 9.0.9 (pcb export odb) exports of thirty-nine open designs: KiCad 5 and 9 demo boards, Antmicro Jetson Nano baseboard, MNT Reform 2 motherboard, Raspberry Pi Pico boards</td><td>yes</td><td>mixed</td><td>—</td></tr>
 <tr><td>HyperLynx (.hyp)</td><td><code>.hyp</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>mixed</td><td>—</td></tr>
 <tr><td>Fabmaster (FATF)</td><td><code>.fab</code> <code>.fatf</code></td><td><span class="status draft">draft (synthetic fixtures only)</span></td><td>synthetic fixtures</td><td>yes</td><td>mixed</td><td>—</td></tr>
@@ -196,7 +196,7 @@
 
 <section id="download"><div class="wrap">
   <h2>Download</h2>
-  <p class="callout warn" style="margin-bottom:16px" data-rel="prerelease-note" hidden><strong>Test version.</strong> These downloads are <span data-rel="version">1.3.1</span>, a prerelease for testing. An installed TRACE never offers it as an update, and it may still change. If something goes wrong, please use the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">bug report form</a> and do not attach proprietary board files. See the full <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases" rel="noopener">release history on GitHub</a>.</p>
+  <p class="callout warn" style="margin-bottom:16px" data-rel="prerelease-note" hidden><strong>Test version.</strong> These downloads are <span data-rel="version">1.3.1</span>, a prerelease for testing. An installed TRACE never offers it as an update, and it may still change. If something goes wrong, please use <strong>Report a bug</strong> in TRACE; if you cannot use the app, the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">GitHub issue form</a> is the fallback. Do not attach proprietary board files. See the full <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases" rel="noopener">release history on GitHub</a>.</p>
   <div class="grid">
     <div class="card">
       <h3>Windows x64 — portable EXE</h3>
@@ -204,13 +204,13 @@
       <p class="meta" style="margin-top:10px"><span class="item" data-rel="win-sha-item">SHA-256 <code data-rel="win-sha">ca666046eb37ffd129c0af9503e4e9357024d7cebe968c2f49c00b28474e9877</code></span><span class="item" data-rel="win-size">106.8 MB</span><span class="item" data-rel="date">2026-10-09</span></p>
       <p style="margin-top:10px">Check the file before you run it (PowerShell, in the download folder):</p>
       <pre>Get-FileHash .\<span data-rel="win-name">TRACE-Boardviewer-1.3.1.exe</span> -Algorithm SHA256</pre>
-      <p>Built by GitHub Actions from the tagged source. Not code-signed yet: check the hash, then allow it once in SmartScreen ("More info → Run anyway"). Each launch extracts about 500 MB into a private temp folder and removes it on exit. Notes and settings live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
+      <p>Built by GitHub Actions from the tagged source. Not code-signed yet: check the hash, then allow it once in SmartScreen ("More info → Run anyway"). Each launch unpacks the app into a private temp folder and removes it on normal exit. Notes and settings live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
 
       <p><a data-rel="releases" href="https://github.com/trace-boardviewer/trace-boardviewer/releases">All releases and checksums</a></p>
     </div>
     <div class="card" id="download-mac">
       <h3>macOS — experimental</h3>
-      <p>The experimental 1.3.1 build is for Apple silicon Macs only (M1 or later) and is ad-hoc signed but not notarized. Native acceptance run 37974058845 reported issues; investigation is ongoing. macOS blocks a downloaded copy until you allow it once: right-click the app and choose Open, or clear the quarantine flag in Terminal:</p>
+      <p>The experimental 1.3.1 build is for Apple silicon Macs only and is ad-hoc signed but not notarized. Native acceptance run 37974058845 reported issues; investigation is ongoing. macOS blocks a downloaded copy until you allow it once: right-click the app and choose Open, or clear the quarantine flag in Terminal:</p>
       <pre>xattr -dr com.apple.quarantine "/Applications/TRACE Boardviewer.app"</pre>
       <p>Intel Macs are not supported. See the release notes for the current validation status.</p>
       <p style="margin-top:10px"><a class="btn dl" data-rel="mac-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1/TRACE-Boardviewer-1.3.1-mac-arm64.zip"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2.1-3.7 2.2-3.8-1.2-1.7-3-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.2-1.2 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 5.3c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.5z"/></svg><span data-rel="mac-name">TRACE-Boardviewer-1.3.1-mac-arm64.zip</span></a></p>
@@ -222,7 +222,7 @@
       <h3>Linux x86-64 — experimental</h3>
       <p data-rel="linux-note">Experimental, x86-64 only. Native acceptance run 37974058845 reported issues; investigation is ongoing. Both packages are unsigned.</p>
       <div data-rel="linux-deb-block">
-      <h4>Ubuntu 24.04 or newer, Debian 12 or newer: .deb (recommended)</h4>
+      <h4>Ubuntu 24.04: .deb (recommended; the tested platform)</h4>
       <p><a class="btn dl" data-rel="linux-deb-url" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.1/TRACE-Boardviewer-1.3.1-linux-amd64.deb"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M12 1.8c-2.3 0-3.7 1.9-3.7 4.3 0 1.4.3 2.3-.4 3.7-.9 1.7-2.7 3.7-2.7 6.6 0 1 .3 1.9.8 2.6-.7.4-1.8.9-1.8 1.9 0 1.1 1.7 1.3 3.1 1.8 1.1.4 1.9.9 2.7.9.7 0 1.3-.4 2-.4s1.3.4 2 .4c.8 0 1.6-.5 2.7-.9 1.4-.5 3.1-.7 3.1-1.8 0-1-1.1-1.5-1.8-1.9.5-.7.8-1.6.8-2.6 0-2.9-1.8-4.9-2.7-6.6-.7-1.4-.4-2.3-.4-3.7 0-2.4-1.4-4.3-3.7-4.3zm0 8.6c-1.9 0-3.5 2.5-3.5 5.4 0 2 .9 3.4 2 4h3c1.1-.6 2-2 2-4 0-2.9-1.6-5.4-3.5-5.4zM10.6 5.4a.85 1.05 0 1 0 0 2.1.85 1.05 0 0 0 0-2.1zm2.8 0a.85 1.05 0 1 0 0 2.1.85 1.05 0 0 0 0-2.1z"/></svg><span data-rel="linux-deb-name">TRACE-Boardviewer-1.3.1-linux-amd64.deb</span></a></p>
       <p class="meta"><span class="item" data-rel="linux-deb-sha-item">SHA-256 <code data-rel="linux-deb-sha">f0a406fbe5467abdbcc88b46b6aff5d5a08da70bfdac1dbe97e5d4407a148bbf</code></span><span class="item" data-rel="linux-deb-size">111.3 MB</span></p>
       <pre>sha256sum <span data-rel="linux-deb-name">TRACE-Boardviewer-1.3.1-linux-amd64.deb</span>
@@ -248,7 +248,8 @@ chmod +x <span data-rel="linux-appimage-name">TRACE-Boardviewer-1.3.1-linux-x86_
   <h2>Testing TRACE?</h2>
   <p class="sub">Thank you very much for testing TRACE and sharing your opinion, special thanks for that! If you find a bug, please be sure to report it.</p>
   <p>In TRACE, use <strong>Report a bug</strong> to describe an issue, review and edit the report, save it for later or leave without sending. Nothing is sent until you choose <strong>Send</strong>. Board files and attachments are not sent with the report.</p>
-  <p><a class="btn primary" id="bug-link" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Manual GitHub bug form</a> <a class="btn" href="support.html">Support the project</a></p>
+  <p><a class="btn primary" id="bug-link" href="getting-started/#bug">Report a bug</a> <a class="btn" href="support.html">Support the project</a></p>
+  <p class="meta">If you cannot use the app, the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">GitHub issue form</a> is the fallback.</p>
 </div></section>
 
 <section id="guides"><div class="wrap">
@@ -264,7 +265,7 @@ chmod +x <span data-rel="linux-appimage-name">TRACE-Boardviewer-1.3.1-linux-x86_
     <li><a href="altium-viewer/">Altium viewer: open .PcbDoc boards and .SchDoc schematics</a></li>
     <li><a href="open-brd-file/">How to open a .brd file: EAGLE, boardview or Allegro?</a></li>
     <li><a href="open-bvr-file/">How to open a .bvr boardview file</a></li>
-    <li><a href="boardview-software-comparison/">Boardview software compared: TRACE, OpenBoardView, FlexBV and NexusBV</a></li>
+    <li><a href="boardview-software-comparison/">Choosing a boardviewer: what TRACE covers</a></li>
     <li><a href="changelog/">Release notes: what changed in each version</a></li>
   </ul></div>
 </div></section>
@@ -275,7 +276,7 @@ chmod +x <span data-rel="linux-appimage-name">TRACE-Boardviewer-1.3.1-linux-x86_
   <details><summary>My BRD / BDV / FZ does not open.</summary><p>Check the table above; some families are still draft. Open an issue with the family, file size and the exact diagnostic — never upload a file you may not share.</p></details>
   <details><summary>Is there a Linux version?</summary><p>Yes. Stable 1.3.1 includes experimental unsigned .deb and AppImage packages for x86-64. Native acceptance run 37974058845 reported issues; investigation is ongoing. See the <a href="#download-linux">Linux downloads</a> and the <a href="linux/">Linux page</a>.</p></details>
   <details><summary>Where do I get board files?</summary><p>TRACE does not include or link to board files. Use files you have the right to use: your own designs, open-hardware projects (many publish KiCad or EAGLE files), or documentation you are licensed to use.</p></details>
-  <details><summary>Can I use it next to OpenBoardView or FlexBV?</summary><p>Yes. On Windows TRACE is a portable EXE with no installer, and on Linux the AppImage installs nothing, so it does not interfere with other boardviewers. See the <a href="boardview-software-comparison/">comparison</a> for what each one does best.</p></details>
+  <details><summary>Can I use it next to OpenBoardView or FlexBV?</summary><p>Yes. On Windows TRACE is a portable EXE with no installer, and the Linux AppImage installs nothing. See the <a href="boardview-software-comparison/">comparison page</a> for what TRACE covers and where to check other boardviewers.</p></details>
   <details><summary>Licence and trademarks</summary><p>MIT. Vendor and format names are used only to identify file formats; the project is not affiliated with any of them.</p></details>
 </div></section>
 
@@ -285,7 +286,7 @@ chmod +x <span data-rel="linux-appimage-name">TRACE-Boardviewer-1.3.1-linux-x86_
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="getting-started/#bug">Report a bug</a>
     <a href="support.html">Support</a>
     <a href="getting-started/">Getting started</a>
     <a href="linux/">Linux</a>

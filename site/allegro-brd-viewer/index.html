@@ -3,11 +3,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free Allegro BRD viewer: supported versions and repair workflow</title>
-<meta name="description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, macOS and Linux. Check version limits, search nets and attach schematic PDFs.">
+<meta name="description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, with experimental macOS and Linux builds. Check version limits, search nets and attach schematic PDFs.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
 <meta property="og:title" content="Free Allegro BRD viewer: supported versions and repair workflow">
-<meta property="og:description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, macOS and Linux. Check version limits, search nets and attach schematic PDFs.">
+<meta property="og:description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, with experimental macOS and Linux builds. Check version limits, search nets and attach schematic PDFs.">
 <meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, schematic and PDF datasheet side by side">
@@ -15,10 +15,10 @@
 <meta property="og:site_name" content="TRACE Boardviewer"><meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Allegro BRD viewer: supported versions and repair workflow">
-<meta name="twitter:description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, macOS and Linux. Check version limits, search nets and attach schematic PDFs.">
+<meta name="twitter:description" content="Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, with experimental macOS and Linux builds. Check version limits, search nets and attach schematic PDFs.">
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/allegro-brd-viewer/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"View an Allegro .brd file for electronics repair","description":"Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, macOS and Linux. Check version limits, search nets and attach schematic PDFs.","datePublished":"2026-10-08","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"mainEntityOfPage":"https://trace-boardviewer.github.io/allegro-brd-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Allegro BRD viewer","item":"https://trace-boardviewer.github.io/allegro-brd-viewer/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"View an Allegro .brd file for electronics repair","description":"Open selected Allegro .brd databases in TRACE, a free repair viewer for Windows, with experimental macOS and Linux builds. Check version limits, search nets and attach schematic PDFs.","datePublished":"2026-10-08","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"mainEntityOfPage":"https://trace-boardviewer.github.io/allegro-brd-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Allegro BRD viewer","item":"https://trace-boardviewer.github.io/allegro-brd-viewer/"}]}]}</script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
@@ -36,7 +36,7 @@
     <a href="../boardview-software-comparison/">Compare</a>
     <a href="../#download">Download</a>
     <a href="../support.html">Support</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
   </nav>
   <div class="toggles">
     <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
@@ -46,7 +46,7 @@
 <section class="hero guide"><div class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">TRACE Boardviewer</a></li><li aria-current="page">Allegro BRD viewer</li></ol></nav>
   <h1>View an Allegro .brd file for electronics repair</h1>
-  <p class="meta">Updated: <time datetime="2026-10-09">9 October 2026</time> · TRACE 1.3.1</p>
+  <p class="meta">Updated: <time datetime="2026-10-11">11 October 2026</time> · TRACE 1.3.3</p>
   <p class="lead">An Allegro .brd is a native PCB database. TRACE opens selected native layouts so you can find parts and pins, highlight nets and keep schematic PDFs beside the board. It is free and MIT-licensed. This guide explains what the current release reads and when to request an export instead.</p>
   <div class="cta"><a class="btn primary" href="../#download">Download TRACE</a><a class="btn" href="../#formats">All supported formats</a></div>
 </div></section>
@@ -55,7 +55,7 @@
   <h2>Which Allegro versions does TRACE open?</h2>
   <p>The reader covers documented binary record layouts from 16.0 to 17.5. That range does not mean every database written by those versions is supported: unknown record types, unsupported layer codes and inconsistent records are refused with a diagnostic.</p>
   <div class="table-scroll"><table>
-    <caption>Native Allegro reader validation included in TRACE 1.3.1</caption>
+    <caption>Native Allegro reader validation included in TRACE 1.3.3</caption>
     <thead><tr><th scope="col">Database layout</th><th scope="col">Evidence</th></tr></thead>
     <tbody>
       <tr><th scope="row">16.2, 16.4, 16.5, 16.6 and 17.2</th><td>Selected real files checked; this is not complete coverage of all exports.</td></tr>
@@ -81,14 +81,14 @@
   <p>A screenshot of the shared board/schematic workflow is available on the <a href="../demo/">demo page</a>. Its openly licensed KiCad example is labelled with its source and the earlier app version; it is not an Allegro import example.</p>
 
   <h2>What to do when a native file will not open</h2>
-  <p>Check the diagnostic first. Native databases are limited to 64 MiB, and unsupported versions, record types or footprint layer codes are refused. Renaming the file does not convert its contents.</p>
+  <p>Check the diagnostic first. Native databases open up to 240 MiB when they declare 4,000,000 objects or fewer, and unsupported versions, record types or footprint layer codes are refused. Renaming the file does not convert its contents.</p>
   <p>If you can open the design in its original tool, request a <a href="../gencad-viewer/">GenCAD 1.4 export</a> for TRACE. Otherwise ask the design owner for an export or use a viewer that supports that native version. TRACE cannot recover missing documentation from a PDF alone.</p>
-  <p>The <a href="../#formats">full compatibility table</a> and <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">reader support notes</a> give the exact current scope. A bug report is most useful with the named format, app version, size and diagnostic; attach only files you may share.</p>
+  <p>The <a href="../#formats">full compatibility table</a> and <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">reader support notes</a> give the exact current scope. A bug report is most useful with the named format, app version, size and diagnostic; do not include board files you may not share.</p>
 
   <h2>Free, local and available on three desktop platforms</h2>
-  <p>The same reader is included in Windows, macOS and Linux builds. Board processing, PDF search, OCR and repair notes stay local. No account or telemetry is required, and support is optional.</p>
+  <p>The same reader is included in the Windows build and the experimental macOS and Linux builds. Board processing, PDF search, OCR and repair notes stay local. No account or telemetry is required, and support is optional.</p>
   <p>Working with an Altium design instead? See <a href="../altium-viewer/">the PcbDoc and SchDoc guide</a>. For other tools and their stated capabilities, see the <a href="../boardview-software-comparison/">boardviewer comparison</a>.</p>
-  <div class="cta"><a class="btn primary" href="../#download">Download TRACE Boardviewer</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a></div>
+  <div class="cta"><a class="btn primary" href="../#download">Download TRACE Boardviewer</a><a class="btn" href="../getting-started/#bug">Report a bug</a></div>
   <p class="sources"><em>Product names identify file formats and programs. They are trademarks of their owners; TRACE is not affiliated with them.</em></p>
 </div></section>
 </main>
@@ -99,7 +99,7 @@
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
     <a href="../changelog/">Changelog</a>
     <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
-    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">Report a bug</a>
+    <a href="../getting-started/#bug">Report a bug</a>
     <a href="../support.html">Support</a>
     <a href="../getting-started/">Getting started</a>
     <a href="../linux/">Linux</a>
