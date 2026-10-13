@@ -63,8 +63,9 @@
   <div class="cta">
     <a class="btn primary" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.3/TRACE-Boardviewer-1.3.3.exe" rel="noopener">Letöltés Windowsra · 1.3.3</a>
     <a class="btn" href="#formats">Támogatott formátumok</a>
-    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.3" rel="noopener">Minden kiadás és ellenőrzőösszeg</a>
+    <a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.3" rel="noopener">Minden platform és ellenőrzőösszeg</a>
   </div>
+  <p class="meta">Köszönjük, ha <a href="../getting-started/#bug">kipróbálod és megírod a tapasztalataidat</a>. Külön köszönjük, ha használod vagy <a href="../support.html">önkéntes támogatással segíted a projektet</a>.</p>
   <ul class="badges" aria-label="Kiadási adatok">
     <li class="badge warn">Aktuális stabil projektkiadás · 1.3.3</li>
     <li class="badge">Windows x64 · hordozható EXE</li>
@@ -82,7 +83,7 @@
     <li>Válts a panel és a kapcsolási rajz között, hogy ellenőrizd a pontos névegyezést. Az eltérő vagy kétértelmű kapcsolatokat a TRACE jelzi; nem találgat.</li>
     <li>Írd fel a saját méréseidet egy alkatrészhez vagy lábhoz. A TRACE megőrzi a jegyzeteidet, de nem diagnosztizál hibát, és nem módosítja a tervfájlt.</li>
   </ol>
-  <figure><img src="../assets/img/shot-08-eagle-split-800.webp" alt="EAGLE panelnézet és kapcsolási rajz egymás mellett; ugyanaz az alkatrész mindkét nézetben kijelölve" width="800" height="500" loading="lazy" decoding="async"><figcaption>Panel és kapcsolási rajz egymás mellett, közös alkatrész kijelölésével.</figcaption></figure>
+  <figure><img src="../assets/img/shot-08-eagle-split-800.webp" alt="EAGLE panelnézet és kapcsolási rajz egymás mellett; ugyanaz az alkatrész mindkét nézetben kijelölve" width="800" height="500" loading="lazy" decoding="async"><figcaption>Panel és kapcsolási rajz egymás mellett, közös alkatrész kijelölésével.<small>TRACE 1.2.0 · RedBoard by SparkFun (CC BY-SA 4.0) · EAGLE board with its EAGLE schematic</small></figcaption></figure>
   <p>A <a href="../getting-started/">részletes használati útmutató angolul</a> képernyőképekkel mutatja be a megnyitást, csatolást, keresést és keresztkijelölést.</p>
 </div></section>
 
@@ -113,9 +114,9 @@
   <table>
     <thead><tr><th scope="col">Platform</th><th scope="col">1.3.3 csomag</th><th scope="col">Státusz és tudnivaló</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Windows x64</th><td>Hordozható EXE, telepítő nélkül</td><td>Ez a Windows stabil célplatformja. A fájl nincs kóddal aláírva, ezért a SmartScreen figyelmeztethet; futtatás előtt ellenőrizd a SHA-256 értéket a kiadási oldalon.</td></tr>
+      <tr><th scope="row">Windows x64</th><td>Hordozható EXE, telepítő nélkül</td><td>Stabil Windows-kiadás. A fájl nincs kóddal aláírva, ezért a SmartScreen figyelmeztethet; futtatás előtt ellenőrizd a SHA-256 értéket a kiadási oldalon.</td></tr>
       <tr><th scope="row">macOS, Apple silicon</th><td>ZIP, arm64; macOS 13 vagy újabb</td><td>Kísérleti, ad-hoc aláírt, nincs notarizálva. A Gatekeeper letilthatja; ha ez történik, ne kerüld meg a védelmet. Részletek a <a href="../macos/">Mac útmutatóban angolul</a>.</td></tr>
-      <tr><th scope="row">Linux x86-64</th><td><code>.deb</code> vagy AppImage</td><td>Kísérleti, aláíratlan csomagok. A .deb Ubuntu 24.04-en tesztelt; más disztribúciókon az AppImage nincs tesztelve. A Linuxos natív elfogadási teszt még függőben van. Részletek a <a href="../linux/">Linux oldalon angolul</a>.</td></tr>
+      <tr><th scope="row">Linux x86-64</th><td><code>.deb</code> vagy AppImage</td><td>Kísérleti, aláíratlan csomagok. A .deb Ubuntu 24.04-en készült, ott indítási próbán is ellenőrizték. Az 1.3.3 automatikus indítási és működési ellenőrzései sikeresek voltak a GitHub Ubuntu 24.04-es futtatóján, virtuális kijelzővel, nem asztali munkamenetben. A kiadott csomagokat valódi Linux-asztali munkamenetben még nem próbálták ki; GNOME, KDE, Wayland és más disztribúciók támogatottságáról nincs teszteredmény. Részletek a <a href="../linux/">Linux oldalon angolul</a>.</td></tr>
     </tbody>
   </table>
   </div>
