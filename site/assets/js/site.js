@@ -84,10 +84,9 @@
     var macFile = FILENAME.test(mac.file || '') ? mac.file : '';
     var winUrl = httpsUrl(win.url), macUrl = httpsUrl(mac.url);
     if (version) text('[data-rel="version"]', version);
-    // A version with a suffix (1.3.1-rc.1) is a test version: the badge and the note above the downloads are shown only then.
+    // A version with a suffix (1.3.1-rc.1) is a test version; its explanatory note appears above the downloads.
     var isPrerelease = /^\d+\.\d+\.\d+-/.test(version);
     text('[data-rel="version-label"]', isPrerelease ? 'Test version' : 'Stable release');
-    show('[data-rel="prerelease"]', isPrerelease);
     show('[data-rel="prerelease-note"]', isPrerelease);
     if (winFile) text('[data-rel="win-name"]', winFile);
     enableLink('[data-rel="win-url"]', winUrl);
