@@ -61,7 +61,7 @@
   </ol></nav>
   <h1>TRACE Boardviewer for macOS (experimental)</h1>
   <p class="meta">Stable release: 1.3.3. The macOS package is experimental. Updated: <time datetime="2026-10-13">13 October 2026</time>.</p>
-  <p class="lead">TRACE 1.3.3 has an experimental download for Apple silicon Macs. It requires macOS 13 or later, is ad-hoc signed but not notarized, and has not passed native acceptance. This page explains which package fits, how to check its download, and what to do if macOS blocks it.</p>
+  <p class="lead">TRACE 1.3.3 has an experimental download for Apple silicon Macs. It requires macOS 13 or later and is ad-hoc signed but not notarized. This page explains which package fits, how to check its download, and what to do if macOS blocks it.</p>
   <div class="cta">
     <a class="btn primary" href="../#download-mac">Mac download and checksum</a>
     <a class="btn" href="../boardview-software-comparison/">Compare platforms and limits</a>
@@ -73,7 +73,7 @@
   <ul>
     <li><strong>Chip:</strong> Apple silicon (arm64) only. Intel Macs are not supported by this download.</li>
     <li><strong>System:</strong> macOS 13 or later.</li>
-    <li><strong>Release state:</strong> 1.3.3 is the stable release across platforms, while the macOS build remains experimental. Its automated build and smoke checks do not count as native acceptance of the released package.</li>
+    <li><strong>Release state:</strong> 1.3.3 is the current stable project release; the macOS build remains experimental.</li>
     <li><strong>Signing:</strong> the app is ad-hoc signed and not notarized. Gatekeeper may block a downloaded copy. If it does, stop and wait for a signed and notarized release; do not remove the quarantine flag or change Gatekeeper settings.</li>
   </ul>
   <p>For the exact packaging and validation boundary, see the tagged <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/MAC_VALIDATION.md" rel="noopener">macOS validation notes</a> and the <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/CHANGELOG.md" rel="noopener">1.3.3 release notes</a>.</p>
@@ -86,10 +86,10 @@
       Compare the 64-character result with the value in the sidecar before extracting.</li>
     <li>Extract the ZIP and open <code>TRACE Boardviewer.app</code>. If Gatekeeper blocks it, stop there. This release does not provide a supported way around that block.</li>
   </ol>
-  <p>The sidecar link was checked against the release archive name and the checksum shown on the site's download section. Check the current release page again if you use a later version.</p>
+  <p>These links are for 1.3.3; use the matching checksum sidecar for any later release.</p>
 
   <h2>What TRACE can do on macOS</h2>
-  <p>The macOS build has the same 1.3.3 application features as the Windows build: open supported board formats, attach a matching schematic and PDF datasheets, search across them, cross-probe board and schematic, and keep local pin notes. Check the <a href="../#formats">format table</a> for exact variants, validation levels and limits; <a href="../getting-started/">Getting started</a> walks through a typical board, schematic and PDF workflow.</p>
+  <p>TRACE 1.3.3 includes the shared board-viewing workflows in its macOS package: open supported board formats, attach a matching schematic and PDF datasheets, search across them, cross-probe board and schematic, and keep local pin notes. Check the <a href="../#formats">format table</a> for exact variants, validation levels and limits; <a href="../getting-started/">Getting started</a> walks through a typical board, schematic and PDF workflow.</p>
   <p>Board and document files are read on your Mac and are not uploaded. Network use is limited to optional features that you choose, such as checking for a release, sending a reviewed bug report, or verifying project support. See the <a href="../boardview-software-comparison/">platform and feature comparison</a> before choosing a build. Windows x64 is the stable, portable target; macOS and Linux packages are experimental.</p>
 
   <h2>Known macOS validation limits</h2>
