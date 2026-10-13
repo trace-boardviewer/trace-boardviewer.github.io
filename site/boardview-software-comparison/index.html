@@ -76,7 +76,7 @@
     <li><strong>Price and licence:</strong> free, MIT-licensed open source. No account and no telemetry.</li>
     <li><strong>Windows x64:</strong> a portable EXE, not code-signed. Nothing is installed.</li>
     <li><strong>macOS (Apple silicon, macOS 13 or later) and Linux (x86-64):</strong> experimental and unsigned. Native acceptance of 1.3.3 on both platforms is still pending.</li>
-    <li><strong>Board formats:</strong> the generated <a href="../#formats">format table</a> lists every reader, its variants and its limits. Some readers are drafts, and some are checked only with selected real files.</li>
+    <li><strong>Board formats:</strong> the generated <a href="../#formats">format table</a> lists every reader, its variants and its limits. See the <a href="../easyeda-pro-viewer/">EasyEDA Pro guide</a> for .epro2 and archive limits, and the <a href="../odb-viewer/">ODB++ guide</a> for archive and copper scope. Some readers are drafts, and some are checked only with selected real files.</li>
     <li><strong>Schematics and PDFs:</strong> KiCad and EAGLE schematics, Altium SchDoc and PDF datasheets, searched offline, with cross-probing to the board. Scanned PDF pages can be read with bundled English text recognition, started by you for each page, with a limit of 40 megapixels and 120 seconds per page.</li>
     <li><strong>Notes:</strong> per part and per pin, including a voltage or resistance you measured. Notes follow the board file by its content hash, so renaming the file keeps them.</li>
     <li><strong>Network:</strong> an optional update check (off until you choose; the first start asks once, and Settings changes the choice) and, only when you choose them, support verification and bug reports. Settings &gt; Network lists each network feature, its host and a request log.</li>
@@ -89,7 +89,7 @@
     <li><strong>Experimental builds.</strong> The macOS and Linux builds are experimental and unsigned. See the native acceptance note above.</li>
     <li><strong>Unsigned Windows EXE.</strong> SmartScreen may show a warning. The portable download is about 5% smaller than in 1.3.1. Each launch unpacks the app into a private temporary folder, which is removed on normal exit.</li>
     <li><strong>Size and format limits.</strong> Most readers have a 64 MiB input limit. Native Allegro databases allow up to 240 MiB when they declare 4,000,000 objects or fewer. Each reader has its own limits; unsupported or damaged files are refused with an explanation rather than guessed.</li>
-    <li><strong>Copper detail.</strong> ODB++ imports draw copper pads, lines, arcs and drilled holes; copper pours and text are not read. Other boardview and PCB readers do not show routed tracks, zones or vias. Net highlighting is a logical connection guide, not a copper-trace inspection.</li>
+    <li><strong>Copper detail.</strong> <a href="../odb-viewer/">ODB++ imports</a> draw copper pads, lines, arcs and drilled holes; copper pours and text are not read. Other boardview and PCB readers do not show routed tracks, zones or vias. Net highlighting is a logical connection guide, not a copper-trace inspection.</li>
   </ul></div>
 
   <h2>Other boardviewers</h2>

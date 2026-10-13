@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open EasyEDA Pro V3 boards in TRACE (.epro2, .epro)</title>
+<meta name="description" content="Open EasyEDA Pro PCB projects in TRACE 1.3.3, including V3 .epro2 archives. See what the board view reads, how to attach PDFs and schematics, and which project variants are refused.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="Open EasyEDA Pro V3 boards in TRACE (.epro2, .epro)">
+<meta property="og:description" content="A practical guide to opening EasyEDA Pro PCB projects in TRACE 1.3.3, with import limits and an offline board-and-documents workflow.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a PCB, schematic and PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/easyeda-pro-viewer/"><meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open EasyEDA Pro V3 boards in TRACE (.epro2, .epro)">
+<meta name="twitter:description" content="A practical guide to opening EasyEDA Pro PCB projects in TRACE 1.3.3, with import limits and an offline board-and-documents workflow.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/easyeda-pro-viewer/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Open EasyEDA Pro V3 boards in TRACE (.epro2, .epro)","description":"Open EasyEDA Pro PCB projects in TRACE 1.3.3, including V3 .epro2 archives. See what the board view reads, how to attach PDFs and schematics, and which project variants are refused.","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/easyeda-pro-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"EasyEDA Pro viewer","item":"https://trace-boardviewer.github.io/easyeda-pro-viewer/"}]}]}</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer"><img src="../assets/img/icon-56.png" width="28" height="28" alt="">TRACE Boardviewer</a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a><a href="../#formats">Formats</a><a href="../#guides">Guides</a><a href="../boardview-software-comparison/">Compare</a><a href="../#download">Download</a><a href="../support.html">Support</a><a href="../getting-started/#bug">Report a bug</a>
+  </nav>
+  <div class="toggles"><button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button></div>
+</div></header>
+<main id="main">
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">TRACE Boardviewer</a></li><li aria-current="page">EasyEDA Pro viewer</li></ol></nav>
+  <h1>Open EasyEDA Pro V3 boards in TRACE</h1>
+  <p class="meta">Updated: <time datetime="2026-10-13">13 October 2026</time> · TRACE 1.3.3</p>
+  <p class="lead">Use TRACE to inspect an EasyEDA Pro PCB project without opening it in a design editor. The guide below helps you choose the right project file, understand what appears on the board, and pair it with the documents you use during repair.</p>
+  <div class="cta"><a class="btn primary" href="../#download">Download TRACE 1.3.3</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">Exact format support</a></div>
+</div></section>
+<section><div class="wrap prose">
+  <h2>Which EasyEDA Pro file should you open?</h2>
+  <ul>
+    <li><strong>EasyEDA Pro V3 project:</strong> choose the <code>.epro2</code> archive itself. TRACE 1.3.3 can select this extension and reads a V3 project when it contains a PCB document with placed components.</li>
+    <li><strong>Earlier Pro project or backup:</strong> choose the <code>.epro</code> project archive, or the ZIP backup made by the EasyEDA client. The archive needs its project description and PCB/FOOTPRINT entries together.</li>
+    <li><strong>Bare <code>.epcb</code> document:</strong> TRACE can show placed component positions, but this file has no footprints, pads or nets. Open the project archive if you need those details.</li>
+  </ul>
+  <p>Press <kbd>Ctrl</kbd>+<kbd>O</kbd> (<kbd>Cmd</kbd>+<kbd>O</kbd> on macOS) and select the project archive, or drag it into TRACE. The reader checks file contents as well as the extension. If it recognizes a project it cannot read, the import message names the reason instead of treating it as an unrelated file.</p>
+
+  <h2>What the board view contains</h2>
+  <p>For a supported project, TRACE reads placed components, their pads, pad-to-net assignments and the board outline. Search a reference, value or net with <kbd>Ctrl</kbd>+<kbd>F</kbd>, select a net to highlight its connected pins, and use the board view to locate a part. This is a viewer: it does not edit or convert the EasyEDA project.</p>
+  <p>Check the import notice before relying on geometry. Tracks, vias, copper pours and text are not read. Oval, polygon and n-gon pads are drawn as bounding rectangles; footprint pad overrides are ignored and disclosed. A bare <code>.epcb</code> has no pads or nets. Bottom-side placement follows the reader's mirrored-and-rotated convention, which has only been checked against selected real angles; TRACE reports this uncertainty when a bottom-side part is present.</p>
+  <p>Validation covers eight open-licence EasyEDA Pro projects. The checked top-side pad positions agree with same-net routed tracks. This evidence covers those files, not every EasyEDA Pro project or every writer version.</p>
+
+  <h2>Files TRACE identifies but refuses</h2>
+  <ul>
+    <li><code>.eprj</code> and <code>.elib</code> offline SQLite databases are not board archives. Open the project in EasyEDA Pro and export an <code>.epro</code> project archive.</li>
+    <li>A V3 project log without a PCB document containing components has no board to display. TRACE says so in the import message.</li>
+    <li>A footprint by itself has no board placement; a panel or copper-pour result is not treated as a board. Unsupported or damaged records are refused with a reason.</li>
+  </ul>
+
+  <h2>Pair the board with its schematic and PDFs</h2>
+  <p>EasyEDA Pro's native schematic is not a native schematic format in TRACE. For a searchable board-and-reference workflow, attach a supported KiCad, EAGLE or Altium schematic through the Schematic or Documents tab. You can also attach schematic PDFs and datasheets in Documents, search their text, and keep those pages beside the board. PDF text search does not turn a PDF into an electrical netlist.</p>
+  <ol class="steps">
+    <li>Open the project archive and review the import notice for approximations or skipped content.</li>
+    <li>Use <kbd>Ctrl</kbd>+<kbd>F</kbd> to find a component reference or net, then select it to locate the board object.</li>
+    <li>Attach a supported schematic and/or PDF datasheet in Documents. Search for the same reference or signal name across the board and attached documents.</li>
+    <li>Keep repair notes on a selected component or pin if useful. TRACE keeps the project files unchanged.</li>
+  </ol>
+
+  <h2>Offline use and platforms</h2>
+  <p>Opening and reading the project is local; the board archive is not uploaded for conversion. The app has separate optional network features, described in <a href="../getting-started/">Getting started</a>. TRACE 1.3.3 is available for Windows x64. macOS on Apple silicon and Linux x86-64 remain experimental builds.</p>
+  <div class="cta"><a class="btn primary" href="../#download">Downloads</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">Full support table and limits</a><a class="btn" href="../getting-started/">Board and document workflow</a></div>
+  <p class="sources"><em>EasyEDA is a trademark of its owner. Product names identify file formats only; TRACE is not affiliated with EasyEDA.</em></p>
+</div></section>
+</main>
+<footer><div class="wrap"><nav class="links" aria-label="Project links">
+  <a href="../">Home</a><a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a><a href="../changelog/">Changelog</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a><a href="../getting-started/#bug">Report a bug</a><a href="../support.html">Support</a><a href="../getting-started/">Getting started</a><a href="../linux/">Linux</a><a href="../demo/">Demo</a><a href="../kicad-pcb-viewer/">KiCad viewer</a><a href="../eagle-viewer/">EAGLE viewer</a><a href="../gencad-viewer/">GenCAD viewer</a><a href="../open-brd-file/">Open a .brd file</a><a href="../open-bvr-file/">Open a .bvr file</a><a href="../boardview-software-comparison/">Compare boardviewers</a>
+</nav><p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p></div></footer>
+<script src="../assets/js/site.js"></script>
+</body></html>
