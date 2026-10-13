@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boardview software for Mac: Apple silicon download and limits</title>
+<meta name="description" content="Download and check TRACE Boardviewer 1.3.3 for Apple silicon Macs. See the macOS version limits, checksum, experimental status and safe Gatekeeper guidance.">
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#0f1216">
+<meta property="og:title" content="Boardview software for Mac: Apple silicon download and limits">
+<meta property="og:description" content="Download and check TRACE Boardviewer 1.3.3 for Apple silicon Macs. See the macOS version limits, checksum, experimental status and safe Gatekeeper guidance.">
+<meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TRACE Boardviewer with a KiCad board, its schematic and a PDF datasheet side by side">
+<meta property="og:url" content="https://trace-boardviewer.github.io/macos/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TRACE Boardviewer">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boardview software for Mac: Apple silicon download and limits">
+<meta name="twitter:description" content="Download and check TRACE Boardviewer 1.3.3 for Apple silicon Macs. See the macOS version limits, checksum, experimental status and safe Gatekeeper guidance.">
+<meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
+<link rel="canonical" href="https://trace-boardviewer.github.io/macos/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Boardview software for Mac: Apple silicon download and limits","description":"Download and check TRACE Boardviewer 1.3.3 for Apple silicon Macs. See the macOS version limits, checksum, experimental status and safe Gatekeeper guidance.","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/macos/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Boardview software for Mac","item":"https://trace-boardviewer.github.io/macos/"}]}]}
+</script>
+<link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/img/icon-56.png" type="image/png" sizes="56x56">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="../" aria-label="TRACE Boardviewer">
+    <img src="../assets/img/icon-56.png" width="28" height="28" alt="">
+    TRACE Boardviewer
+  </a>
+  <nav class="main" aria-label="Sections">
+    <a href="../demo/">Demo</a>
+    <a href="../#formats">Formats</a>
+    <a href="../#guides">Guides</a>
+    <a href="../boardview-software-comparison/">Compare</a>
+    <a href="../#download">Download</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/#bug">Report a bug</a>
+  </nav>
+  <div class="toggles">
+    <button class="btn small" type="button" data-theme-btn title="Light / dark" aria-label="Toggle light or dark theme">◐</button>
+  </div>
+</div></header>
+
+<main id="main">
+
+<section class="hero guide"><div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../">TRACE Boardviewer</a></li>
+    <li aria-current="page">Boardview software for Mac</li>
+  </ol></nav>
+  <h1>TRACE Boardviewer for macOS (experimental)</h1>
+  <p class="meta">Stable release: 1.3.3. The macOS package is experimental. Updated: <time datetime="2026-10-13">13 October 2026</time>.</p>
+  <p class="lead">TRACE 1.3.3 has an experimental download for Apple silicon Macs. It requires macOS 13 or later, is ad-hoc signed but not notarized, and has not passed native acceptance. This page explains which package fits, how to check its download, and what to do if macOS blocks it.</p>
+  <div class="cta">
+    <a class="btn primary" href="../#download-mac">Mac download and checksum</a>
+    <a class="btn" href="../boardview-software-comparison/">Compare platforms and limits</a>
+  </div>
+</div></section>
+
+<section><div class="wrap prose">
+  <h2>Check whether the Mac package fits</h2>
+  <ul>
+    <li><strong>Chip:</strong> Apple silicon (arm64) only. Intel Macs are not supported by this download.</li>
+    <li><strong>System:</strong> macOS 13 or later.</li>
+    <li><strong>Release state:</strong> 1.3.3 is the stable release across platforms, while the macOS build remains experimental. Its automated build and smoke checks do not count as native acceptance of the released package.</li>
+    <li><strong>Signing:</strong> the app is ad-hoc signed and not notarized. Gatekeeper may block a downloaded copy. If it does, stop and wait for a signed and notarized release; do not remove the quarantine flag or change Gatekeeper settings.</li>
+  </ul>
+  <p>For the exact packaging and validation boundary, see the tagged <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/MAC_VALIDATION.md" rel="noopener">macOS validation notes</a> and the <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/CHANGELOG.md" rel="noopener">1.3.3 release notes</a>.</p>
+
+  <h2>Download and verify the archive</h2>
+  <ol class="steps">
+    <li>From the <a href="../#download-mac">Mac download section</a>, get <code>TRACE-Boardviewer-1.3.3-mac-arm64.zip</code> and its <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/download/v1.3.3/TRACE-Boardviewer-1.3.3-mac-arm64.zip.sha256" rel="noopener">SHA-256 sidecar</a>. Both files are also listed on the <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.3" rel="noopener">1.3.3 release page</a>.</li>
+    <li>In Terminal, calculate the downloaded archive's hash:
+      <pre>shasum -a 256 ~/Downloads/TRACE-Boardviewer-1.3.3-mac-arm64.zip</pre>
+      Compare the 64-character result with the value in the sidecar before extracting.</li>
+    <li>Extract the ZIP and open <code>TRACE Boardviewer.app</code>. If Gatekeeper blocks it, stop there. This release does not provide a supported way around that block.</li>
+  </ol>
+  <p>The sidecar link was checked against the release archive name and the checksum shown on the site's download section. Check the current release page again if you use a later version.</p>
+
+  <h2>What TRACE can do on macOS</h2>
+  <p>The macOS build has the same 1.3.3 application features as the Windows build: open supported board formats, attach a matching schematic and PDF datasheets, search across them, cross-probe board and schematic, and keep local pin notes. Check the <a href="../#formats">format table</a> for exact variants, validation levels and limits; <a href="../getting-started/">Getting started</a> walks through a typical board, schematic and PDF workflow.</p>
+  <p>Board and document files are read on your Mac and are not uploaded. Network use is limited to optional features that you choose, such as checking for a release, sending a reviewed bug report, or verifying project support. See the <a href="../boardview-software-comparison/">platform and feature comparison</a> before choosing a build. Windows x64 is the stable, portable target; macOS and Linux packages are experimental.</p>
+
+  <h2>Known macOS validation limits</h2>
+  <p>The release workflow builds and smoke-checks the Apple silicon ZIP on a hosted macOS runner. A development build was also run on an Apple M3, but neither result is native acceptance of the published downloaded package. The macOS package remains experimental until that acceptance is complete and signing and notarization are available. The app's user-data location is documented as <code>~/Library/Application Support/trace-boardviewer</code>, but the tagged release notes say that location has not been confirmed on a native build.</p>
+  <p>If the app opens and you find a problem, use <strong>Report a bug</strong> in the app to review what would be sent; do not attach board files. If the app cannot be used, the <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues/new?template=bug_report.yml" rel="noopener" target="_blank">GitHub issue form</a> is available in a browser.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="../#download-mac">Mac download and checksum</a>
+    <a class="btn" href="../#formats">Exact supported formats</a>
+    <a class="btn" href="../getting-started/">Getting started</a>
+  </div>
+  <p class="sources"><em>TRACE Boardviewer is not affiliated with Apple. “Mac” and “macOS” identify the platform and are used descriptively.</em></p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="links" aria-label="Project links">
+    <a href="../">Home</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a>
+    <a href="../changelog/">Changelog</a>
+    <a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a>
+    <a href="../getting-started/#bug">Report a bug</a>
+    <a href="../support.html">Support</a>
+    <a href="../getting-started/">Getting started</a>
+    <a href="../linux/">Linux</a>
+    <a href="../macos/">macOS</a>
+    <a href="../demo/">Demo</a>
+    <a href="../kicad-pcb-viewer/">KiCad viewer</a>
+    <a href="../eagle-viewer/">EAGLE viewer</a>
+    <a href="../gencad-viewer/">GenCAD viewer</a>
+    <a href="../open-brd-file/">Open a .brd file</a>
+    <a href="../open-bvr-file/">Open a .bvr file</a>
+    <a href="../boardview-software-comparison/">Compare boardviewers</a>
+  </nav>
+  <p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p>
+</div></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

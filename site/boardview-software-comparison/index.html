@@ -102,11 +102,12 @@
     <li><strong>You have a boardview with a separate schematic.</strong> Attach a supported KiCad, EAGLE or Altium schematic and compare exact component/net names. TRACE lists unmatched or ambiguous links rather than guessing. For Altium project hierarchy, keep sibling <code>.SchDoc</code> sheets and the <code>.PrjPcb</code> file together; see the <a href="../altium-viewer/">Altium guide</a>.</li>
     <li><strong>You have only a PDF schematic or a board image.</strong> TRACE can search PDF text offline; scanned pages need the optional English OCR. A PDF or image is a document, not a board or netlist, and measurements on an image require calibration.</li>
     <li><strong>You need routed copper geometry.</strong> Use an ODB++ file for the copper objects TRACE currently displays; the support table describes the remaining ODB++ scope. Most other readers provide pads, components and logical net highlighting without routed tracks.</li>
-    <li><strong>You plan to use macOS or Linux.</strong> Those 1.3.3 packages are experimental and unsigned; check the <a href="../linux/">Linux page</a> or the download notes before choosing a package.</li>
+    <li><strong>You plan to use macOS or Linux.</strong> Both 1.3.3 packages are experimental; the macOS app is ad-hoc signed but not notarized, while the Linux packages are unsigned. See the <a href="../macos/">Mac download and validation guide</a> or the <a href="../linux/">Linux page</a> before choosing a package.</li>
   </ol>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
     <a class="btn" href="../#formats">Exact format table</a>
+    <a class="btn" href="../macos/">Mac page</a>
     <a class="btn" href="../linux/">Linux page</a>
   </div>
 
