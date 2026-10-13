@@ -2,11 +2,11 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open ODB++ board archives in TRACE (.zip, .tgz, .tar.gz)</title>
+<title>Free ODB++ viewer: open ZIP and tar board archives</title>
 <meta name="description" content="Open an ODB++ product-model ZIP or tar archive in TRACE 1.3.3. See components, nets, copper and drill geometry, plus validation scope and archive limits.">
 <meta name="robots" content="max-image-preview:large">
 <meta name="theme-color" content="#0f1216">
-<meta property="og:title" content="Open ODB++ board archives in TRACE (.zip, .tgz, .tar.gz)">
+<meta property="og:title" content="Free ODB++ viewer: open ZIP and tar board archives">
 <meta property="og:description" content="A practical guide to opening an ODB++ product-model archive, reading the board and copper view, and understanding archive limits in TRACE 1.3.3.">
 <meta property="og:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -14,11 +14,11 @@
 <meta property="og:url" content="https://trace-boardviewer.github.io/odb-viewer/"><meta property="og:type" content="article">
 <meta property="og:site_name" content="TRACE Boardviewer"><meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Open ODB++ board archives in TRACE (.zip, .tgz, .tar.gz)">
+<meta name="twitter:title" content="Free ODB++ viewer: open ZIP and tar board archives">
 <meta name="twitter:description" content="A practical guide to opening an ODB++ product-model archive, reading the board and copper view, and understanding archive limits in TRACE 1.3.3.">
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/odb-viewer/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Open ODB++ board archives in TRACE (.zip, .tgz, .tar.gz)","description":"Open an ODB++ product-model ZIP or tar archive in TRACE 1.3.3. See components, nets, copper and drill geometry, plus validation scope and archive limits.","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/odb-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"ODB++ viewer","item":"https://trace-boardviewer.github.io/odb-viewer/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Free ODB++ viewer: open ZIP and tar board archives","description":"Open an ODB++ product-model ZIP or tar archive in TRACE 1.3.3. See components, nets, copper and drill geometry, plus validation scope and archive limits.","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/odb-viewer/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"ODB++ viewer","item":"https://trace-boardviewer.github.io/odb-viewer/"}]}]}</script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
@@ -37,7 +37,7 @@
   <h1>Open an ODB++ board archive in TRACE</h1>
   <p class="meta">Updated: <time datetime="2026-10-13">13 October 2026</time> · TRACE 1.3.3</p>
   <p class="lead">An ODB++ product model can include board components, electrical connections, copper geometry and drill data. TRACE opens supported archives as a read-only board view and explains which parts of the model it could not show.</p>
-  <div class="cta"><a class="btn primary" href="../#download">Download TRACE 1.3.3</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">Exact format support</a></div>
+  <div class="cta"><a class="btn primary" href="../#download">Download TRACE 1.3.3</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/SUPPORT.md">Exact format support</a></div>
 </div></section>
 <section><div class="wrap prose">
   <h2>Choose the complete product-model archive</h2>
@@ -49,7 +49,7 @@
   <p>The view is intentionally partial. Copper pours, text, fonts, solder mask and silkscreen are not read or drawn. Rectangle, square and circular pads retain their size; other contours appear as their enclosing rectangle and are counted in the import note. Review that note for skipped layer files or geometry before using the view.</p>
 
   <h2>Validation scope and archive limits</h2>
-  <p>The ODB++ reader was checked against 39 ZIP exports written by <code>kicad-cli</code> 9.0.9 from open designs. Some exports were compared with their source boards and IPC-2581 outputs. No ODB++ file written by a vendor's own software was tested, so this evidence does not establish coverage for every writer or product-model variant. See the <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">support table</a> for the full validation record.</p>
+  <p>The ODB++ reader was checked against 39 ZIP exports written by <code>kicad-cli</code> 9.0.9 from open designs. Some exports were compared with their source boards and IPC-2581 outputs. No ODB++ file written by a vendor's own software was tested, so this evidence does not establish coverage for every writer or product-model variant. See the <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/SUPPORT.md">support table</a> for the full validation record.</p>
   <ul>
     <li>The selected archive must be no larger than 64 MiB. Import also has bounded limits on expanded streams, entries and retained files.</li>
     <li>Encrypted ZIP archives and ZIP compression methods other than stored or deflate are refused.</li>
@@ -66,12 +66,12 @@
     <li>Keep measurement notes on the relevant component or pin. TRACE leaves the original archive unchanged.</li>
   </ol>
   <p>Import and document search are local. Optional network features are separate and explained in <a href="../getting-started/">Getting started</a>. Windows x64 is the stable package; macOS on Apple silicon and Linux x86-64 remain experimental.</p>
-  <div class="cta"><a class="btn primary" href="../#download">Downloads</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">Full support table and limits</a><a class="btn" href="../getting-started/">Board and document workflow</a></div>
+  <div class="cta"><a class="btn primary" href="../#download">Downloads</a><a class="btn" href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/SUPPORT.md">Full support table and limits</a><a class="btn" href="../getting-started/">Board and document workflow</a></div>
   <p class="sources"><em>ODB++ is a trademark of its owner. Product names identify file formats only; TRACE is not affiliated with any format owner.</em></p>
 </div></section>
 </main>
 <footer><div class="wrap"><nav class="links" aria-label="Project links">
-  <a href="../">Home</a><a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md">SUPPORT.md</a><a href="../changelog/">Changelog</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a><a href="../getting-started/#bug">Report a bug</a><a href="../support.html">Support</a><a href="../getting-started/">Getting started</a><a href="../linux/">Linux</a><a href="../demo/">Demo</a><a href="../kicad-pcb-viewer/">KiCad viewer</a><a href="../eagle-viewer/">EAGLE viewer</a><a href="../gencad-viewer/">GenCAD viewer</a><a href="../open-brd-file/">Open a .brd file</a><a href="../open-bvr-file/">Open a .bvr file</a><a href="../boardview-software-comparison/">Compare boardviewers</a>
+  <a href="../">Home</a><a href="https://github.com/trace-boardviewer/trace-boardviewer">GitHub</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/v1.3.3/docs/SUPPORT.md">SUPPORT.md</a><a href="../changelog/">Changelog</a><a href="https://github.com/trace-boardviewer/trace-boardviewer/issues">Issues</a><a href="../getting-started/#bug">Report a bug</a><a href="../support.html">Support</a><a href="../getting-started/">Getting started</a><a href="../linux/">Linux</a><a href="../demo/">Demo</a><a href="../kicad-pcb-viewer/">KiCad viewer</a><a href="../eagle-viewer/">EAGLE viewer</a><a href="../gencad-viewer/">GenCAD viewer</a><a href="../open-brd-file/">Open a .brd file</a><a href="../open-bvr-file/">Open a .bvr file</a><a href="../boardview-software-comparison/">Compare boardviewers</a>
 </nav><p>© 2026 TRACE Boardviewer contributors · MIT · no cookies, no trackers</p></div></footer>
 <script src="../assets/js/site.js"></script>
 </body></html>
