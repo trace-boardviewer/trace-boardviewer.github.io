@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/boardview-software-comparison/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Choosing a boardviewer: what TRACE covers","description":"What TRACE Boardviewer covers in stable 1.3.3: formats, schematics and PDFs, platforms (Windows; macOS and Linux experimental), licence and limits. Other programs: check their own sites.","datePublished":"2026-10-06","dateModified":"2026-10-09","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/boardview-software-comparison/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Choosing a boardviewer","item":"https://trace-boardviewer.github.io/boardview-software-comparison/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Choosing a boardviewer: what TRACE covers","description":"What TRACE Boardviewer covers in stable 1.3.3: formats, schematics and PDFs, platforms (Windows; macOS and Linux experimental), licence and limits. Other programs: check their own sites.","datePublished":"2026-10-06","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/boardview-software-comparison/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Choosing a boardviewer","item":"https://trace-boardviewer.github.io/boardview-software-comparison/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -60,7 +60,7 @@
     <li aria-current="page">Choosing a boardviewer</li>
   </ol></nav>
   <h1>Choosing a boardviewer</h1>
-  <p class="meta">TRACE details refer to stable version 1.3.3, published 11 October 2026.</p>
+  <p class="meta">TRACE details refer to stable version 1.3.3, published 12 October 2026. Updated: <time datetime="2026-10-13">13 October 2026</time>.</p>
   <p class="lead">Choose a boardviewer by the files you actually have. This page explains what TRACE covers and where to check other programs. It does not restate the prices, versions or formats of other programs.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -89,20 +89,22 @@
     <li><strong>No copper.</strong> Tracks, zones and vias are not drawn. Connection guides show logical relationships, not real traces.</li>
     <li><strong>Experimental builds.</strong> The macOS and Linux builds are experimental and unsigned. See the native acceptance note above.</li>
     <li><strong>Unsigned Windows EXE.</strong> SmartScreen may show a warning. The portable download is about 5% smaller than in 1.3.1. Each launch unpacks the app into a private temporary folder, which is removed on normal exit.</li>
-    <li><strong>Size and format limits.</strong> Files are limited to 64 MiB, except native Allegro databases, which open up to 240 MiB when they declare 4,000,000 objects or fewer. Unsupported or damaged files are refused with an explanation rather than guessed.</li>
+    <li><strong>Size and format limits.</strong> Most readers have a 64 MiB input limit. Native Allegro databases allow up to 240 MiB when they declare 4,000,000 objects or fewer. Each reader has its own limits; unsupported or damaged files are refused with an explanation rather than guessed.</li>
+    <li><strong>Copper detail.</strong> ODB++ imports draw copper pads, lines, arcs and drilled holes; copper pours and text are not read. Other boardview and PCB readers do not show routed tracks, zones or vias. Net highlighting is a logical connection guide, not a copper-trace inspection.</li>
   </ul></div>
 
   <h2>Other boardviewers</h2>
-  <p>Other free and commercial boardviewers exist, including OpenBoardView, FlexBV, NexusBV, BoardViewer and BoardRipper. Their formats, platforms, licences and prices differ, and they change over time. Their own websites or repositories are the current reference.</p>
+  <p>Other boardview projects exist. For current primary-source information, see the <a href="https://github.com/OpenBoardView/OpenBoardView" rel="noopener">OpenBoardView source repository and releases</a> and the <a href="https://nexusbv.net/" rel="noopener">NexusBV project site</a>. This page does not rank products or make claims about their current prices, platforms or file coverage; compare their published format lists with the exact file variant you have.</p>
 
-  <h2>Which one fits your work</h2>
-  <ul>
-    <li><strong>KiCad, EAGLE or Altium designs with their schematics:</strong> TRACE reads these natively. The format table gives the exact scope for each.</li>
-    <li><strong>Classic boardview files</strong> (.brd, .bdv, .fz, .bvr, XZZ .pcb): check your export variant in the format table. It shows which variants have real-file checks and which are drafts.</li>
-    <li><strong>Allegro or Teboview (TVW) files:</strong> TRACE reads selected documented layouts only and refuses unknown ones.</li>
-    <li><strong>Board, schematic, datasheets and your measurements in one window, offline:</strong> TRACE.</li>
-    <li><strong>Linux:</strong> the .deb and AppImage are experimental. See the <a href="../linux/">Linux page</a>.</li>
-  </ul>
+  <h2>Choose by the job in front of you</h2>
+  <ol>
+    <li><strong>You need to edit the design, route copper, run design-rule checks or generate manufacturing files.</strong> Use the design application and project that own the board. KiCad's official <a href="https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html" rel="noopener">PCB Editor manual</a> documents editing and DRC; Altium's official <a href="https://www.altium.com/documentation/altium-designer/design-tools-interfacing" rel="noopener">design-tool documentation</a> describes its native project formats and integrations. TRACE is a read-only viewer and does not replace those design workflows.</li>
+    <li><strong>You have an existing PCB or boardview and need to inspect it with its schematic, PDF and notes.</strong> Check the <a href="../#formats">format table</a> for the exact extension, variant, validation level and limits. Open a copy first, then verify a few known references, nets and dimensions against a trusted source before relying on the view.</li>
+    <li><strong>You have a boardview with a separate schematic.</strong> Attach a supported KiCad, EAGLE or Altium schematic and compare exact component/net names. TRACE lists unmatched or ambiguous links rather than guessing. For Altium project hierarchy, keep sibling <code>.SchDoc</code> sheets and the <code>.PrjPcb</code> file together; see the <a href="../altium-viewer/">Altium guide</a>.</li>
+    <li><strong>You have only a PDF schematic or a board image.</strong> TRACE can search PDF text offline; scanned pages need the optional English OCR. A PDF or image is a document, not a board or netlist, and measurements on an image require calibration.</li>
+    <li><strong>You need routed copper geometry.</strong> Use an ODB++ file for the copper objects TRACE currently displays; the support table describes the remaining ODB++ scope. Most other readers provide pads, components and logical net highlighting without routed tracks.</li>
+    <li><strong>You plan to use macOS or Linux.</strong> Those 1.3.3 packages are experimental and unsigned; check the <a href="../linux/">Linux page</a> or the download notes before choosing a package.</li>
+  </ol>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
     <a class="btn" href="../#formats">Exact format table</a>
@@ -110,7 +112,7 @@
   </div>
 
   <h2>How this page was written</h2>
-  <p>This page describes TRACE from its own documentation: the release data for 1.3.3, the generated format table in <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md" rel="noopener">SUPPORT.md</a> and the <a href="../changelog/">release notes</a>. It makes no statements about other programs.</p>
+  <p>This page describes TRACE from its own documentation: the release data for 1.3.3, the generated format table in <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md" rel="noopener">SUPPORT.md</a> and the <a href="../changelog/">release notes</a>. Links to other products go to their primary sources. Verify the current documentation and your exact file before choosing.</p>
 </div></section>
 
 </main>

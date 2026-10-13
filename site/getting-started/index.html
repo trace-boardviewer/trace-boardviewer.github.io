@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/getting-started/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Getting started with TRACE Boardviewer","description":"Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.","datePublished":"2026-10-07","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-08-eagle-split.png","https://trace-boardviewer.github.io/assets/img/shot-09-pdf-parts.png","https://trace-boardviewer.github.io/assets/img/shot-04-notes.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/getting-started/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Getting started","item":"https://trace-boardviewer.github.io/getting-started/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"Getting started with TRACE Boardviewer","description":"Step by step: open a board file, attach its schematic and PDF datasheets, search across all of them, cross-probe board and schematic, and keep pin notes.","datePublished":"2026-10-07","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":["https://trace-boardviewer.github.io/assets/img/shot-08-eagle-split.png","https://trace-boardviewer.github.io/assets/img/shot-09-pdf-parts.png","https://trace-boardviewer.github.io/assets/img/shot-04-notes.png"],"mainEntityOfPage":"https://trace-boardviewer.github.io/getting-started/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Getting started","item":"https://trace-boardviewer.github.io/getting-started/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -60,7 +60,7 @@
     <li aria-current="page">Getting started</li>
   </ol></nav>
   <h1>Getting started with TRACE Boardviewer</h1>
-  <p class="meta">Updated: <time datetime="2026-10-08">8 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-13">13 October 2026</time></p>
   <p class="lead">A boardviewer is most useful with the schematic and the datasheets next to the board. This guide shows how to open a board in TRACE, attach its documents, search across all of them, jump between board and schematic, measure and keep notes.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE</a>
@@ -87,8 +87,8 @@
   </ol>
 
   <h2 id="run">1. Run TRACE</h2>
-  <p><strong>Windows (x64).</strong> Download the portable EXE from the <a href="../#download">download section</a>. Check its SHA-256 in PowerShell with <code>Get-FileHash</code> and compare it with the value on the page. The EXE is not code-signed yet, so SmartScreen may warn: choose "More info", then "Run anyway". Nothing is installed. Each launch unpacks the app into a private temporary folder and removes it on exit. Settings and notes live in <code>%APPDATA%\TRACE Boardviewer</code>.</p>
-  <p><strong>macOS (experimental, Apple silicon only).</strong> Unzip the download and move <code>TRACE Boardviewer.app</code> to Applications. The build is unsigned, so macOS blocks it until you allow it once: right-click the app and choose Open, or run <code>xattr -dr com.apple.quarantine "/Applications/TRACE Boardviewer.app"</code> in Terminal.</p>
+  <p><strong>Windows (x64).</strong> Download the portable EXE from the <a href="../#download">download section</a>. Check its SHA-256 in PowerShell with <code>Get-FileHash</code> and compare it with the value on the page. The EXE is not code-signed yet, so SmartScreen may warn: choose "More info", then "Run anyway". Nothing is installed. Each launch unpacks the app into a private temporary folder and removes it on exit. Settings and notes are expected in <code>%APPDATA%\trace-boardviewer</code>; this location has not yet been confirmed on a native Windows build.</p>
+  <p><strong>macOS (experimental, Apple silicon only).</strong> The ad-hoc signed app is not notarized, so Gatekeeper may block it. Do not remove the quarantine flag or change Gatekeeper settings to open it. Use a signed and notarized release once one is available.</p>
   <p><strong>Linux (experimental, x86-64).</strong> Tested on Ubuntu 24.04 only; other distributions are not tested. On Ubuntu 24.04, install the <code>.deb</code> with <code>sudo apt install ./&lt;file&gt;.deb</code> and start TRACE from the application menu. On other distributions, make the AppImage executable with <code>chmod +x</code> and run it. Check the SHA-256 first. The <a href="../linux/">Linux page</a> explains the packages and the Chromium sandbox.</p>
   <p>At every start a short support notice appears; "Not now" skips it. TRACE can ask GitHub once whether a newer release exists. Settings can turn it off, and Settings &gt; Network lists every optional network feature.</p>
 
@@ -97,7 +97,7 @@
   <p>Format guides: <a href="../kicad-pcb-viewer/">KiCad</a> · <a href="../eagle-viewer/">EAGLE</a> · <a href="../gencad-viewer/">GenCAD</a> · <a href="../open-brd-file/">.brd files</a> · <a href="../open-bvr-file/">.bvr files</a></p>
 
   <h2 id="attach">3. Attach the schematic, PDFs and images</h2>
-  <p>Use <strong>Attach…</strong> in the Documents tab or <strong>Attach a schematic…</strong> in the Schematic tab, or drop the files into the window while a board is open. TRACE accepts KiCad and EAGLE schematics, PDFs and PNG, JPEG, WebP and SVG images.</p>
+  <p>Use <strong>Attach…</strong> in the Documents tab or <strong>Attach a schematic…</strong> in the Schematic tab, or drop the files into the window while a board is open. TRACE accepts KiCad, EAGLE and Altium SchDoc schematics, PDFs and PNG, JPEG, WebP and SVG images. Altium project scope and multi-sheet hierarchy require sibling SchDoc files and a PrjPcb file; see the <a href="../altium-viewer/">Altium guide</a> for the limits.</p>
   <ul>
     <li>Attached files are remembered for this board, by their SHA-256 and their path relative to the board. They come back after a restart.</li>
     <li>A moved file is found again by its relative path. A missing one offers <strong>Relink</strong>. A file that changed is never adopted silently.</li>
@@ -137,7 +137,7 @@
     <li><strong>Top and bottom:</strong> the switch above the board shows the top side or the mirrored bottom side. <kbd>R</kbd> rotates and <kbd>F</kbd> fits the board.</li>
     <li><strong>Layouts:</strong> Workshop shows the search panel and the inspector beside the board. Focus gives the board the whole window with a floating search and inspector. <kbd>Ctrl</kbd>+<kbd>1</kbd> and <kbd>Ctrl</kbd>+<kbd>2</kbd> switch.</li>
     <li><strong>Themes:</strong> dark, light or the system setting.</li>
-    <li><strong>Languages:</strong> English, French, German, Hungarian, Italian, Polish, Slovak and Ukrainian, switched instantly in Settings. The workspace features added in 1.2.0 (the tabs, search, the PDF, image and schematic viewers and their dialogs) are still English in every language.</li>
+    <li><strong>Languages:</strong> English, French, German, Hungarian, Italian, Polish, Slovak and Ukrainian, switched instantly in Settings. Version 1.3.3 translates additional interface text in all eight languages. Some workspace areas remain English, including the Board/Schematic/Documents tabs, search, workspace views, note/link/export/key dialogs, inspector sections and workspace messages; see the <a href="../changelog/">release notes</a> for details.</li>
   </ul>
   <div class="figs">
     <figure><button type="button" class="shot" aria-haspopup="dialog"><img src="../assets/img/shot-15-focus-800.webp" srcset="../assets/img/shot-15-focus-800.webp 800w, ../assets/img/shot-15-focus.webp 1600w" sizes="(max-width: 680px) calc(100vw - 32px), 490px" data-full="../assets/img/shot-15-focus.png" alt="Focus layout in TRACE Boardviewer: the board fills the window, with a floating search and inspector" width="1600" height="1000" loading="lazy" decoding="async"></button><figcaption>Focus layout: the board fills the window.<small data-cap="15">TRACE 1.2.0 · Jetson Nano baseboard (Antmicro, Apache-2.0) · Focus layout</small></figcaption></figure>

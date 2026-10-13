@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://trace-boardviewer.github.io/assets/img/og.png">
 <link rel="canonical" href="https://trace-boardviewer.github.io/changelog/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"TRACE Boardviewer release notes","description":"What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.3 (12 October 2026).","datePublished":"2026-10-07","dateModified":"2026-10-12","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/changelog/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Release notes","item":"https://trace-boardviewer.github.io/changelog/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"TRACE Boardviewer release notes","description":"What changed in each TRACE Boardviewer release: boardview formats, the technician workspace, fixes and builds. Latest: 1.3.3 (12 October 2026).","datePublished":"2026-10-07","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"TRACE Boardviewer","url":"https://trace-boardviewer.github.io/"},"publisher":{"@type":"Organization","name":"TRACE Boardviewer","logo":{"@type":"ImageObject","url":"https://trace-boardviewer.github.io/assets/img/icon.png"}},"image":"https://trace-boardviewer.github.io/assets/img/og.png","mainEntityOfPage":"https://trace-boardviewer.github.io/changelog/","about":{"@id":"https://trace-boardviewer.github.io/#app"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"TRACE Boardviewer","item":"https://trace-boardviewer.github.io/"},{"@type":"ListItem","position":2,"name":"Release notes","item":"https://trace-boardviewer.github.io/changelog/"}]}]}
 </script>
 <link rel="icon" href="../assets/img/icon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -60,7 +60,7 @@
     <li aria-current="page">Release notes</li>
   </ol></nav>
   <h1>TRACE Boardviewer release notes</h1>
-  <p class="meta">Updated: <time datetime="2026-10-12">12 October 2026</time></p>
+  <p class="meta">Updated: <time datetime="2026-10-13">13 October 2026</time></p>
   <p class="lead">What changed in each release of TRACE Boardviewer, newest first. Downloads and SHA-256 checksums are on the <a href="https://github.com/trace-boardviewer/trace-boardviewer/releases" rel="noopener">GitHub releases page</a>; the exact format support is in <a href="https://github.com/trace-boardviewer/trace-boardviewer/blob/main/docs/SUPPORT.md" rel="noopener">docs/SUPPORT.md</a>.</p>
   <div class="cta">
     <a class="btn primary" href="../#download">Download TRACE 1.3.3</a>
@@ -71,7 +71,8 @@
 <section class="release" id="v1-3-3"><div class="wrap prose">
   <h2>TRACE Boardviewer 1.3.3 <span class="meta"><time datetime="2026-10-12">12 October 2026</time></span></h2>
   <p class="meta"><a href="https://github.com/trace-boardviewer/trace-boardviewer/releases/tag/v1.3.3" rel="noopener">Downloads and checksums for 1.3.3 on GitHub</a></p>
-  <p>Windows x64, macOS Apple silicon and Linux x86-64 packages carry the same application features; macOS and Linux remain experimental. ### New</p>
+  <p>Windows x64, macOS Apple silicon and Linux x86-64 packages carry the same application features; macOS and Linux remain experimental.</p>
+  <h3>What's new</h3>
   <ul>
     <li>ODB++ boards show their copper (pads, copper lines and arcs) and their drilled holes in the 2D view. Copper pours and text, fonts, solder mask and silkscreen are still not read.</li>
     <li>EasyEDA Pro V3 projects are read: components, pads, nets and the board outline. A project that cannot be read is refused, and the message names the reason. Projects with the .epro2 extension can be picked in the open dialog.</li>
@@ -108,7 +109,8 @@
 
 <section class="release" id="v1-3-2"><div class="wrap prose">
   <h2>TRACE Boardviewer 1.3.2</h2>
-  <p>Windows x64, macOS Apple silicon and Linux x86-64 packages carry the same application features; macOS and Linux remain experimental. ### New</p>
+  <p class="meta">Not released separately; these changes shipped in 1.3.3.</p>
+  <h3>Changes included in 1.3.3</h3>
   <ul>
     <li>In-app bug reports: a private form for describing a problem, with an exact preview of what will be sent before anything leaves the computer. Drafts can be kept locally. Sending is an explicit action after review, through a separate receiver. Detected personal details can be removed while the rest of the text is kept; home-relative and drive-less file paths are detected too. The description has a 2,000-character limit with a counter.</li>
     <li>Keyboard: Ctrl+, (Windows and Linux) and Cmd+, (macOS) open Settings, also before a board is open and while a text field has the focus. A comma typed in a text field stays text, and the shortcut is listed in the keyboard help.</li>
@@ -137,7 +139,8 @@
 
 <section class="release" id="v1-3-1"><div class="wrap prose">
   <h2>TRACE Boardviewer 1.3.1</h2>
-  <p>Windows x64, macOS Apple silicon and Linux x86-64 packages carry the same application features; macOS and Linux remain experimental. ### New</p>
+  <p>Windows x64, macOS Apple silicon and Linux x86-64 packages carry the same application features; macOS and Linux remain experimental.</p>
+  <h3>What's new</h3>
   <ul>
     <li>Native Allegro BRD databases now import components, values, packages, pin labels, nets, pad positions and dimensions, and board outlines. Selected 16.2, 16.4, 16.5, 16.6 and 17.2 layouts have real-file checks; other 16.0–17.5 layouts use synthetic fixtures. Unsupported keyed records and layer semantics fail explicitly. Bodies remain estimated; curves use chords, custom pads use extents, and tracks, copper fills and vias are omitted.</li>
     <li>Jet3/Jet4 BV database and BV2 text boardviews import Layout, Pin and Nail tables with explicit units, pin identities, nets, sides, test points and outlines. Selected Jet4 and BV2 exports were independently checked. Jet3 uses synthetic validation. Physical bodies and pads are estimated; encrypted database pages, overflow rows, multiple outline groups and unknown schemas remain unsupported.</li>
@@ -145,7 +148,7 @@
     <li>Placed Mentor Boardstation Neutral exports import declared units, absolute pin positions, literal net names, component origins and explicit sides. Missing pad/outline geometry is disclosed; unvalidated board transforms are refused.</li>
     <li>Tebo-ict v3.0 BOARD / BOARD_XY pairs open from either entry file. Explicit Ref.Pin connections and matching node sets preserve electrical identity, inch positions, access sides and the outline. Bodies, pad sizes and tester availability are not established by this format.</li>
     <li>Fabmaster FARC ASCII jobs and FAZ ZIP packages import pin positions, identities, nets, sides, placements, test vias and straight board outlines. Section counts and electrical membership are cross-checked. Routing and tester settings are omitted; pad sizes are estimated.</li>
-    <li>Readers for IPC-2581 revisions B/C, HyperLynx, Fabmaster FATF, EasyEDA Standard/Pro PCB, IPC-D-356 and CSV/TSV pin lists, plus Altium SchDoc schematics. EasyEDA Pro and SchDoc have selected real-file checks; IPC-2581 and IPC-D-356 were validated with open tool-written exports. HyperLynx, Fabmaster, EasyEDA Standard and pin lists remain draft with synthetic fixtures only. [The support table](docs/SUPPORT.md) gives the status and limits of each reader.</li>
+    <li>Readers for IPC-2581 revisions B/C, HyperLynx, Fabmaster FATF, EasyEDA Standard/Pro PCB, IPC-D-356 and CSV/TSV pin lists, plus Altium SchDoc schematics. EasyEDA Pro and SchDoc have selected real-file checks; IPC-2581 and IPC-D-356 were validated with open tool-written exports. HyperLynx, Fabmaster, EasyEDA Standard and pin lists remain draft with synthetic fixtures only. The <a href="../#formats">format table</a> gives the status and limits of each reader.</li>
     <li>ODB++ product models from tgz, tar.gz, tar, tar.Z and ZIP archives, including a nested model archive. Components, pins, nets, pads, package bodies and the board profile are read. Validation used open tool-written exports; vendor-written models remain unverified.</li>
     <li>Open a single board and its companions directly from a ZIP, by Open, drag and drop or the command line. Extraction stays in memory. Multiple boards, encrypted or split archives, unsafe paths and damaged entries are refused. The generic ZIP container is draft, validated with synthetic fixtures.</li>
     <li>Offline English text recognition for scanned PDFs. Recognized words carry confidence marks and are searchable; only exact board references or net names with at least 60% confidence become links. Progress and Cancel are available, completed pages stay recognized for the session, and no OCR data is downloaded or uploaded.</li>
